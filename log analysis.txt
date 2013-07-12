@@ -1,0 +1,183 @@
+Jan sent me a 6.2 gig log file. I've been analyzing the searches from it
+
+
+The vast majority (about 90%) are indeed searches for substrings of predicate functors.
+
+These could be 'cleaned up' in various ways
+
+
+There are a fair number of
+
+search(all,summary,'labeling([max(Var)],Vars)'),
+
+type searches, sometimes just with a fragment
+
+search(all,summary,'ord_subset('),
+
+And some people have terrible spelling. Metaphone and spelling corrector matches might be useful
+
+search(all,summary,'suppresing bindings'),
+search(all,summary,'lenght of atom'),
+
+Students sometimes haven't internalized that Prolog is case sensitive. Lowercasing searches might make sense.
+
+search(all,summary,'Http'),
+search(all,summary,'JSON'),
+search(all,summary,'XML'),
+
+On the other hand, module and arity decorations are common
+search(all,summary,'http:location'),
+search(all,summary,'@/2'),
+
+==========
+
+The next largest category is problems using the development environment
+search(all,summary,'% swipl -x'),
+search(all,summary,'? swipl -x'),
+search(all,summary,'swipl options'),
+search(all,summary,trace),
+search(all,summary,traceappend),
+search(all,summary,'win prolog'),
+search(all,summary,'change pl extension'),
+
+search(all,summary,'basic tutor'),
+
+From the many searches like this, it's apparent that many people find their first 10 minutes with SWI-Prolog baffling.
+
+I suggest we produce a starter tutorial page (one for each OS) with an accompanying video, and prominently link to this off the home page.
+
+===============
+
+Slightly separate is install issues.
+
+search(all,summary,'ubuntu dependencies'),
+
+These should point at per-OS install pages. Search issues probably to be subsumed in reorg of the download/install section.
+
+There's a surprising number of searches for specific version numbers.
+
+search(all,summary,'swi prolog 6.0.2'),
+search(all,summary,'SWI-Prolog/XPCE 6.0.2 '),
+
+We should make sure specific versions are searchable.
+
+==============
+
+A large category is error messages. A review of swipl's error messages for clarity might be in order. Beyond that, we should make sure we search well for them.
+
+search(all,summary,'retract/1: No permission to modify static procedure'),
+search(all,summary,'No permission to modify static procedure'),
+search(all,summary,'Singleton variables: [New_Name,New_Budget,New_Model]'),
+
+===============
+
+There are attempts to find modules and files
+
+search(all,summary,'init.pl'),
+
+There are some searches for section names, libraries, and so on
+search(all,summary,'library(record)'),
+
+And explicit searches for docs
+
+search(all,summary,'XPCE doc'),
+search(all,summary,'XPCE notes'),
+
+
+=================
+
+There are a suprising number of searches having to do with interop.
+
+Maybe this means we can improve this area of the site.
+
+===============
+
+Then there are what I'm calling 'subject' searches - 
+search(all,summary,'delete string in text file'),
+search(all,summary,'delete string '),
+
+search(all,summary,'expert system'),
+
+search(app,summary,'DDE'),
+search(all,summary,'JSON'),
+search(all,summary,'foreign language interface'),
+search(all,summary,'installation requirements'),
+search(all,summary,'reference books'),
+search(all,summary,'SWI-Prolog by Ubuntu'),
+
+I have yet to see a search with a blank that wasn't intended as a phrase.
+
+I suggest we handle these by training a graphmaster based bot.
+
+
+===============
+
+There are a few searches from programmers obviously coming from some functional language.  There are searches for lambda, cons, and ocaml.
+An intro to Prolog for an audience coming from Lisp, Ocaml, Haskell, Clojure, ad nauseum would have an audience.
+
+===================
+
+Occasionally there's a search that's just baffling. There are apparently a number of bored logic programmers in'
+the world who have nothing better to do than type strange things into the search box. 
+
+search(all,summary,'_'),
+search(all,summary,a),
+search(all,summary,'9e9'),
+search(all,summary,'9e9ergdfg'),
+search(all,summary,a2),
+search(all,summary,'_ _'),
+search(all,summary,'_ _'),
+search(all,summary,'_ _'),
+search(all,summary,'_ _'),
+search(man,summary,'_ _'),
+search(man,summary,'_ _ _'),
+search(man,summary,'_ _ _ _ _ _ _ _ _ _'),
+
+(the underscores actually match wildcards- Oops, DoS attack!  The last one times out the server, while _ _ returns a lot of stuff).
+
+Some more attacks.
+
+search(all,summary,'\003\\004\\005\\006\\a\b\a\005\\003\\004\\005\\006\\a\b\a\005\Clauses'),
+search(all,summary,'\003\\004\\005\\006\\a\b\a\005\\003\\004\\005\\006\\a\b\a\005\Clause'),
+search(all,summary,'\003\\004\\005\\006\\a\b\a\005\\003\\004\\005\\006\\a\b\a\005\clause'),
+
+Amusing, rather sad intrusion attempt:
+
+search(all,summary,'<script><marque>heloo</marque></script>'),
+
+others are merely baffling
+
+search(all,summary,'nani search'),
+
+(While on the subject - you should start immediately 404'ing baidu. They're a way overaggressive spider from China. At one point they were over 70% of my own server's traffic.
+
+The various non English submissions are interesting, but localizing the site seems like a huge project. Interestingly, some of them appear to be gibberish - at least Google translate gives up on translating them.
+
+There are a few optimists who have pasted the text of their homework problems into the search box. These folks seem to often be unclear that SWI-Prolog isn't a dialect of Java:
+
+search(all,summary,'Which one of the following bean instances can have a loopback call, allowing the bean instance to behave as a multi-threaded object? '),
+
+=========
+
+bits of humor from log analysis:
+
+somebody's an optimist!
+
+search(all,summary,سمشسا),
+
+Sorry, nope, site's not translated to Arabic.
+
+search(all,summary,тгьиук_срфкы),
+
+No Russian either
+
+and the occasionally just baffling:
+
+search(all,summary,'Excell'),
+
+I SWEAR I didn't do this one:
+
+search(all,summary,':- )'),
+
+
+8cD  Work continues

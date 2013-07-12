@@ -1,0 +1,475 @@
+Sept 2
+
+===========
+
+Re: Swipl web tutorial
+Sunday, September 2, 2012 7:08 AM
+From:
+"Jan Wielemaker" <J.Wielemaker@vu.nl>
+View contact details
+To:
+aogborn@uh.edu
+On 09/01/2012 09:27 PM, Anne Ogborn wrote:
+>> That page shows auto-documenting an HTTP server from the handler
+>> declarations, http_parameters calls and PlDoc documentation.
+>
+> Far out! Ok, now I get it.
+>
+> &8cD <-- Too much Java has rotted my brain, I don't think about
+> reflection.
+
+Its almost the main point of Prolog :-)  Java has some of it too ...
+
+> Now, gotta figure out how to describe this in the tutorial.
+
+At the moment the documentation library is part of ClioPatria, not
+the Prolog distribution only HTTP services.
+
+> (hey, doesn't that catch block make life difficult as well?)
+
+No.  Well, insofar that it will still find the http_parameters
+call and derive the docs, but as you are catching the errors
+the docs may be wrong (or incomplete, as it merely tries to
+unwind the control flow and do some data flow analysis to
+find the first call to http_parameters and the arguments to
+this call).
+
+>> I'm all ears :-)
+>
+> Cogbot's a virtual robot that operates in opensim/second life worlds.
+> The code connects to the virtual world server, turns the nasty
+> streaming data protocol into a scene graph of the world, and provides
+> an interface to this via a number of languages. The most developed of
+> these connector languages is swipl.
+>
+> Attached is a rendered image from the testbed example. The testbed is
+> a group of 6 stone age technology people who live in a wooded area.
+> They hunt, fish, gather berries, and raise corn (The corn fields are
+> visible in the lower right). To navigate their environment they need
+> to cooperate and share resources.
+>
+> Atop this we're integrating many existing AI tools: AIML, Cyc, and a
+> long list of NLP stuff, a behaviors language.
+>
+> Based on the hillpeople experience, our next task (after getting the
+> software stable enough to not be a distraction) is to make a
+> multi-agent planner language for the bots.
+>
+> But for now, what we're working to get 'shippable' is the basic bot +
+> Swi-prolog support + ABCL lisp support + a heftier version of AIML.
+
+Sounds great.  I'm happy to add some pointers (but you should be able
+to do that yourself now) when time is ready.
+
+> The issue's really site navigation, not what's on individual pages,
+> so perhaps the fix is to build a navigation layer that hides those
+> differences from the user.
+
+That might work.  I've always been thinking on a really good search
+facility.  One that classifies and relates individual pages around
+topics, uses (software) thesaurus/dictionary relations to find related
+material, central pages explaining topics, etc.  All the technology
+to do this sort of things are there.
+
+> While thinking about this, making the online help system more
+> complete should be in the mix.
+
+That is part of the picture yes, and would be my first attack (if
+I had time, which I don't :-()
+
+> We could put a 'this page was hard to find' button on every page, and
+> use collected data to prioritize.  Alternatively, we might develop a
+> scheme for scoring pages by how easy to find, and then compare this
+> data against the log files looking for pages that should be more
+> prominent.
+
+Yes. Only, then you get a lot of hints that you have to use.  That
+means work.  I'd be more in favour of allowing users to add tags
+(which we used to call keywords) to the pages.   Next, we can use
+those in search and have the classification done by users :-)
+
+The nice thing is that it isn't that much work and it is immediately
+helpful to the user as they tag this page they never can find with
+the proper keyword which they can remember.
+
+Just brainstorming.  Its not so hard to implement: just an autocomplete
+field to add keywords that are related to the documented object.  Show
+the given keywords in the page and use them in search.  The list of
+keywords can be bootstrapped from some software thesaurus, or maybe
+stackoverflow.
+
+>> A second reason for that is that quite some of the older stuff has
+>> changed significantly and writing docs is one thing, maintaining it
+>> is another :-(
+>
+> Important thing is to flag those pages. Maybe that could be
+> semi-automated.
+
+Flagging is one, but it still takes mostly me to repair it :-(  I
+sometimes renew a topic description after confusion expressed on
+the list or in person, but there enough serious ones on my
+pile (notably the module system and foreign interface).
+
+>>> So, can I get a masters for this?
+>>
+>> You could get a masters on tools that provide intelligent
+>> navigation and search.  There is enough to do in that area.
+>
+> Hmm... Now THAT's interesting..... I'm wondering if it's economically
+> feasible. Also wondering if the university would admit. I have no
+> bachelors. I'm transsexual, and reassigned in 1985. At that time it
+> was impossible for someone to continue studies at same institution
+> after reassigning. I was roughly in senior year at the University of
+> Kansas. I'm afraid this is one more case where Annie doesn't fit into
+> conventional categories.
+
+I already figured some of that.  I guess life is easier in Amsterdam
+than in Texas under these circumstances ...
+
+> But I need to be doing something here. Masters at VU would be a great
+> thing!
+
+Hmmm.  The problem is that doing a masters requires you to have a
+finished bachelors.  Also, a masters is mostly following classes and
+only a 3 month project.  Of course nobody forbids you to graduate on
+a project that took longer.
+
+If you have experience in (academic) research (notably publications),
+that might make things different.  Funny enough, doing a PhD might be
+easier.  Formally you need a masters for that, but as far as I know
+it is possible without if there is enough proof of scientific experience.
+
+    Cheers --- Jan
+
+===============
+On 08/31/2012 07:02 PM, Anne Ogborn wrote:
+
+>> Would that make sense. P.s. to see the documentation in
+>> action, go to
+>> http://cliopatria.swi-prolog.org/help/http. That
+>> library should still be
+>> moved to the core libraries ...
+>>
+>
+> ?? Don't understand this.
+
+That page shows auto-documenting an HTTP server from the handler
+declarations, http_parameters calls and PlDoc documentation.  If
+we start using http_parameters all over the place and using failure
+to move from the one to the other, it gets pretty nasty to figure
+out what parameters a handler accepts.
+
+> http://code.google.com/p/opensim4opencog/
+>
+> dmiles grand project.
+>
+> We've deliberately been low key about it, we want to have a big splash when we're ready.
+> That was supposed to happen in a couple weeks, but dmiles' been sucked off to do something else.
+
+I'm all ears :-)
+
+> I won't be touching anythign for a while.
+> I need to clear other things off my plate first.
+> Even when I do, I'm gonna sit down and make an inventory of the site
+> and try to find a good organization.
+
+Be my guest :-)  Some of the current oddities are the result
+of technical choices (generated vs human edited stuff), which
+might demand some work to `fix'.
+
+> I think it has, since the docs for newer stuff seem to be the better ones.
+
+A second reason for that is that quite some of the older stuff
+has changed significantly and writing docs is one thing,
+maintaining it is another :-(
+
+> So, can I get a masters for this?
+
+You could get a masters on tools that provide intelligent navigation
+and search.  There is enough to do in that area.
+
+>>> Let me finish this tutorial series - It seems some
+>> virtuous cycle has started - ttmrichter has started work on
+>> a PLDoc tutorial, and 139 people have hit the tutorial so
+>> far.
+
+Great.  Can I link to it?  I missed the announcement ...
+
+    Cheers --- Jan
+
+================
+Hi Anne,
+
+On 08/30/2012 09:46 PM, Anne Ogborn wrote:
+> I've toned down my comments on param handling. :-)
+>
+>
+>> I'd also typically avoid overloading locations by giving
+>> them a
+>> different meaning with different sets of parameters because
+>> it makes it
+>> hard to document the interface.
+>
+> Well, usually the options would be 'thing I do when the parms I expect are there', and 'thing I do when they aren't'
+>
+> http_select_parameters seems like a good idea.
+
+Hmmm.  Seems you only want failure if a parameter is not present
+and you still want an error if there are type errors?
+
+Anyway, you/2 could define http_no_parameters as
+
+http_no_parameters(Request) :-
+    memberchk(method(get), Request),
+    \+ memberchk(search(_), Request).
+
+Then you can do
+
+handle(Request) :-
+    http_no_parameters(Request), !
+    ...
+handle(Request) :-
+    http_parameters(Request,
+            [ ...
+            ]),
+    ...
+
+Would that make sense. P.s. to see the documentation in action, go to
+http://cliopatria.swi-prolog.org/help/http. That library should still be
+moved to the core libraries ...
+
+* Using the IDE. Early feedback from this one was that
+>> 80% of reviewers didn't know it existed.
+>>
+>> I know.� It is a shame.� Please help advertising
+>> it!
+>
+> I will!
+
+Looking forward!
+
+>>> * Using DCG's. Suprising number of Prolog programmers
+>> find them confusing and don't really use them.
+>>
+>> That is a pity too. Note that "Learn Prolog Now!" is quite
+>> good here.
+>> The problem is that Prolog education is non-existing or bad
+>> at most
+>> places :-(
+>>
+>
+> True. It's invariably of the 'here's a weird language we'll torture you with, and after that you can go learn a real language and get a job'
+
+Yes :-(
+
+> Cogbot might help with that, actually, if we can get to a shippable state. It's really easiest to interact with cogbot from swipl, and I'm hoping we end up with thousands of hobbiest users, most of whom would end up learning Prolog along the way.
+
+Is that opencog.org?
+
+> I'm hoping these tuts will also help change perception of Prolog. I love coding in Prolog.
+
+:-)
+
+>
+>>
+>> P.s.��� Just ask if you want to hack on
+>> www.swi-prolog.org.
+>>
+>
+> Yes indeedy do!
+
+The server is available from the plweb.git repository. You can submit
+patches through the normal git way. You can edit the wiki pages (the one
+with an edit icon) if you give me the login name you want and a password
+hash (classical Unix hash or MD5, as crypt/2 can give you).  Don't use
+your best password; it is sent over plain HTTP.
+
+>
+> I'll need to clear a space to do that.
+>
+> I'd like to sit down and try to organize everything that's there, and that's a major job. But the issue with the docs is finding what's there, not the individual pages, which are usually fairly decent.
+
+I know :-( Most has grown like that over the years and certainly my
+writing was pretty bad in the past (hope it has improved :-).
+
+Tutorial and HOWTO are a way out.  That is why I started some of those,
+but it is a lot of work.  I think technology could also help to fragment
+and index the documentation and make it easier to find material that
+belongs together.  Only, master projects have been reduced to 3 months,
+which is far too short to get a student to understand the problem and
+the technology and do something meaningful :-(
+
+> Let me finish this tutorial series - It seems some virtuous cycle has started - ttmrichter has started work on a PLDoc tutorial, and 139 people have hit the tutorial so far.
+
+I'm happy to review and link them :-)  I'm also happy to host them.
+Sometimes it is better if it is clear that others care and take care
+of the system though, so linking may be even better.  Just make sure
+they won't get lost and preferably they don't change URL.
+
+    Cheers --- Jan
+
+P.s.    Three gotchas:
+
+    - 2_3 "This bit of naughtiness uses the library DCG head//1"
+      not AFAIK.  Only the page//1 rule does (and rely_html_page).
+    - 2_4 is still missing the vital list around the head and the
+           body!
+    - I guess DSL means "Domain Specific Language"?  I don't think
+      it is a very common abbreviation in the Prolog world (although
+      the concept is popular :-)
+
+
+================
+
+Hi Anne,
+
+On 08/30/2012 12:26 AM, Anne Ogborn wrote:
+> Thanks for looking it over.
+>
+> The mention of print_html was certainly just a pedagogic device. I, and others I've talked to, had a lot of difficulties learning to use the system because it wasn't clear if we were in one or the other.
+> It took me a while to realize there was an intermediate form.
+> I'm attempting to show some of what happens under the covers.
+>
+> " The only promise made is that html//1 produces
+> a token list that causes print_html/1 to print a valid HTML document."
+>
+> It seems to me there's another contract here. That concat works as expected with output of html//1.  This seems necessary for
+>
+> outer_handler -->
+>        upper_half,
+>        lower_half.
+
+That works because every DCG produces a complete HTML (sub)tree.  That
+is, as long as you do not use html_begin// and html_end//, but these
+are -like \[..]- emergency measures.
+
+> upper_half -->
+>      html(p(upper)).
+> lower_half -->
+>      html(p(lower)).
+>
+> Or is that bad practice, and it should be
+> outer_handler -->
+>       html([ \upper_half, \lower_half]).
+
+Hard to say.  It boils down to the same.  I always use the first
+(direct) approach, but there is something to be said for the
+latter.  After all, the compiler could rewrite it.
+
+> That might be related to your remark that `tokenized HTML' is passed in
+> some places.  That is typically incorrect.  Most pass `termerized HTML'.
+>
+> Again in my example, upper_half and lower_half are unifying against tokenized HTML. I'm not sure how to rewrite this so tokenized HTML never gets passed.
+
+Seems a terminology issues.  If I write
+
+user:body(Style, Body) -->
+
+Body is a term (possibly with embedded \). Serialization is done by the
+DCG. As it happens out of sight, I don't really call this `passing'.  The
+system tries to hide the two serialization steps.  I think only the mailman
+system doesn't succeed in hiding it all.
+
+> As for make not clearing routes, dmiles and I were trying to figure some of this stuff out one night and I was seeing it, but I'm not sure how I got there. I'll find a repro case or pull that comment.
+
+Its often not a bad idea to explain some of the underlying stuff :-)
+
+>    - I'd add a big warning to \[...] usage ...
+>
+> Done. See if you're happy with it. I didn't use <blink>  ;-)
+
+:-)
+
+>    - 2_7. body//2 receives termerized HTML, not tokenized!
+>
+>    baffled. I'm sending it termerized HTML?? I don't understand you here.
+
+Also after the above remark?
+
+>    - 3_1. Seems we  disagree here.  Do you propose overloading
+>      as below?  One of the problems with this is that if no rule fires,
+>      you get an ugly `goal failed' error without much of a clue.
+>
+>      handler(Request) :-
+>      http_parameters(Request,
+>              [ ...
+>              ]), !,
+>      <case 1>
+>      handler(Request) :-
+>      http_parameters(Request,
+>              [ ...
+>              ]), !,
+>      <case 2>
+>
+> Yes, that's what I'm proposing.
+> The cure if you get the error message is to make yourself a fallback.
+>      handler(Request) :-
+>          html_reply_page([title(oops)], [p('some erudite error message')]).
+
+That reminds me a bit on how this started.  http_dispatch didn't exist and
+there was simply a (multifile) predicate that received the request, so
+you write
+
+handler(Request) :-
+    <some condition>, !,
+    <handle>.
+...
+handler(Request) :-
+    <404>.
+
+This is all nice and logical, but not very modular and doesn't allow for
+a great deal of analysis to drive the IDE, provide automatic help, etc.
+That is why failure driven selection of handlers was abandoned (but you
+can still use it). I think that the reasoning for parameters is similar.
+I'd also typically avoid overloading locations by giving them a
+different meaning with different sets of parameters because it makes it
+hard to document the interface.
+
+> In an ideal world, if the handler failed the route binding would try other
+> possibilities, so you could have a handler that handles /blog/post/show/14 and displays 14,
+> and if you don't *have* a 14 it fails and tries the less specific /blog/post/show which displays
+> a 'blog post doesn't exist' message, and if that failed it'd keep going all the way back to some
+> / 404 handler.
+> I <3 backtracking. 8cD
+>
+> I'm suprised you didn't comment on POST handling.
+
+It is related to the above.  Note that it is easy enough to write your own
+bit of logic: just make a prefix handler, get the whole form and do
+whathever
+you like :-)  I'm not against a http_select_parameters(Form, Params).
+Failing
+might be more acceptable in that case.  Note that I don't want to get the
+form before the dispatching because it might be very big and not relevant.
+Fetching it opens opportunities for DoS attacks.
+
+> I've included everything else you commented on, and updated the page and example 2_4. I also cleaned up the style so it's more readable.
+
+Looks even better :-)
+
+> Thanks again for taking the time to look this over.
+> When I recover from making this one, I'm planning 3 more
+> * Using the IDE. Early feedback from this one was that 80% of reviewers didn't know it existed.
+
+I know.  It is a shame.  Please help advertising it!
+
+> * Using DCG's. Suprising number of Prolog programmers find them confusing and don't really use them.
+
+That is a pity too. Note that "Learn Prolog Now!" is quite good here.
+The problem is that Prolog education is non-existing or bad at most
+places :-(
+
+> * Threading. Another thing I just had trouble learning myself and feel like there's a tutorial needed.
+
+It could certainly profit from a bit more info.     When to use threads, how
+to make them cooperate, etc.  A good book is `POSIX threads' (if I recall
+well), but (SWI-)Prolog threads are too different.  Still, the idea of
+presenting a number of design patterns that apply threads is neat.
+
+      Looking forward
+
+      --- Jan
+
+P.s.    Just ask if you want to hack on www.swi-prolog.org.
+
+

@@ -1,0 +1,139 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>SWI-Prolog</title>
+<link rel="stylesheet" type="text/css" href="js/plweb.css">
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="js/jquery.markitup.js">
+</script>
+<script type="text/javascript" src="js/jquery-ui.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="js/style.css">
+<link rel="stylesheet" type="text/css" href="js/style.css">
+<script type="text/javascript" src="js/set.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery.tagit.css">
+<link rel="stylesheet" type="text/css" href="js/tagit.ui-zendesk.css">
+<script type="text/javascript" src="js/tag-it.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/pldoc.css">
+<script type="text/javascript" src="js/pldoc.js">
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="js/favicon.ico">
+<link rel="apple-touch-icon" href="js/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="js/swipl.css">
+</head>
+<body>
+<div id='outer-container'>
+    <div id='upper-header'>
+        <div id='upper-header-contents'>
+            <span id='dyknow-container'>
+                <span class='lbl'>Did you know?</span>
+                <span id='dyknow'>SWI-Prolog has an XML Parser</span>
+            </span>
+            <span id='search-container'>
+                <span class='lbl'>Search Documentation: </span>
+                <form id="search-form" action="/pldoc/search">
+                    <input name="for" id="for">
+                    <input id="submit-for" type="submit" value="Search">
+                    <input type="hidden" name="in" value="all">
+                    <input type="hidden" name="match" value="summary">
+                    <script type="text/javascript">
+
+        $(function() {
+        $("#"+"for").autocomplete({
+        minLength: 1,
+        delay: 0.3,
+        source: "/autocomplete/ac_predicate",
+        focus: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          return false;
+        },
+        select: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          window.location.href = ui.item.href;
+          return false;
+        }
+        })
+        .data("ui-autocomplete")._renderItem = function(ul,item) {
+        var label = String(item.label).replace(
+            new RegExp(this.term),
+            "<span class=\"acmatch\">$&</span>");
+        var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+        return $("<li>")
+          .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+          .appendTo(ul)
+        };
+        });
+               
+                    </script>
+                </form>
+            </span>
+        </div>
+    </div><!-- upper banner -->
+    <div id='tag-line-area'>
+    <img src='js/swipl.png'><span class='tagline'>Robust, mature, free. <b>Prolog for the real world.</b></span>
+    </div>
+    <div id='menubar'>
+        <div class='menubar fixed-width'>
+
+        </div>
+    </div>
+    <div id='blurb'>
+        <div>
+SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1987, SWI-Prolog development has been driven by the needs of real world applications. SWI-Prolog is widely used in research and education as well as commercial applications. Join over 1.5 zillion users who have downloaded SWI-Prolog.
+        </div>
+    </div>
+    <div id='cta-container'>
+        <div>Download SWI-Prolog</div>
+        <div>Get Started</div>
+        <div>Is SWI-Prolog Right For My Project?</div>
+    </div>
+    <div>&nbsp;</div>
+    <div id='enhanced-search-container'>
+        <div>
+            <span class='lbl'>SEARCH DOCUMENTATION:</span>
+            <form  id="search-form-enhanced" action="/pldoc/search">
+                <input type='text' id="forenhanced">
+                <input type="image" src="js/go.png" alt='Search'>
+                <input type="hidden" name="in" value="all">
+                <input type="hidden" name="match" value="summary">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript"><!-- broken at moment -->
+
+        $(function() {
+        $("#"+"forenhanced").autocomplete({
+        minLength: 1,
+        delay: 0.3,
+        source: "/autocomplete/ac_predicate",
+        focus: function(event,ui) {
+          $("#"+"forenhanced").val(ui.item.label);
+          return false;
+        },
+        select: function(event,ui) {
+          $("#"+"forenhanced").val(ui.item.label);
+          window.location.href = ui.item.href;
+          return false;
+        }
+        })
+        .data("ui-autocomplete")._renderItem = function(ul,item) {
+        var label = String(item.label).replace(
+            new RegExp(this.term),
+            "<span class=\"acmatch\">$&</span>");
+        var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+        return $("<li>")
+          .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+          .appendTo(ul)
+        };
+        });
+               
+    </script>
+    <div id='tail-end'>&nbsp;</div>
+</div>
+</body>
+</html>
