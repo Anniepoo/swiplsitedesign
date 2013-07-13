@@ -139,8 +139,12 @@ span.tagline {
     text-decoration: none;
 }
 
-.menubar-container > li ul {
+.menubar-container > li > ul {
     display: none;
+}
+
+.menubar-container > li > ul.open {
+    display: absolute;
 }
 
 #blurb {

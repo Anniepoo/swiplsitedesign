@@ -25,6 +25,18 @@
 <link rel="shortcut icon" href="js/favicon.ico">
 <link rel="apple-touch-icon" href="js/apple-touch-icon.png">
 <link rel="stylesheet" type="text/css" href="js/swipl.css">
+<script type="text/javascript">
+$(function() {
+$(".menubar-container > li").hover(
+  function (event) {
+    $(this).find("ul").addClass("open");
+  },
+  function (event) {
+    $(this).find("ul").removeClass("open");
+  });
+
+});
+</script>
 </head>
 <body>
 <div id='outer-container'>
