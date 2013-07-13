@@ -102,6 +102,45 @@ span.tagline {
     background-repeat: repeat-x;
     height: 36px;
     border-radius: 3px;
+    line-height: 36px;
+}
+
+.menubar-container {
+  /*  padding: 0 20px 0 20px;   */
+  padding: 0;
+  border-right: 2px solid #d57719;
+  border-radius: 5px;
+}
+
+.menubar-container > li {
+    height: 36px;
+    display: inline;
+    color: #FFF;
+    padding: 3px 22px;
+    border-left: 2px solid #d57719;
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+.menubar-container > li > a:link {
+    color: #FFF;
+    text-decoration: none;
+}
+.menubar-container > li > a:visited {
+    color: #FFF;
+    text-decoration: none;
+}
+.menubar-container > li > a:hover {
+    color: #d9d8cf;
+    text-decoration: none;
+}
+.menubar-container > li > a:active {
+    color: #d57719;
+    text-decoration: none;
+}
+
+.menubar-container > li ul {
+    display: none;
 }
 
 #blurb {

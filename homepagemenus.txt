@@ -31,9 +31,8 @@ Tutorials
     Using the Debugger http://www.swi-prolog.org/pldoc/man?section=debugoverview
     Development Tools  /IDE.html
  Intermediate
-    Web
-       Creating a web-service        http://www.swi-prolog.org/howto/http/
-       Creating web applications     http://www.pathwayslms.com/swipltuts/html/index.html
+    Creating a web-service           http://www.swi-prolog.org/howto/http/
+    Creating web applications        http://www.pathwayslms.com/swipltuts/html/index.html
     PlDoc                            http://www.pathwayslms.com/swipltuts/pldoc/index.html
     DCG's                            http://www.pathwayslms.com/swipltuts/dcg/index.html
     XPCE                             I have this as a pdf
