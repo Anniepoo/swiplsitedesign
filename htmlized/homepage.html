@@ -11,7 +11,7 @@
 </script>
 <link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="js/style.css">
-<link rel="stylesheet" type="text/css" href="js/style.css">
+<link rel="stylesheet" type="text/css" href="/js/markitupstyle.css">
 <script type="text/javascript" src="js/set.js">
 </script>
 <link rel="stylesheet" type="text/css" href="js/jquery.tagit.css">
@@ -25,18 +25,6 @@
 <link rel="shortcut icon" href="js/favicon.ico">
 <link rel="apple-touch-icon" href="js/apple-touch-icon.png">
 <link rel="stylesheet" type="text/css" href="js/swipl.css">
-<script type="text/javascript">
-$(function() {
-$(".menubar-container > li").hover(
-  function (event) {
-    $(this).find("ul").addClass("open");
-  },
-  function (event) {
-    $(this).find("ul").removeClass("open");
-  });
-
-});
-</script>
 </head>
 <body>
 <div id='outer-container'>
@@ -47,6 +35,7 @@ $(".menubar-container > li").hover(
                 <span id='dyknow'>SWI-Prolog has an XML Parser</span>
             </span>
             <span id='search-container'>
+            <!-- this worked til I copied in all the other files -->
                 <span class='lbl'>Search Documentation: </span>
                 <form id="search-form" action="/pldoc/search">
                     <input name="for" id="for">
@@ -232,5 +221,17 @@ SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1
     </script>
     <div id='tail-end'>&nbsp;</div>
 </div>
+<script type="text/javascript">
+$(function() {
+$(".menubar-container > li").hover(
+  function (event) {
+    $(this).find("ul").addClass("open");
+  },
+  function (event) {
+    $(this).find("ul").removeClass("open");
+  });
+
+});
+</script>s
 </body>
 </html>
