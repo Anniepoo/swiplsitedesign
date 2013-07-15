@@ -170,16 +170,23 @@ span.tagline {
 
 .mouseovermenuitem {
     color: #FFF !important;
-    background-color: #d57719;
-    min-width: 199px;
+    background-color: #d57719 !important;
+    min-width: 199px !important;
 }
 
-.mouseovermenuitem a {
+.mouseovermenuitem > a {
+    color: #FFF !important;
+    background-color: #d57719 !important;
+    min-width: 199px !important;
+}
+.mouseovermenuitem .arrow {
     color: #FFF !important;
     background-color: #d57719;
-    min-width: 199px;
 }
-
+.arrow {
+    float: right;
+    margin-right: 8px;
+}
 .menubar-container > li * {
     color: #d47618;
     font-size: 14pt;
@@ -192,6 +199,22 @@ span.tagline {
     width: 200px;
     overflow: hidden;
 }
+
+.menubar-container > li > ul > li > ul {
+    position: absolute;
+    display: none;
+}
+.menubar-container > li > ul > li *{
+    background-color: #ffd8b2;
+    color: #d47618;
+}
+
+
+.mouseovermenuitem > ul {
+    display: block !important;
+}
+
+.
 
 #blurb {
     margin-left: auto;

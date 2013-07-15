@@ -97,7 +97,7 @@
                         <li><a href="/FAQ/">FAQ</a></li>
                         <li><a href="/pldoc/man?section=cmdline">COMMAND LINE</a></li>
                         <li><a href="/pldoc/package/pldoc.html">PLDOC</a></li>
-                        <li>BLUFFERS
+                        <li>BLUFFERS<span class='arrow'>&#x25B6;</span>
                             <ul>
                                 <li><a href="/prologsyntax.html">PROLOG SYNTAX</a></li>
                                 <li><a href="/pldoc/man?section=emacsbluff">pceEMACS</a></li>
@@ -111,7 +111,7 @@
                 </li>
                 <li>TUTORIALS
                     <ul>
-                        <li>BEGINNER
+                        <li>BEGINNER<span class='arrow'>&#x25B6;</span>
                             <ul>
                                 <li><a href="/pldoc/man?section=quickstart">GETTING STARTED</a></li>
                                 <li><a href="/swipltuts/mod/index.html">MODULES</a></li>
@@ -119,9 +119,9 @@
                                 <li><a href="/IDE.html">DEVELOPMENT TOOLS</a></li>
                             </ul>
                         </li>
-                        <li>INTERMEDIATE
+                        <li>INTERMEDIATE<span class='arrow'>&#x25B6;</span>
                             <ul>
-                                <li><a href="/howto/http/">CREATING A WEB SERVICE</a></li>
+                                <li><a href="/howto/http/">WEB SERVICE</a></li>
                                 <li><a href="/swipltuts/html/index.html">WEB APPLICATIONS</a></li>
                                 <li><a href="/swipltuts/pldoc/index.html">PLDOC</a></li>
                                 <li><a href="/dcg/index.html">DCGs</a></li>
@@ -129,10 +129,10 @@
                                 <li><a href="/Graphics.html">GUI OPTIONS</a></li>
                             </ul>
                         </li>
-                        <li>ADVANCED
+                        <li>ADVANCED<span class='arrow'>&#x25B6;</span>
                             <ul>
                                 <li><a href="/howto/UseRdfMeta.html">RDF NAMESPACES</a></li>
-                                <li><a href="/build/guidelines.txt">Unix Package Managers</a></li>
+                                <li><a href="/build/guidelines.txt">UNIX PACKAGES</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -233,10 +233,21 @@ $(function() {
             $(foo).contents().filter('ul').removeClass('activemenu');
         }, 100);
     });
-    $(".menubar-container > li > ul").bind('mouseenter mouseleave', function() {
-        $(this).toggleClass('mouseovermenu');
+    $(".menubar-container > li > ul").bind('mouseenter', function() {
+        $(this).addClass('mouseovermenu');
+    }).bind('mouseleave' , function() {
+        var foo = this;
+        window.setTimeout(function() {
+            $(foo).removeClass('mouseovermenu');
+        }, 100);
     });
     $(".menubar-container > li > ul > li").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenuitem');
+        $(this).contents().filter('ul').toggleClass('activemenu');
+        $(this).contents().filter('ul').offset({ top: $(this).offset().top , left: $(this).offset().left + 208 });
+        $(this).contents().filter('ul').css('position', 'absolute');
+    });
+    $(".menubar-container > li > ul > li > ul > li").bind('mouseenter mouseleave', function() {
         $(this).toggleClass('mouseovermenuitem');
     });
 });
