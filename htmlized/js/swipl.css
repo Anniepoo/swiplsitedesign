@@ -108,7 +108,7 @@ span.tagline {
 .menubar-container {
   /*  padding: 0 20px 0 20px;   */
   padding: 0;
-  border-right: 2px solid #d57719;
+ border-right: 2px solid #d57719;
   border-radius: 5px;
 }
 
@@ -116,7 +116,7 @@ span.tagline {
     height: 36px;
     display: inline;
     color: #FFF;
-    padding: 3px 22px;
+    padding: 3px 18px;
     border-left: 2px solid #d57719;
     font-size: 14pt;
     font-weight: 700;
@@ -143,8 +143,28 @@ span.tagline {
     display: none;
 }
 
-.menubar-container > li > ul.open {
-    display: absolute;
+.menubar-container > li > ul.activemenu {
+    display: block;
+    position: absolute;
+    float: left;
+}
+
+/* any dropdown box */
+.menubar-container > li ul {
+    background-color: #ffd8b2;
+    border: 1px solid #d47618;
+}
+
+.menubar-container > li * {
+    color: #d47618;
+    font-size: 14pt;
+    font-weight: 400;
+    text-decoration: none;  
+}
+
+.menubar-container > li li {
+    width: 200px;
+    overflow: hidden;
 }
 
 #blurb {

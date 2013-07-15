@@ -170,7 +170,7 @@
     </div>
     <div id='blurb'>
         <div>
-SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1987, SWI-Prolog development has been driven by the needs of real world applications. SWI-Prolog is widely used in research and education as well as commercial applications. Join over 1.5 zillion users who have downloaded SWI-Prolog.
+SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1987, SWI-Prolog development has been driven by the needs of real world applications. SWI-Prolog is widely used in research and education as well as commercial applications. Join over a million users who have downloaded SWI-Prolog.
         </div>
     </div>
     <div id='cta-container'>
@@ -191,7 +191,7 @@ SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1
         </div>
     </div>
     <script type="text/javascript"><!-- broken at moment -->
-
+/*
         $(function() {
         $("#"+"forenhanced").autocomplete({
         minLength: 1,
@@ -217,21 +217,19 @@ SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1
           .appendTo(ul)
         };
         });
-               
+        */       
     </script>
     <div id='tail-end'>&nbsp;</div>
 </div>
 <script type="text/javascript">
 $(function() {
-$(".menubar-container > li").hover(
-  function (event) {
-    $(this).find("ul").addClass("open");
-  },
-  function (event) {
-    $(this).find("ul").removeClass("open");
-  });
-
+    $(".menubar-container > li").bind('mouseenter mouseleave', function() { 
+        $(this).contents().filter('ul').toggleClass('activemenu');
+     // doesn't work   console.log($(this).left);
+     $(this).contents().filter('ul').offset({ top: $(this).offset().top + 36, left: $(this).offset().left });
+     
+    });
 });
-</script>s
+</script>
 </body>
 </html>
