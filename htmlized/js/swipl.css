@@ -209,6 +209,9 @@ span.tagline {
     color: #d47618;
 }
 
+.menubar-container a:active {
+    color: #d9d8cf !important;
+}
 
 .mouseovermenuitem > ul {
     display: block !important;
