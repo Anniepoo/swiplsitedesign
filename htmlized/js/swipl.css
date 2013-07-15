@@ -143,6 +143,12 @@ span.tagline {
     display: none;
 }
 
+.menubar-container > li > ul.mouseovermenu {
+    display: block;
+    position: absolute;
+    float: left;
+}
+
 .menubar-container > li > ul.activemenu {
     display: block;
     position: absolute;
@@ -153,6 +159,25 @@ span.tagline {
 .menubar-container > li ul {
     background-color: #ffd8b2;
     border: 1px solid #d47618;
+    padding: 0;
+}
+
+/* any dropdown box item */
+.menubar-container > li ul li {
+    min-width: 199px;   
+    padding-left: 8px;
+}
+
+.mouseovermenuitem {
+    color: #FFF !important;
+    background-color: #d57719;
+    min-width: 199px;
+}
+
+.mouseovermenuitem a {
+    color: #FFF !important;
+    background-color: #d57719;
+    min-width: 199px;
 }
 
 .menubar-container > li * {
@@ -160,6 +185,7 @@ span.tagline {
     font-size: 14pt;
     font-weight: 400;
     text-decoration: none;  
+    line-height: 27px;
 }
 
 .menubar-container > li li {

@@ -95,7 +95,7 @@
                         <li><a href="/pldoc/refman/">MANUAL</a></li>
                         <li><a href="/pldoc/index.html">PACKAGES</a></li>
                         <li><a href="/FAQ/">FAQ</a></li>
-                        <li><a href="/pldoc/man?section=cmdline">COMMAND LINE OPTIONS</a></li>
+                        <li><a href="/pldoc/man?section=cmdline">COMMAND LINE</a></li>
                         <li><a href="/pldoc/package/pldoc.html">PLDOC</a></li>
                         <li>BLUFFERS
                             <ul>
@@ -223,11 +223,21 @@ SWI-Prolog offers a comprehensive free Prolog environment. Since its' start in 1
 </div>
 <script type="text/javascript">
 $(function() {
-    $(".menubar-container > li").bind('mouseenter mouseleave', function() { 
-        $(this).contents().filter('ul').toggleClass('activemenu');
-     // doesn't work   console.log($(this).left);
-     $(this).contents().filter('ul').offset({ top: $(this).offset().top + 36, left: $(this).offset().left });
-     
+    $(".menubar-container > li").bind('mouseenter', function() {
+        $(this).contents().filter('ul').addClass('activemenu');
+        $(this).contents().filter('ul').offset({ top: $(this).offset().top + 31, left: $(this).offset().left });
+        $(this).contents().filter('ul').css('position', 'absolute');
+    }).bind('mouseleave', function() {
+        var foo = this;
+        window.setTimeout(function() {
+            $(foo).contents().filter('ul').removeClass('activemenu');
+        }, 100);
+    });
+    $(".menubar-container > li > ul").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenu');
+    });
+    $(".menubar-container > li > ul > li").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenuitem');
     });
 });
 </script>
