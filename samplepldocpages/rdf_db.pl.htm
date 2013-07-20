@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://127.0.0.1:4040/help/source/doc/swi/library/semweb/rdf_db.pl -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rdf_db.pl</title>
+
+<link rel="stylesheet" type="text/css" href="./rdf_db.pl_files/pldoc.css">
+<script type="text/javascript" src="./rdf_db.pl_files/pldoc.js">
+</script>
+
+
+</head>
+<body>
+
+<div class="navhdr">
+<div class="jump">
+<div>
+
+<form action="http://127.0.0.1:4040/help/source/place">
+<input type="submit" value="Go">
+<select name="place">
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/geohash/index.html&#39;;">c:/docs/prolog/geohash</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/html_form/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/html_form</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/info/geohashing/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/info/geohashing</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/info/html/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/info/html</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/info/maps/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/info/maps</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/info/maps/google/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/info/maps/google</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/info/maps/leaflet/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/info/maps/leaflet</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/info/stock/crox/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/info/stock/crox</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/resources/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/resources</option>
+<option onclick="document.location=&#39;/help/source/doc/c:/docs/prolog/weblog/development/weblog/prolog/support/index.html&#39;;">c:/docs/prolog/weblog/development/weblog/prolog/support</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/index.html&#39;;">c:/program files/swipl</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/boot/index.html&#39;;">c:/program files/swipl/boot</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/library/index.html&#39;;">c:/program files/swipl/library</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/library/dcg/index.html&#39;;">c:/program files/swipl/library/dcg</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/library/dialect/swi/index.html&#39;;">c:/program files/swipl/library/dialect/swi</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/library/http/index.html&#39;;">c:/program files/swipl/library/http</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/library/pldoc/index.html&#39;;">c:/program files/swipl/library/pldoc</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/library/semweb/index.html&#39;;" selected="">c:/program files/swipl/library/semweb</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/xpce/prolog/boot/index.html&#39;;">c:/program files/swipl/xpce/prolog/boot</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/xpce/prolog/lib/index.html&#39;;">c:/program files/swipl/xpce/prolog/lib</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/xpce/prolog/lib/emacs/index.html&#39;;">c:/program files/swipl/xpce/prolog/lib/emacs</option>
+<option onclick="document.location=&#39;/help/source/doc/swi/xpce/prolog/lib/english/index.html&#39;;">c:/program files/swipl/xpce/prolog/lib/english</option>
+</select>
+</form>
+
+<a class="prolog_version" href="http://www.swi-prolog.org/"> SWI-Prolog 6.3.17</a></div>
+</div>
+<div class="search">
+
+<form id="search-form" action="http://127.0.0.1:4040/help/source/search">
+<div><input name="for" id="for"><input id="submit-for" type="submit" value="Search"></div>
+<div class="search-options"><span class="search-in"><input type="radio" name="in" value="all" checked="">All<input type="radio" name="in" value="app">Application<input type="radio" name="in" value="man">Manual</span><span class="search-match"><input type="radio" name="match" value="name">Name<input type="radio" name="match" value="summary" checked="">Summary</span><span class="search-help"><a href="http://127.0.0.1:4040/help/source/package/pldoc.html#sec:browser">Help</a></span></div>
+</form>
+
+</div>
+<br clear="right">
+</div>
+
+<h1 class="file"><span style="float:right"><a href="http://127.0.0.1:4040/help/source/doc/swi/library/semweb/rdf_db.pl?reload=true&public_only=true"><img class="action" alt="Reload" title="Make &amp; Reload" src="./rdf_db.pl_files/reload.gif"></a><a href="http://127.0.0.1:4040/help/source/doc/swi/library/semweb/rdf_db.pl?public_only=false"><img class="action" alt="Public" title="Click to include private" src="./rdf_db.pl_files/public.png"></a><a href="http://127.0.0.1:4040/help/source/doc/swi/library/semweb/rdf_db.pl?show=src"><img class="action" alt="Show source" title="Show source" src="./rdf_db.pl_files/source.png"></a><a onclick="HTTPrequest(&#39;/help/source/edit?file=c%3a%2fprogram%20files%2fswipl%2flibrary%2fsemweb%2frdf_db.pl&#39;)"><img class="action" alt="edit" title="Edit file" src="./rdf_db.pl_files/edit.gif"></a></span>rdf_db.pl -- Core RDF database</h1>
+
+<p>
+The file <a class="file" href="./rdf_db.pl_files/rdf_db.pl.htm">library(semweb/rdf_db)</a> provides the core of the SWI-Prolog RDF
+store.</p>
+
+<dl>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_current_prefix&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=236&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_current_prefix/2"><b class="pred">rdf_current_prefix</b><var class="arglist">(?Alias, ?URI)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Query predefined prefixes and prefixes defined with
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_register_ns/2">rdf_register_ns/2</a>.</dd>
+<dt class="multidef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=ns&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=244&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="ns/2"><b class="pred">ns</b><var class="arglist">(?Alias, ?URI)</var></a> is <b class="det">nondet</b><span class="anot" style="float:right">[multifile]</span></dt><dd class="defbody">Dynamic and multifile predicate that maintains the registered
+namespace aliases.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- New code must modify the namespace table using
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_register_ns/3">rdf_register_ns/3</a> and query using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_current_ns/2">rdf_current_ns/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_register_prefix&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=262&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_register_prefix/2"><b class="pred">rdf_register_prefix</b><var class="arglist">(+Prefix, +URI)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_register_prefix&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=262&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_register_prefix/3"><b class="pred">rdf_register_prefix</b><var class="arglist">(+Prefix, +URI, +Options)</var></a> is <b class="det">det</b></dt><dd class="defbody">Register <var>Prefix</var> as an abbreviation for <var>URI</var>. <var>Options</var>:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">force</b><var class="arglist">(Boolean)</var></dt><dd>If <code>true</code>, Replace existing namespace alias. Please note
+that replacing a namespace is dangerous as namespaces
+affect preprocessing. Make sure all code that depends on
+a namespace is compiled after changing the registration.</dd>
+<dt class="term"><b class="pred">keep</b><var class="arglist">(Boolean)</var></dt><dd>If <code>true</code> and Alias is already defined, keep the
+original message and succeed silently.</dd>
+</dl>
+
+<p>
+Without options, an attempt to redefine an alias raises a
+permission error.</p>
+
+<p>
+Predefined prefixes are:</p>
+
+<table class="wiki">
+<tbody><tr><td>rdf</td><td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#'">http://www.w3.org/1999/02/22-rdf-syntax-ns#'</a></td></tr>
+<tr><td>rdfs</td><td><a href="http://www.w3.org/2000/01/rdf-schema#'">http://www.w3.org/2000/01/rdf-schema#'</a></td></tr>
+<tr><td>owl</td><td><a href="http://www.w3.org/2002/07/owl#'">http://www.w3.org/2002/07/owl#'</a></td></tr>
+<tr><td>xsd</td><td><a href="http://www.w3.org/2001/XMLSchema#'">http://www.w3.org/2001/XMLSchema#'</a></td></tr>
+<tr><td>dc</td><td><a href="http://purl.org/dc/elements/1.1/'">http://purl.org/dc/elements/1.1/'</a></td></tr>
+<tr><td>dcterms</td><td><a href="http://purl.org/dc/terms/'">http://purl.org/dc/terms/'</a></td></tr>
+<tr><td>eor</td><td><a href="http://dublincore.org/2000/03/13/eor#'">http://dublincore.org/2000/03/13/eor#'</a></td></tr>
+<tr><td>skos</td><td><a href="http://www.w3.org/2004/02/skos/core#'">http://www.w3.org/2004/02/skos/core#'</a></td></tr>
+<tr><td>serql</td><td><a href="http://www.openrdf.org/schema/serql#'">http://www.openrdf.org/schema/serql#'</a></td></tr>
+</tbody></table>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_current_ns&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=311&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_current_ns/2"><b class="pred">rdf_current_ns</b><var class="arglist">(?Prefix, ?URI)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- . Use <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_current_prefix/2">rdf_current_prefix/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_register_ns&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=318&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_register_ns/2"><b class="pred">rdf_register_ns</b><var class="arglist">(?Prefix, ?URI)</var></a> is <b class="det">det</b></dt><dd class="defbody">
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- . Use <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_register_prefix/2">rdf_register_prefix/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_register_ns&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=322&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_register_ns/3"><b class="pred">rdf_register_ns</b><var class="arglist">(?Prefix, ?URI, +Options)</var></a> is <b class="det">det</b></dt><dd class="defbody">
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- . Use <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_register_prefix/3">rdf_register_prefix/3</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_global_id&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=361&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_global_id/2"><b class="pred">rdf_global_id</b><var class="arglist">(?Id, ?GlobalId)</var></a> is <b class="det">det</b></dt><dd class="defbody">Convert between NS:Local and global atomic identifier.
+To be completed.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_global_object&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=371&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_global_object/2"><b class="pred">rdf_global_object</b><var class="arglist">(+Object, -GlobalObject)</var></a> is <b class="det">semidet</b></dt>
+<dt class="pubdef"><b class="pred">rdf_global_object</b><var class="arglist">(-Object, +GlobalObject)</var> is <b class="det">semidet</b></dt><dd class="defbody">Same as <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_global_id/2">rdf_global_id/2</a>, but intended for dealing with the
+object part of a triple, in particular the type for typed
+literals.
+
+<dl class="tags">
+<dt class="keyword-error">Errors</dt><dd class="keyword-error">- <code>existence_error(rdf_namespace, NS)</code></dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_global_term&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=401&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_global_term/2"><b class="pred">rdf_global_term</b><var class="arglist">(+TermIn, -GlobalTerm)</var></a> is <b class="det">det</b></dt><dd class="defbody">Does <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_global_id/2">rdf_global_id/2</a> on all terms NS:Local by recursively analysing
+the term.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_meta&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=479&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_meta/1"><b class="pred">rdf_meta</b><var class="arglist">(+Heads)</var></a></dt><dd class="defbody">This directive defines the argument types of the named
+predicates, which will force compile time namespace expansion
+for these predicates. <var>Heads</var> is a coma-separated list of callable
+terms. Defined argument properties are:
+
+<dl class="wiki">
+<dt>:</dt><dd>
+Argument is a goal. The goal is processed using <a class="builtin" href="http://127.0.0.1:4040/help/source/man?predicate=expand_goal/2">expand_goal/2</a>,
+recursively applying goal transformation on the argument.</dd>
+<dt>+</dt><dd>
+The argument is instantiated at entry. Nothing is changed.</dd>
+<dt>-</dt><dd>
+The argument is not instantiated at entry. Nothing is changed.</dd>
+<dt>?</dt><dd>
+The argument is unbound or instantiated at entry. Nothing is
+changed.</dd>
+<dt>@</dt><dd>
+The argument is not changed.</dd>
+<dt>r</dt><dd>
+The argument must be a resource. If it is a term
+&lt;prefix&gt;:&lt;local&gt; it is translated.</dd>
+<dt>o</dt><dd>
+The argument is an object or resource. See
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_global_object/2">rdf_global_object/2</a>.</dd>
+<dt>t</dt><dd>
+The argument is a term that must be translated. Expansion will
+translate all occurences of &lt;prefix&gt;:&lt;local&gt; appearing
+anywhere in the term. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_global_term/2">rdf_global_term/2</a>.</dd>
+</dl>
+
+<p>
+As it is subject to <a class="builtin" href="http://127.0.0.1:4040/help/source/man?predicate=term_expansion/2">term_expansion/2</a>, the <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_meta/1">rdf_meta/1</a> declaration
+can only be used as a directive. The directive must be processed
+before the definition of the predicates as well as before
+compiling code that uses the rdf meta-predicates. The atom
+<code>rdf_meta</code> is declared as an operator exported from
+<a class="file" href="./rdf_db.pl_files/rdf_db.pl.htm">library(semweb/rdf_db)</a>. Files using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_meta/1">rdf_meta/1</a> must explicitely
+load this library.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_equal&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=626&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_equal/2"><b class="pred">rdf_equal</b><var class="arglist">(?Resource1, ?Resource2)</var></a></dt><dd class="defbody">Simple equality test to exploit goal-expansion</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=lang_equal&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=632&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="lang_equal/2"><b class="pred">lang_equal</b><var class="arglist">(+Lang1, +Lang2)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">True if two RFC language specifiers denote the same language
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:lang_matches/2">lang_matches/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=lang_matches&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=643&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="lang_matches/2"><b class="pred">lang_matches</b><var class="arglist">(+Lang, +Pattern)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">True if <var>Lang</var> matches <var>Pattern</var>. This implements XML language
+matching conform RFC 4647. Both <var>Lang</var> and <var>Pattern</var> are
+dash-separated strings of identifiers or (for <var>Pattern</var>) the
+wildcart *. Identifiers are matched case-insensitive and a *
+matches any number of identifiers. A short pattern is the same
+as *.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=657&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf/3"><b class="pred">rdf</b><var class="arglist">(?Subject, ?Predicate, ?Object)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Elementary query for triples. <var>Subject</var> and <var>Predicate</var> are atoms
+representing the fully qualified URL of the resource. <var>Object</var> is
+either an atom representing a resource or <code>literal(Value)</code> if the
+object is a literal value. If a value of the form
+NameSpaceID:LocalName is provided it is expanded to a ground
+atom using <a class="builtin" href="http://127.0.0.1:4040/help/source/man?predicate=expand_goal/2">expand_goal/2</a>. This implies you can use this
+construct in compiled code without paying a performance penalty.
+Literal values take one of the following forms:
+
+<dl class="termlist">
+<dt class="term">Atom</dt><dd>If the value is a simple atom it is the textual representation
+of a string literal without explicit type or language
+qualifier.</dd>
+<dt class="term"><b class="pred">lang</b><var class="arglist">(LangID, Atom)</var></dt><dd><var>Atom</var> represents the text of a string literal qualified with
+the given language.</dd>
+<dt class="term"><b class="pred">type</b><var class="arglist">(TypeID, Value)</var></dt><dd>Used for attributes qualified using the <code>rdf:datatype</code>
+<var>TypeID</var>. The <var>Value</var> is either the textual representation or a
+natural Prolog representation. See the option
+convert_typed_literal(:Convertor) of the parser. The storage
+layer provides efficient handling of atoms, integers (64-bit)
+and floats (native C-doubles). All other data is represented
+as a Prolog record.</dd>
+</dl>
+
+<p>
+For literal querying purposes, <var>Object</var> can be of the form
+<code>literal(+Query, -Value)</code>, where Query is one of the terms below.</p>
+
+<dl class="termlist">
+<dt class="term"><b class="pred">plain</b><var class="arglist">(+Text)</var></dt><dd>Perform exact match and demand the language or type qualifiers
+to match. This query is fully indexed.</dd>
+<dt class="term"><b class="pred">exact</b><var class="arglist">(+Text)</var></dt><dd>Perform exact, but case-insensitive match. This query is
+fully indexed.</dd>
+<dt class="term"><b class="pred">substring</b><var class="arglist">(+Text)</var></dt><dd>Match any literal that contains <var>Text</var> as a case-insensitive
+substring. The query is not indexed on <var>Object</var>.</dd>
+<dt class="term"><b class="pred">word</b><var class="arglist">(+Text)</var></dt><dd>Match any literal that contains <var>Text</var> delimited by a non
+alpha-numeric character, the start or end of the string. The
+query is not indexed on <var>Object</var>.</dd>
+<dt class="term"><b class="pred">prefix</b><var class="arglist">(+Text)</var></dt><dd>Match any literal that starts with <var>Text</var>. This call is intended
+for completion. The query is indexed using the skip list of
+literals.</dd>
+<dt class="term"><b class="pred">ge</b><var class="arglist">(+Literal)</var></dt><dd>Match any literal that is equal or larger then <var>Literal</var> in the
+ordered set of literals.</dd>
+<dt class="term"><b class="pred">le</b><var class="arglist">(+Literal)</var></dt><dd>Match any literal that is equal or smaller then <var>Literal</var> in the
+ordered set of literals.</dd>
+<dt class="term"><b class="pred">between</b><var class="arglist">(+Literal1, +Literal2)</var></dt><dd>Match any literal that is between <var>Literal1</var> and <var>Literal2</var> in the
+ordered set of literals. This may include both <var>Literal1</var> and
+<var>Literal2</var>.</dd>
+<dt class="term"><b class="pred">like</b><var class="arglist">(+Pattern)</var></dt><dd>Match any literal that matches <var>Pattern</var> case insensitively,
+where the `*' character in <var>Pattern</var> matches zero or more
+characters.</dd>
+</dl>
+
+<p>
+Backtracking never returns duplicate triples. Duplicates can be
+retrieved using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/4">rdf/4</a>. The predicate <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a> raises a type-error
+if called with improper arguments. If <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a> is called with a
+term <code>literal(_)</code> as <var>Subject</var> or <var>Predicate</var> object it fails
+silently. This allows for graph matching goals like
+<code>rdf(S,P,O)</code>,<code>rdf(O,P2,O2)</code> to proceed without errors.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=736&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf/4"><b class="pred">rdf</b><var class="arglist">(?Subject, ?Predicate, ?Object, ?Source)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">As <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a> but in addition query the graph to which the triple
+belongs. Unlike <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a>, this predicate does not remove duplicates
+from the result set.
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tbody><tr><td><var>Source</var></td><td class="argdescr">- is a term Graph:Line. If <var>Source</var> is instatiated,
+passing an atom is the same as passing Atom:_.</td></tr>
+</tbody></table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_has&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=746&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_has/3"><b class="pred">rdf_has</b><var class="arglist">(?Subject, +Predicate, ?Object)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Succeeds if the triple <code>rdf(Subject, Predicate, Object)</code> is true
+exploiting the rdfs:subPropertyOf predicate as well as inverse
+predicates declared using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_set_predicate/2">rdf_set_predicate/2</a> with the
+<code>inverse_of</code> property.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_has&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=753&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_has/4"><b class="pred">rdf_has</b><var class="arglist">(?Subject, +Predicate, ?Object, -RealPredicate)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Same as <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/3">rdf_has/3</a>, but <var>RealPredicate</var> is unified to the actual
+predicate that makes this relation true. <var>RealPredicate</var> must be
+<var>Predicate</var> or an rdfs:subPropertyOf <var>Predicate</var>. If an inverse
+match is found, <var>RealPredicate</var> is the term <code>inverse_of(Pred)</code>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_reachable&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=760&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_reachable/3"><b class="pred">rdf_reachable</b><var class="arglist">(?Subject, +Predicate, ?Object)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Is true if <var>Object</var> can be reached from <var>Subject</var> following the
+transitive predicate <var>Predicate</var> or a sub-property thereof, while
+repecting the <code>symetric(true)</code> or <code>inverse_of(P2)</code> properties.
+
+<p>
+If used with either <var>Subject</var> or <var>Object</var> unbound, it first returns
+the origin, followed by the reachable nodes in breath-first
+search-order. The implementation internally looks one solution
+ahead and succeeds deterministically on the last solution. This
+predicate never generates the same node twice and is robust
+against cycles in the transitive relation.</p>
+
+<p>
+With all arguments instantiated, it succeeds deterministically
+if a path can be found from <var>Subject</var> to <var>Object</var>. Searching starts
+at <var>Subject</var>, assuming the branching factor is normally lower. A
+call with both <var>Subject</var> and <var>Object</var> unbound raises an
+instantiation error. The following example generates all
+subclasses of rdfs:Resource:</p>
+
+<pre class="code" ext="">?- rdf_reachable(X, rdfs:subClassOf, rdfs:'Resource').
+X = 'http://www.w3.org/2000/01/rdf-schema#Resource' ;
+X = 'http://www.w3.org/2000/01/rdf-schema#Class' ;
+X = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property' ;
+...
+</pre>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_reachable&amp;arity=5&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=789&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_reachable/5"><b class="pred">rdf_reachable</b><var class="arglist">(?Subject, +Predicate, ?Object, +MaxD, -D)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Same as <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reachable/3">rdf_reachable/3</a>, but in addition, <var>MaxD</var> limits the number
+of edges expanded and <var>D</var> is unified with the `distance' between
+<var>Subject</var> and <var>Object</var>. Distance 0 means <var>Subject</var> and <var>Object</var> are the
+same resource. <var>MaxD</var> can be the constant <code>infinite</code> to impose no
+distance-limit.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_subject&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=797&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_subject/1"><b class="pred">rdf_subject</b><var class="arglist">(?Resource)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True if <var>Resource</var> appears as a subject. This query respects the
+visibility rules implied by the logical update view.
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_resource/1">rdf_resource/1</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_resource&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=808&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_resource/1"><b class="pred">rdf_resource</b><var class="arglist">(?Resource)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when <var>Resource</var> is a resource used as a subject or object in
+a triple.
+
+<p>
+This predicate is primarily intended as a way to process all
+resources without processing resources twice. The user must be
+aware that some of the returned resources may not appear in any
+<i>visible</i> triple.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_assert&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=823&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_assert/3"><b class="pred">rdf_assert</b><var class="arglist">(+Subject, +Predicate, +Object)</var></a> is <b class="det">det</b></dt><dd class="defbody">Assert a new triple into the database. This is equivalent to
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_assert/4">rdf_assert/4</a> using Graph <code>user</code>. <var>Subject</var> and <var>Predicate</var> are
+resources. <var>Object</var> is either a resource or a term <code>literal(Value)</code>.
+See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a> for an explanation of Value for typed and language
+qualified literals. All arguments are subject to name-space
+expansion. Complete duplicates (including the same graph and
+`line' and with a compatible `lifespan') are not added to the
+database.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_assert&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=834&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_assert/4"><b class="pred">rdf_assert</b><var class="arglist">(+Subject, +Predicate, +Object, +Graph)</var></a> is <b class="det">det</b></dt><dd class="defbody">As <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_assert/3">rdf_assert/3</a>, adding the predicate to the indicated named
+graph.
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tbody><tr><td><var>Graph</var></td><td class="argdescr">- is either the name of a graph (an atom) or a term
+<var>Graph</var>:Line, where Line is an integer that denotes a line number.</td></tr>
+</tbody></table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_retractall&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=842&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_retractall/3"><b class="pred">rdf_retractall</b><var class="arglist">(?Subject, ?Predicate, ?Object)</var></a> is <b class="det">det</b></dt><dd class="defbody">Remove all matching triples from the database. As
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_retractall/4">rdf_retractall/4</a> using an unbound graph.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_retractall&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=847&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_retractall/4"><b class="pred">rdf_retractall</b><var class="arglist">(?Subject, ?Predicate, ?Object, ?Graph)</var></a> is <b class="det">det</b></dt><dd class="defbody">As <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_retractall/3">rdf_retractall/3</a>, also matching <var>Graph</var>. This is particulary
+useful to remove all triples coming from a loaded file. See also
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_unload/1">rdf_unload/1</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_update&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=853&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_update/4"><b class="pred">rdf_update</b><var class="arglist">(+Subject, +Predicate, +Object, +Action)</var></a> is <b class="det">det</b></dt><dd class="defbody">Replaces one of the three fields on the matching triples
+depending on <var>Action</var>:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">subject</b><var class="arglist">(Resource)</var></dt><dd>Changes the first field of the triple.</dd>
+<dt class="term"><b class="pred">predicate</b><var class="arglist">(Resource)</var></dt><dd>Changes the second field of the triple.</dd>
+<dt class="term"><b class="pred">object</b><var class="arglist">(Object)</var></dt><dd>Changes the last field of the triple to the given resource or
+<code>literal(Value)</code>.</dd>
+<dt class="term"><b class="pred">graph</b><var class="arglist">(Graph)</var></dt><dd>Moves the triple from its current named graph to <var>Graph</var>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_update&amp;arity=5&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=868&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_update/5"><b class="pred">rdf_update</b><var class="arglist">(+Subject, +Predicate, +Object, +Graph, +Action)</var></a> is <b class="det">det</b></dt><dd class="defbody">As <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_update/4">rdf_update/4</a> but allows for specifying the graph.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_member_property&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=877&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_member_property/2"><b class="pred">rdf_member_property</b><var class="arglist">(?Prop, ?Index)</var></a></dt><dd class="defbody">Deal with the rdf:_1, ... properties.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_node&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=901&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_node/1"><b class="pred">rdf_node</b><var class="arglist">(-Id)</var></a></dt><dd class="defbody">Generate a unique blank node identifier for a subject.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- New code should use <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_bnode/1">rdf_bnode/1</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_bnode&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=910&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_bnode/1"><b class="pred">rdf_bnode</b><var class="arglist">(-Id)</var></a></dt><dd class="defbody">Generate a unique anonymous identifier for a subject.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_is_bnode&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=927&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_is_bnode/1"><b class="pred">rdf_is_bnode</b><var class="arglist">(+Id)</var></a></dt><dd class="defbody">Tests if a resource is a blank node (i.e. is an anonymous
+resource).
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_bnode/1">rdf_bnode/1</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_is_resource&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=938&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_is_resource/1"><b class="pred">rdf_is_resource</b><var class="arglist">(@Term)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">True if <var>Term</var> is an RDF resource. Note that this is merely a
+type-test; it does not mean this resource is involved in any
+triple. Blank nodes are also considered resources.
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_is_bnode/1">rdf_is_bnode/1</a></dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_is_literal&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=949&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_is_literal/1"><b class="pred">rdf_is_literal</b><var class="arglist">(@Term)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">True if <var>Term</var> is an RDF literal object. Currently only checks for
+groundness and the literal functor.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_current_literal&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=961&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_current_literal/1"><b class="pred">rdf_current_literal</b><var class="arglist">(-Literal)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when <var>Literal</var> is a currently known literal. Enumerates each
+unique literal exactly once. Note that it is possible that the
+literal only appears in already deleted triples. Deleted triples
+may be locked due to active queries, transactions or snapshots
+or may not yet be reclaimed by the garbage collector.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_literal_value&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=970&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_literal_value/2"><b class="pred">rdf_literal_value</b><var class="arglist">(+Literal, -Value)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">True when value is the appropriate Prolog representation of
+<var>Literal</var> in the RDF <i>value space</i>. Current mapping:
+
+<table class="wiki">
+<tbody><tr><td>Plain literals</td><td>Atom</td></tr>
+<tr><td>Language tagged literal</td><td>Atom holding plain text</td></tr>
+<tr><td>xsd:string</td><td>Atom</td></tr>
+<tr><td>rdf:XMLLiteral</td><td>XML DOM Tree</td></tr>
+<tr><td>Numeric XSD type</td><td>Number</td></tr>
+</tbody></table>
+
+<dl class="tags">
+<dt class="keyword-tbd">To be done</dt><dd class="keyword-tbd">- Well, this is the long-term idea.</dd><dd class="keyword-tbd">- Add mode (-,+)</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_source_location&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1025&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_source_location/2"><b class="pred">rdf_source_location</b><var class="arglist">(+Subject, -Location)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when triples for <var>Subject</var> are loaded from <var>Location</var>.
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tbody><tr><td><var>Location</var></td><td class="argdescr">- is a term File:Line.</td></tr>
+</tbody></table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_gc&amp;arity=0&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1092&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_gc/0"><b class="pred">rdf_gc</b></a> is <b class="det">det</b></dt><dd class="defbody">Run the RDF-DB garbage collector until no garbage is left and
+all tables are fully optimized. Under normal operation a
+seperate thread with identifier =__rdf_GC= performs garbage
+collection as long as it is considered `useful'.
+
+<p>
+Using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_gc/0">rdf_gc/0</a> should only be needed to ensure a fully clean
+database for analysis purposes such as leak detection.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_statistics&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1146&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_statistics/1"><b class="pred">rdf_statistics</b><var class="arglist">(?KeyValue)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">Obtain statistics on the RDF database. Defined statistics are:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">graphs</b><var class="arglist">(-Count)</var></dt><dd>Number of named graphs</dd>
+<dt class="term"><b class="pred">triples</b><var class="arglist">(-Count)</var></dt><dd>Total number of triples in the database. This is the number
+of asserted triples minus the number of retracted ones. The
+number of <i>visible</i> triples in a particular context may be
+different due to visibility rules defined by the logical
+update view and transaction isolation.</dd>
+<dt class="term"><b class="pred">resources</b><var class="arglist">(-Count)</var></dt><dd>Number of resources that appear as subject or object in a
+triple. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_resource/1">rdf_resource/1</a>.</dd>
+<dt class="term"><b class="pred">properties</b><var class="arglist">(-Count)</var></dt><dd>Number of current predicates. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_current_predicate/1">rdf_current_predicate/1</a>.</dd>
+<dt class="term"><b class="pred">literals</b><var class="arglist">(-Count)</var></dt><dd>Number of current literals. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_current_literal/1">rdf_current_literal/1</a>.</dd>
+<dt class="term"><b class="pred">gc</b><var class="arglist">(GCCount, ReclaimedTriples, ReindexedTriples, Time)</var></dt><dd>Information about the garbage collector.</dd>
+<dt class="term"><b class="pred">searched_nodes</b><var class="arglist">(-Count)</var></dt><dd>Number of nodes expanded by <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reachable/3">rdf_reachable/3</a> and
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reachable/5">rdf_reachable/5</a>.</dd>
+<dt class="term">lookup(rdf(S,P,O,G),Count)</dt><dd>Number of queries for this particular instantiation pattern.
+Each of <var>S</var>,<var>P</var>,<var>O</var>,<var>G</var> is either + or -.</dd>
+<dt class="term">hash_quality(rdf(S,P,O,G),Buckets,Quality,PendingResize)</dt><dd>Statistics on the index for this pattern. Indices are created
+lazily on the first relevant query.</dd>
+<dt class="term"><b class="pred">triples_by_graph</b><var class="arglist">(Graph, Count)</var></dt><dd>This statistics is produced for each named graph. See
+<code>triples</code> for the interpretation of this value.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_current_predicate&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1242&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_current_predicate/1"><b class="pred">rdf_current_predicate</b><var class="arglist">(?Predicate)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when <var>Predicate</var> is a currently known predicate. Predicates
+are created if a triples is created that uses this predicate or
+a property of the predicate is set using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_set_predicate/2">rdf_set_predicate/2</a>.
+The predicate may (no longer) have triples associated with it.
+
+<p>
+Note that resources that have <code>rdf:type</code> <code>rdf:Property</code> are
+not automatically included in the result-set of this predicate,
+while <i>all</i> resources that appear as the second argument of a
+triple <i>are</i> included.</p>
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_predicate_property/2">rdf_predicate_property/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_predicate_property&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1262&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_predicate_property/2"><b class="pred">rdf_predicate_property</b><var class="arglist">(?Predicate, ?Property)</var></a></dt><dd class="defbody">Query properties of a defined predicate. Currently defined
+properties are given below.
+
+<dl class="termlist">
+<dt class="term"><b class="pred">symmetric</b><var class="arglist">(Bool)</var></dt><dd>True if the predicate is defined to be symetric. I.e., {A} P
+{B} implies {B} P {A}. Setting symmetric is equivalent to
+<code>inverse_of(Self)</code>.</dd>
+<dt class="term"><b class="pred">inverse_of</b><var class="arglist">(Inverse)</var></dt><dd>True if this predicate is the inverse of <var>Inverse</var>. This
+property is used by <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/3">rdf_has/3</a>, <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/4">rdf_has/4</a>, <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reachable/3">rdf_reachable/3</a> and
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reachable/5">rdf_reachable/5</a>.</dd>
+<dt class="term"><b class="pred">transitive</b><var class="arglist">(Bool)</var></dt><dd>True if this predicate is transitive. This predicate is
+currently not used. It might be used to make <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/3">rdf_has/3</a> imply
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reachable/3">rdf_reachable/3</a> for transitive predicates.</dd>
+<dt class="term"><b class="pred">triples</b><var class="arglist">(Triples)</var></dt><dd>Unify <var>Triples</var> with the number of existing triples using this
+predicate as second argument. Reporting the number of triples
+is intended to support query optimization.</dd>
+<dt class="term"><b class="pred">rdf_subject_branch_factor</b><var class="arglist">(-Float)</var></dt><dd>Unify <var>Float</var> with the average number of triples associated with
+each unique value for the subject-side of this relation. If
+there are no triples the value 0.0 is returned. This value is
+cached with the predicate and recomputed only after
+substantial changes to the triple set associated to this
+relation. This property is indented for path optimalisation
+when solving conjunctions of <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a> goals.</dd>
+<dt class="term"><b class="pred">rdf_object_branch_factor</b><var class="arglist">(-Float)</var></dt><dd>Unify <var>Float</var> with the average number of triples associated with
+each unique value for the object-side of this relation. In
+addition to the comments with the subject_branch_factor
+property, uniqueness of the object value is computed from the
+hash key rather than the actual values.</dd>
+<dt class="term"><b class="pred">rdfs_subject_branch_factor</b><var class="arglist">(-Float)</var></dt><dd>Same as <code>rdf_subject_branch_factor</code>, but also considering
+triples of `subPropertyOf' this relation. See also <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/3">rdf_has/3</a>.</dd>
+<dt class="term"><b class="pred">rdfs_object_branch_factor</b><var class="arglist">(-Float)</var></dt><dd>Same as <code>rdf_object_branch_factor</code>, but also considering
+triples of `subPropertyOf' this relation. See also <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/3">rdf_has/3</a>.</dd>
+</dl>
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_set_predicate/2">rdf_set_predicate/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_set_predicate&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1320&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_set_predicate/2"><b class="pred">rdf_set_predicate</b><var class="arglist">(+Predicate, +Property)</var></a> is <b class="det">det</b></dt><dd class="defbody">Define a property of the predicate. This predicate currently
+supports the properties <code>symmetric</code>, <code>inverse_of</code> and
+<code>transitive</code> as defined with <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_predicate_property/2">rdf_predicate_property/2</a>. Adding an
+A inverse_of B also adds B inverse_of A. An inverse relation is
+deleted using <code>inverse_of([])</code>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_snapshot&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1333&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_snapshot/1"><b class="pred">rdf_snapshot</b><var class="arglist">(-Snapshot)</var></a> is <b class="det">det</b></dt><dd class="defbody">Take a snapshot of the current state of the RDF store. Later,
+goals may be executed in the context of the database at this
+moment using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_transaction/3">rdf_transaction/3</a> with the <code>snapshot</code> option. A
+snapshot created outside a transaction exists until it is
+deleted. Snapshots taken inside a transaction can only be used
+inside this transaction.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_delete_snapshot&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1342&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_delete_snapshot/1"><b class="pred">rdf_delete_snapshot</b><var class="arglist">(+Snapshot)</var></a> is <b class="det">det</b></dt><dd class="defbody">Delete a snapshot as obtained from <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_snapshot/1">rdf_snapshot/1</a>. After this
+call, resources used for maintaining the snapshot become subject
+to garbage collection.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_current_snapshot&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1348&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_current_snapshot/1"><b class="pred">rdf_current_snapshot</b><var class="arglist">(?Term)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when <var>Term</var> is a currently known snapshot.
+
+<dl class="tags">
+<dt class="keyword-bug">bug</dt><dd class="keyword-bug">- Enumeration of snapshots is slow.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_transaction&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1362&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_transaction/1"><b class="pred">rdf_transaction</b><var class="arglist">(:Goal)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">Same as <code>rdf_transaction(Goal, user, [])</code>. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_transaction/3">rdf_transaction/3</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_transaction&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1366&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_transaction/2"><b class="pred">rdf_transaction</b><var class="arglist">(:Goal, +Id)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">Same as <code>rdf_transaction(Goal, Id, [])</code>. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_transaction/3">rdf_transaction/3</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_transaction&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1370&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_transaction/3"><b class="pred">rdf_transaction</b><var class="arglist">(:Goal, +Id, +Options)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">Run <var>Goal</var> in an RDF transaction. Compared to the ACID model,
+RDF transactions have the following properties:
+
+<ol>
+<li>Modifications inside the transactions become all atomically
+visible to the outside world if <var>Goal</var> succeeds or remain
+invisible if <var>Goal</var> fails or throws an exception. I.e.,
+the <i>atomicy</i> property is fully supported.</li>
+<li><i>Consistency</i> is not guaranteed. Later versions may
+implement consistency constraints that will be checked
+serialized just before the actual commit of a transaction.</li>
+<li>Concurrently executing transactions do not infuence each
+other. I.e., the <i>isolation</i> property is fully supported.</li>
+<li><i>Durability</i> can be activated by loading
+<a class="file" href="http://127.0.0.1:4040/help/source/doc/swi/library/semweb/rdf_persistency.pl">library(semweb/rdf_persistency)</a>.</li>
+</ol>
+
+<p>
+Processed options are:</p>
+
+<dl class="termlist">
+<dt class="term"><b class="pred">snapshot</b><var class="arglist">(+Snapshot)</var></dt><dd>Execute <var>Goal</var> using the state of the RDF store as stored in
+<var>Snapshot</var>. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_snapshot/1">rdf_snapshot/1</a>. <var>Snapshot</var> can also be the
+atom <code>true</code>, which implies that an anonymous snapshot is
+created at the current state of the store. Modifications
+due to executing <var>Goal</var> are only visible to <var>Goal</var>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_active_transaction&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1401&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_active_transaction/1"><b class="pred">rdf_active_transaction</b><var class="arglist">(?Id)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True if <var>Id</var> is the identifier of a transaction in the context of
+which this call is executed. If <var>Id</var> is not instantiated,
+backtracking yields transaction identifiers starting with the
+innermost nested transaction. Transaction identifier terms are
+not copied, need not be ground and can be instantiated during
+the transaction.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_monitor&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1414&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_monitor/2"><b class="pred">rdf_monitor</b><var class="arglist">(:Goal, +Options)</var></a></dt><dd class="defbody">Call <var>Goal</var> if specified actions occur on the database.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_warm_indexes&amp;arity=0&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1468&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_warm_indexes/0"><b class="pred">rdf_warm_indexes</b></a></dt><dd class="defbody">Warm all indexes. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_warm_indexes/1">rdf_warm_indexes/1</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_warm_indexes&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1487&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_warm_indexes/1"><b class="pred">rdf_warm_indexes</b><var class="arglist">(+Indexes)</var></a> is <b class="det">det</b></dt><dd class="defbody">Create the named indexes. Normally, the RDF database creates
+indexes on lazily the first time they are needed. This predicate
+serves two purposes: it provides an explicit way to make sure
+that the required indexes are present and creating multiple
+indexes at the same time is more efficient.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_update_duplicates&amp;arity=0&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1500&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_update_duplicates/0"><b class="pred">rdf_update_duplicates</b></a> is <b class="det">det</b></dt><dd class="defbody">Update the duplicate administration of the RDF store. This marks
+every triple that is potentionally a duplicate of another as
+duplicate. Being potentially a duplicate means that subject,
+predicate and object are equivalent and the life-times of the
+two triples overlap.
+
+<p>
+The duplicates marks are used to reduce the administrative load
+of avoiding duplicate answers. Normally, the duplicates are
+marked using a background thread that is started on the first
+query that produces a substantial amount of duplicates.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_update_duplicates&amp;arity=0&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1526&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_update_duplicates/0"><b class="pred">rdf_update_duplicates</b></a> is <b class="det">det</b></dt><dd class="defbody">Update the duplicate administration. If this adminstration is
+up-to-date, each triples that <i>may</i> have a duplicate is flagged.
+The predicate <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf/3">rdf/3</a> uses this administration to speedup checking
+for duplicate answers.
+
+<p>
+This predicate is normally executed from a background thread
+named =__rdf_duplicate_detecter= which is created when a query
+discovers that checking for duplicates becomes too expensive.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save_db&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1542&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save_db/1"><b class="pred">rdf_save_db</b><var class="arglist">(+File)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save_db&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1542&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save_db/2"><b class="pred">rdf_save_db</b><var class="arglist">(+File, +Graph)</var></a> is <b class="det">det</b></dt><dd class="defbody">Save triples into <var>File</var> in a quick-to-load binary format. If <var>Graph</var>
+is supplied only triples flagged to originate from that database
+are added. Files created this way can be loaded using
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_load_db/1">rdf_load_db/1</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_load_db&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1597&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_load_db/1"><b class="pred">rdf_load_db</b><var class="arglist">(+File)</var></a> is <b class="det">det</b></dt><dd class="defbody">Load triples from a file created using <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save_db/2">rdf_save_db/2</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_load&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1618&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_load/1"><b class="pred">rdf_load</b><var class="arglist">(+FileOrList)</var></a> is <b class="det">det</b></dt><dd class="defbody">Same as <code>rdf_load(FileOrList, [])</code>. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_load/2">rdf_load/2</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_load&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=1622&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_load/2"><b class="pred">rdf_load</b><var class="arglist">(+FileOrList, :Options)</var></a> is <b class="det">det</b></dt><dd class="defbody">Load RDF file. <var>Options</var> provides additional processing options.
+Currently defined options are:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">blank_nodes</b><var class="arglist">(+ShareMode)</var></dt><dd>How to handle equivalent blank nodes. If <code>share</code> (default),
+equivalent blank nodes are shared in the same resource.</dd>
+<dt class="term"><b class="pred">base_uri</b><var class="arglist">(+URI)</var></dt><dd><var>URI</var> that is used for rdf:about="" and other RDF constructs
+that are relative to the base uri. Default is the source
+URL.</dd>
+<dt class="term"><b class="pred">concurrent</b><var class="arglist">(+Jobs)</var></dt><dd>If <var>FileOrList</var> is a list of files, process the input files
+using <var>Jobs</var> threads concurrently. Default is the mininum
+of the number of cores and the number of inputs. Higher
+values can be useful when loading inputs from (slow)
+network connections. Using 1 (one) does not use
+separate worker threads.</dd>
+<dt class="term"><b class="pred">format</b><var class="arglist">(+Format)</var></dt><dd>Specify the source format explicitly. Normally this is
+deduced from the filename extension or the mime-type. The
+core library understands the formats xml (RDF/XML) and
+triples (internal quick load and cache format). Plugins,
+such as library)semweb/turtle) extend the set of recognised
+extensions.</dd>
+<dt class="term"><b class="pred">graph</b><var class="arglist">(?Graph)</var></dt><dd>Named graph in which to load the data. It is <b>not</b> allowed
+to load two sources into the same named graph. If <var>Graph</var> is
+unbound, it is unified to the graph into which the data is
+loaded.</dd>
+<dt class="term"><b class="pred">if</b><var class="arglist">(Condition)</var></dt><dd>When to load the file. One of <code>true</code>, <code>changed</code> (default) or
+<code>not_loaded</code>.</dd>
+<dt class="term"><b class="pred">modified</b><var class="arglist">(-Modified)</var></dt><dd>Unify <var>Modified</var> with one of <code>not_modified</code>, <code>cached(File)</code>,
+<code>last_modified(Stamp)</code> or <code>unknown</code>.</dd>
+<dt class="term"><b class="pred">cache</b><var class="arglist">(Bool)</var></dt><dd>If <code>false</code>, do not use or create a cache file.</dd>
+<dt class="term"><b class="pred">register_namespaces</b><var class="arglist">(Bool)</var></dt><dd>If <code>true</code> (default <code>false</code>), register xmlns= namespace
+declarations as <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:ns/2">ns/2</a> namespaces if there is no conflict.</dd>
+<dt class="term"><b class="pred">silent</b><var class="arglist">(+Bool)</var></dt><dd>If <code>true</code>, the message reporting completion is printed using
+level <code>silent</code>. Otherwise the level is <code>informational</code>. See
+also <a class="builtin" href="http://127.0.0.1:4040/help/source/man?predicate=print_message/2">print_message/2</a>.</dd>
+</dl>
+
+<p>
+Other options are forwarded to <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf:process_rdf/3">process_rdf/3</a>.</p></dd>
+<dt class="multidef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_file_type&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2055&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_file_type/2"><b class="pred">rdf_file_type</b><var class="arglist">(+Extension, -Format)</var></a> is <b class="det">semidet</b><span class="anot" style="float:right">[multifile]</span></dt><dd class="defbody">True if <var>Format</var> is the format belonging to the given file
+extension. This predicate is multifile and can thus be extended
+by plugins.</dd>
+<dt class="multidef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_load_stream&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2078&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_load_stream/3"><b class="pred">rdf_load_stream</b><var class="arglist">(+Format, +Stream, :Options)</var></a><span class="anot" style="float:right">[multifile]</span></dt><dd class="defbody">Load RDF data from <var>Stream</var>.
+
+<dl class="tags">
+<dt class="keyword-tbd">To be done</dt><dd class="keyword-tbd">- Handle mime-types?</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_unload&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2116&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_unload/1"><b class="pred">rdf_unload</b><var class="arglist">(+Source)</var></a> is <b class="det">det</b></dt><dd class="defbody">Identify the graph loaded from <var>Source</var> and use <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_unload_graph/1">rdf_unload_graph/1</a>
+to erase this graph.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- For compatibility, this predicate also accepts a
+graph name instead of a source specification.
+Please update your code to use
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_unload_graph/1">rdf_unload_graph/1</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_unload_graph&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2147&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_unload_graph/1"><b class="pred">rdf_unload_graph</b><var class="arglist">(+Graph)</var></a> is <b class="det">det</b></dt><dd class="defbody">Remove <var>Graph</var> from the RDF store. Succeeds silently if the named
+graph does not exist.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_create_graph&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2171&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_create_graph/1"><b class="pred">rdf_create_graph</b><var class="arglist">(+Graph)</var></a> is <b class="det">det</b></dt><dd class="defbody">Create an RDF graph without triples. Succeeds silently if the
+graph already exists.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_graph&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2177&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_graph/1"><b class="pred">rdf_graph</b><var class="arglist">(?Graph)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when <var>Graph</var> is an existing graph.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_source&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2184&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_source/2"><b class="pred">rdf_source</b><var class="arglist">(?Graph, ?SourceURL)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True if named <var>Graph</var> is loaded from <var>SourceURL</var>.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- Use <code>rdf_graph_property(Graph, source(SourceURL))</code>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_source&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2194&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_source/1"><b class="pred">rdf_source</b><var class="arglist">(?Source)</var></a></dt><dd class="defbody">True if <var>Source</var> is a loaded source.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- Use <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_graph/1">rdf_graph/1</a> or <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_source/2">rdf_source/2</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_make&amp;arity=0&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2203&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_make/0"><b class="pred">rdf_make</b></a></dt><dd class="defbody">Reload all loaded files that have been modified since the last
+time they were loaded.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_graph_property&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2220&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_graph_property/2"><b class="pred">rdf_graph_property</b><var class="arglist">(?Graph, ?Property)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True when <var>Property</var> is a property of <var>Graph</var>. Defined properties
+are:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">hash</b><var class="arglist">(Hash)</var></dt><dd><var>Hash</var> is the (MD5-)hash for the content of <var>Graph</var>.</dd>
+<dt class="term"><b class="pred">modified</b><var class="arglist">(Boolean)</var></dt><dd>True if the graph is modified since it was loaded or
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_set_graph/2">rdf_set_graph/2</a> was called with <code>modified(false)</code>.</dd>
+<dt class="term"><b class="pred">source</b><var class="arglist">(Source)</var></dt><dd>The graph is loaded from the <var>Source</var> (a URL)</dd>
+<dt class="term"><b class="pred">source_last_modified</b><var class="arglist">(?Time)</var></dt><dd><var>Time</var> is the last-modified timestamp of Source at the moment
+that the graph was loaded from Source.</dd>
+<dt class="term"><b class="pred">triples</b><var class="arglist">(Count)</var></dt><dd>True when <var>Count</var> is the number of triples in <var>Graph</var>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_set_graph&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2254&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_set_graph/2"><b class="pred">rdf_set_graph</b><var class="arglist">(+Graph, +Property)</var></a> is <b class="det">det</b></dt><dd class="defbody">Set properties of <var>Graph</var>. Defined properties are:
+
+<dl class="termlist">
+<dt class="term">modified(false)</dt><dd>Set the modified state of <var>Graph</var> to false.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_reset_db&amp;arity=0&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2295&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_reset_db/0"><b class="pred">rdf_reset_db</b></a></dt><dd class="defbody">Remove all triples from the RDF database and reset all its
+statistics.
+
+<dl class="tags">
+<dt class="keyword-bug">bug</dt><dd class="keyword-bug">- This predicate checks for active queries, but this check is
+not properly synchronized and therefore the use of this
+predicate is unsafe in multi-threaded contexts. It is
+mainly used to run functionality tests that need to
+start with an empty database.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2314&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save/1"><b class="pred">rdf_save</b><var class="arglist">(+Out)</var></a> is <b class="det">det</b></dt><dd class="defbody">Same as <code>rdf_save(Out, [])</code>. See <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save/2">rdf_save/2</a> for details.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2318&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save/2"><b class="pred">rdf_save</b><var class="arglist">(+Out, :Options)</var></a> is <b class="det">det</b></dt><dd class="defbody">Write RDF data as RDF/XML. <var>Options</var> is a list of one or more of
+the following options:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">graph</b><var class="arglist">(+Graph)</var></dt><dd>Save only triples associated to the given named <var>Graph</var>.</dd>
+<dt class="term"><b class="pred">anon</b><var class="arglist">(Bool)</var></dt><dd>If false (default true) do not save blank nodes that do
+not appear (indirectly) as object of a named resource.</dd>
+<dt class="term"><b class="pred">base_uri</b><var class="arglist">(URI)</var></dt><dd>BaseURI used. If present, all URIs that can be
+represented relative to this base are written using
+their shorthand. See also <code>write_xml_base</code> option</dd>
+<dt class="term"><b class="pred">convert_typed_literal</b><var class="arglist">(:Convertor)</var></dt><dd>Call <var>Convertor</var>(-Type, -Content, +RDFObject), providing
+the opposite for the convert_typed_literal option of
+the RDF parser.</dd>
+<dt class="term"><b class="pred">document_language</b><var class="arglist">(+Lang)</var></dt><dd>Initial xml:lang saved with rdf:RDF element</dd>
+<dt class="term"><b class="pred">encoding</b><var class="arglist">(Encoding)</var></dt><dd><var>Encoding</var> for the output. Either utf8 or iso_latin_1</dd>
+<dt class="term"><b class="pred">inline</b><var class="arglist">(+Bool)</var></dt><dd>If <code>true</code> (default <code>false</code>), inline resources when
+encountered for the first time. Normally, only bnodes
+are handled this way.</dd>
+<dt class="term"><b class="pred">namespaces</b><var class="arglist">(+List)</var></dt><dd>Explicitely specify saved namespace declarations. See
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save_header/2">rdf_save_header/2</a> option namespaces for details.</dd>
+<dt class="term"><b class="pred">sorted</b><var class="arglist">(+Boolean)</var></dt><dd>If <code>true</code> (default <code>false</code>), emit subjects sorted on
+the full URI. Useful to make file comparison easier.</dd>
+<dt class="term"><b class="pred">write_xml_base</b><var class="arglist">(Bool)</var></dt><dd>If <code>false</code>, do <i>not</i> include the <code>xml:base</code>
+declaration that is written normally when using the
+<code>base_uri</code> option.</dd>
+<dt class="term"><b class="pred">xml_attributes</b><var class="arglist">(+Bool)</var></dt><dd>If <code>false</code> (default <code>true</code>), never use xml attributes to
+save plain literal attributes, i.e., always used an XML
+element as in <code>&lt;name&gt;Joe&lt;/name&gt;</code>.</dd>
+</dl>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tbody><tr><td><var>Out</var></td><td class="argdescr">- Location to save the data. This can also be a
+file-url (<code>file://path</code>) or a stream wrapped
+in a term <code>stream(Out)</code>.</td></tr>
+</tbody></table>
+
+</dd>
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save_db/1">rdf_save_db/1</a></dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save_header&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2476&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save_header/2"><b class="pred">rdf_save_header</b><var class="arglist">(+Fd, +Options)</var></a></dt><dd class="defbody">Save XML document header, doctype and open the RDF environment.
+This predicate also sets up the namespace notation.
+
+<p>
+Save an RDF header, with the XML header, DOCTYPE, ENTITY and
+opening the rdf:RDF element with appropriate namespace
+declarations. It uses the primitives from section 3.5 to
+generate the required namespaces and desired short-name. <var>Options</var>
+is one of:</p>
+
+<dl class="termlist">
+<dt class="term"><b class="pred">graph</b><var class="arglist">(+URI)</var></dt><dd>Only search for namespaces used in triples that belong to the
+given named graph.</dd>
+<dt class="term"><b class="pred">namespaces</b><var class="arglist">(+List)</var></dt><dd>Where <var>List</var> is a list of namespace abbreviations. With this
+option, the expensive search for all namespaces that may be
+used by your data is omitted. The namespaces <code>rdf</code> and <code>rdfs</code>
+are added to the provided <var>List</var>. If a namespace is not
+declared, the resource is emitted in non-abreviated form.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_graph_prefixes&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2588&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_graph_prefixes/2"><b class="pred">rdf_graph_prefixes</b><var class="arglist">(?Graph, -List:ord_set)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_graph_prefixes&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2588&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_graph_prefixes/3"><b class="pred">rdf_graph_prefixes</b><var class="arglist">(?Graph, -List:ord_set, :Options)</var></a> is <b class="det">det</b></dt><dd class="defbody"><var>List</var> is a sorted list of prefixes (namepaces) in <var>Graph</var>. <var>Options</var>
+defined are:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">filter</b><var class="arglist">(:Filter)</var></dt><dd>optional <var>Filter</var> argument is used to filter the results. It
+is called with 3 additional arguments:
+
+<pre class="code" ext="">call(Filter, Where, Prefix, URI)
+</pre>
+
+<p>
+The Where argument gives the location of the prefix ans is
+one of <code>subject</code>, <code>predicate</code>, <code>object</code> or <code>type</code>. The
+Prefix argument is the potentionally new prefix and URI is
+the full URI that is being processed.</p></dd>
+<dt class="term"><b class="pred">expand</b><var class="arglist">(:Goal)</var></dt><dd>Hook to generate the graph. Called using
+
+<pre class="code" ext="">call(Goal,S,P,O,Graph)
+</pre>
+
+</dd>
+<dt class="term"><b class="pred">min_count</b><var class="arglist">(+Count)</var></dt><dd>Only include prefixes that appear at least N times. Default
+is 1. Declared prefixes are always returned if found at
+least one time.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save_footer&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2766&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save_footer/1"><b class="pred">rdf_save_footer</b><var class="arglist">(Out:stream)</var></a> is <b class="det">det</b></dt><dd class="defbody">Finish XML generation and write the document footer.
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save_header/2">rdf_save_header/2</a>, <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save_subject/3">rdf_save_subject/3</a>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_save_subject&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=2793&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_save_subject/3"><b class="pred">rdf_save_subject</b><var class="arglist">(+Out, +Subject:resource, +Options)</var></a> is <b class="det">det</b></dt><dd class="defbody">Save the triples associated to <var>Subject</var> to <var>Out</var>. <var>Options</var>:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">graph</b><var class="arglist">(+Graph)</var></dt><dd>Only save properties from <var>Graph</var>.</dd>
+<dt class="term"><b class="pred">base_uri</b><var class="arglist">(+URI)</var></dt><dd></dd>
+<dt class="term"><b class="pred">convert_typed_literal</b><var class="arglist">(:Goal)</var></dt><dd></dd>
+<dt class="term"><b class="pred">document_language</b><var class="arglist">(+XMLLang)</var></dt><dd></dd>
+</dl>
+
+<dl class="tags">
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_save/2">rdf_save/2</a> for a description of these options.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_match_label&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3238&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_match_label/3"><b class="pred">rdf_match_label</b><var class="arglist">(+Method, +Search, +Atom)</var></a> is <b class="det">semidet</b></dt><dd class="defbody">True if <var>Search</var> matches <var>Atom</var> as defined by <var>Method</var>. All matching
+is performed case-insensitive. Defines methods are:
+
+<dl class="termlist">
+<dt class="term"><span class="functor">exact</span></dt><dd>Perform exact, but case-insensitive match.</dd>
+<dt class="term"><span class="functor">substring</span></dt><dd><var>Search</var> is a sub-string of Text.</dd>
+<dt class="term"><span class="functor">word</span></dt><dd><var>Search</var> appears as a whole-word in Text.</dd>
+<dt class="term"><span class="functor">prefix</span></dt><dd>Text start with <var>Search</var>.</dd>
+<dt class="term"><span class="functor">like</span></dt><dd>Text matches <var>Search</var>, case insensitively, where the `*'
+character in <var>Search</var> matches zero or more characters.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_split_url&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3256&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_split_url/3"><b class="pred">rdf_split_url</b><var class="arglist">(+Prefix, +Local, -URL)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">rdf_split_url</b><var class="arglist">(-Prefix, -Local, +URL)</var> is <b class="det">det</b></dt><dd class="defbody">Split/join a <var>URL</var>. This functionality is moved to <a class="file" href="http://127.0.0.1:4040/help/source/doc/swi/library/sgml.pl">library(sgml)</a>.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- Use <a href="http://127.0.0.1:4040/help/source/doc/swi/library/sgml.pl#iri_xml_namespace/3">iri_xml_namespace/3</a>. Note that the argument
+order is <code>iri_xml_namespace(+IRI, -Namespace, -Localname)</code>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_url_namespace&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3270&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_url_namespace/2"><b class="pred">rdf_url_namespace</b><var class="arglist">(+URL, -Namespace)</var></a></dt><dd class="defbody"><var>Namespace</var> is the namespace of <var>URL</var>.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- Use <a href="http://127.0.0.1:4040/help/source/doc/swi/library/sgml.pl#iri_xml_namespace/2">iri_xml_namespace/2</a></dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_new_literal_map&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3284&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_new_literal_map/1"><b class="pred">rdf_new_literal_map</b><var class="arglist">(-Map)</var></a> is <b class="det">det</b></dt><dd class="defbody">Create a new literal map, returning an opaque handle.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_destroy_literal_map&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3288&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_destroy_literal_map/1"><b class="pred">rdf_destroy_literal_map</b><var class="arglist">(+Map)</var></a> is <b class="det">det</b></dt><dd class="defbody">Destroy a literal map. After this call, further use of the <var>Map</var>
+handle is illegal. Additional synchronisation is needed if maps
+that are shared between threads are destroyed to guarantee the
+handle is no longer used. In some scenarios
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_reset_literal_map/1">rdf_reset_literal_map/1</a> provides a safe alternative.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_reset_literal_map&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3296&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_reset_literal_map/1"><b class="pred">rdf_reset_literal_map</b><var class="arglist">(+Map)</var></a> is <b class="det">det</b></dt><dd class="defbody">Delete all content from the literal map.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_insert_literal_map&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3300&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_insert_literal_map/3"><b class="pred">rdf_insert_literal_map</b><var class="arglist">(+Map, +Key, +Value)</var></a> is <b class="det">det</b></dt><dd class="defbody">Add a relation between <var>Key</var> and <var>Value</var> to the map. If this
+relation already exists no action is performed.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_insert_literal_map&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3305&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_insert_literal_map/4"><b class="pred">rdf_insert_literal_map</b><var class="arglist">(+Map, +Key, +Value, -KeyCount)</var></a> is <b class="det">det</b></dt><dd class="defbody">As <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_insert_literal_map/3">rdf_insert_literal_map/3</a>. In addition, if <var>Key</var> is a new key in
+<var>Map</var>, unify <var>KeyCount</var> with the number of keys in <var>Map</var>. This serves
+two purposes. Derived maps, such as the stem and metaphone maps
+need to know about new keys and it avoids additional foreign
+calls for doing the progress in <a class="file" href="http://127.0.0.1:4040/help/source/doc/swi/library/semweb/rdf_litindex.pl">rdf_litindex.pl</a>.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_delete_literal_map&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3313&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_delete_literal_map/2"><b class="pred">rdf_delete_literal_map</b><var class="arglist">(+Map, +Key)</var></a> is <b class="det">det</b></dt><dd class="defbody">Delete <var>Key</var> and all associated values from the map.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_delete_literal_map&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3317&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_delete_literal_map/3"><b class="pred">rdf_delete_literal_map</b><var class="arglist">(+Map, +Key, +Value)</var></a> is <b class="det">det</b></dt><dd class="defbody">Delete the association between <var>Key</var> and <var>Value</var> from the map.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_find_literal_map&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3321&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_find_literal_map/3"><b class="pred">rdf_find_literal_map</b><var class="arglist">(+Map, +KeyList, -ValueList)</var></a> is <b class="det">det</b></dt><dd class="defbody">Unify <var>ValueList</var> with an ordered set of values associated to all
+keys from <var>KeyList</var>. Each key in <var>KeyList</var> is either an atom, an
+integer or a term <code>not(Key)</code>. If not-terms are provided, there
+must be at least one positive keywords. The negations are tested
+after establishing the positive matches.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_keys_in_literal_map&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3329&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_keys_in_literal_map/3"><b class="pred">rdf_keys_in_literal_map</b><var class="arglist">(+Map, +Spec, -Answer)</var></a> is <b class="det">det</b></dt><dd class="defbody">Realises various queries on the key-set:
+<ul>
+<li>all
+Unify <var>Answer</var> with an ordered list of all keys.</li>
+<li><code>key(+Key)</code>
+Succeeds if Key is a key in the map and unify <var>Answer</var> with the
+number of values associated with the key. This provides a fast
+test of existence without fetching the possibly large
+associated value set as with <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_find_literal_map/3">rdf_find_literal_map/3</a>.</li>
+<li><code>prefix(+Prefix)</code>
+Unify <var>Answer</var> with an ordered set of all keys that have the
+given prefix. See section 3.1 for details on prefix matching.
+Prefix must be an atom. This call is intended for
+auto-completion in user interfaces.</li>
+<li><code>ge(+Min)</code>
+Unify <var>Answer</var> with all keys that are larger or equal to the
+integer Min.</li>
+<li><code>le(+Max)</code>
+Unify <var>Answer</var> with all keys that are smaller or equal to the integer
+Max.</li>
+<li><code>between(+Min, +Max)</code> Unify
+<var>Answer</var> with all keys between Min and Max (including).</li>
+</ul>
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_statistics_literal_map&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3360&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_statistics_literal_map/2"><b class="pred">rdf_statistics_literal_map</b><var class="arglist">(+Map, -KeyValue)</var></a></dt><dd class="defbody">Query some statistics of the map. Provides <var>KeyValue</var> are:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">size</b><var class="arglist">(-Keys, -Relations)</var></dt><dd>Unify <var>Keys</var> with the total key-count of the index and Relation
+with the total Key-Value count.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_version&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3374&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_version/1"><b class="pred">rdf_version</b><var class="arglist">(-Version)</var></a> is <b class="det">det</b></dt><dd class="defbody">True when <var>Version</var> is the numerical version-id of this library.
+The version is computed as
+
+<pre class="code">Major*10000 + Minor*100 + Patch.
+</pre>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_set&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3381&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_set/1"><b class="pred">rdf_set</b><var class="arglist">(+Term)</var></a> is <b class="det">det</b></dt><dd class="defbody">Set properties of the RDF store. Currently defines:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">hash</b><var class="arglist">(+Hash, +Parameter, +Value)</var></dt><dd>Set properties for a triple index. <var>Hash</var> is one of <code>s</code>,
+<code>p</code>, <code>sp</code>, <code>o</code>, <code>po</code>, <code>spo</code>, <code>g</code>, <code>sg</code> or <code>pg</code>. <var>Parameter</var>
+is one of:
+
+<dl class="termlist">
+<dt class="term"><span class="functor">size</span></dt><dd><var>Value</var> defines the number of entries in the hash-table.
+<var>Value</var> is rounded <i>down</i> to a power of 2. After setting
+the size explicitly, auto-sizing for this table is
+disabled. Setting the size smaller than the current
+size results in a <code>permission_error</code> exception.</dd>
+<dt class="term"><span class="functor">average_chain_len</span></dt><dd>Set maximum average collision number for the hash.</dd>
+<dt class="term"><span class="functor">optimize_threshold</span></dt><dd>Related to resizing hash-tables. If 0, all triples are
+moved to the new size by the garbage collector. If more
+then zero, those of the last <var>Value</var> resize steps remain at
+their current location. Leaving cells at their current
+location reduces memory fragmentation and slows down
+access.</dd>
+</dl>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_md5&amp;arity=2&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3408&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_md5/2"><b class="pred">rdf_md5</b><var class="arglist">(+Graph, -MD5)</var></a> is <b class="det">det</b></dt><dd class="defbody">True when <var>MD5</var> is the <var>MD5</var> hash for all triples in graph. The <var>MD5</var>
+digest itself is represented as an atom holding a 32-character
+hexadecimal string. The library maintains the digest
+incrementally on rdf_load/[1,2], <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_load_db/1">rdf_load_db/1</a>, rdf_assert/[3,4]
+and rdf_retractall/[3,4]. Checking whether the digest has
+changed since the last rdf_load/[1,2] call provides a practical
+means for checking whether the file needs to be saved.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- New code should use <code>rdf_graph_property(Graph,
+hash(Hash))</code>.</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_generation&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3421&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_generation/1"><b class="pred">rdf_generation</b><var class="arglist">(-Generation)</var></a> is <b class="det">det</b></dt><dd class="defbody">True when <var>Generation</var> is the current generation of the database.
+Each modification to the database increments the generation. It
+can be used to check the validity of cached results deduced from
+the database. Committing a non-empty transaction increments the
+generation by one.
+
+<p>
+When inside a transaction, <var>Generation</var> is unified to a term
+<i>TransactionStartGen</i> + <i>InsideTransactionGen</i>. E.g., 4+3 means
+that the transaction was started at generation 4 of the global
+database and we have created 3 new generations inside the
+transaction. Note that this choice of representation allows for
+comparing generations using Prolog arithmetic. Comparing a
+generation in one transaction with a generation in another
+transaction is meaningless.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_estimate_complexity&amp;arity=4&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3438&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_estimate_complexity/4"><b class="pred">rdf_estimate_complexity</b><var class="arglist">(?Subject, ?Predicate, ?Object, -Complexity)</var></a></dt><dd class="defbody">Return the number of alternatives as indicated by the database
+internal hashed indexing. This is a rough measure for the number
+of alternatives we can expect for an <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_has/3">rdf_has/3</a> call using the
+given three arguments. When called with three variables, the
+total number of triples is returned. This estimate is used in
+query optimisation. See also <a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_predicate_property/2">rdf_predicate_property/2</a> and
+<a href="http://127.0.0.1:4040/help/source/doc_for?object=rdf_db:rdf_statistics/1">rdf_statistics/1</a> for additional information to help optimizers.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_debug&amp;arity=1&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3448&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_debug/1"><b class="pred">rdf_debug</b><var class="arglist">(+Level)</var></a> is <b class="det">det</b></dt><dd class="defbody">Set debugging to <var>Level</var>. <var>Level</var> is an integer 0..9. Default is
+0 no debugging.</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest(&#39;/help/source/edit?name=rdf_atom_md5&amp;arity=3&amp;file=c:/program%20files/swipl/library/semweb/rdf_db.pl&amp;line=3453&amp;module=rdf_db&amp;module=rdf_db&#39;)"><img class="action" alt="Edit predicate" title="Edit predicate" src="./rdf_db.pl_files/edit.gif"></a></span><a name="rdf_atom_md5/3"><b class="pred">rdf_atom_md5</b><var class="arglist">(+Text, +Times, -MD5)</var></a> is <b class="det">det</b></dt><dd class="defbody">Computes the <var>MD5</var> hash from <var>Text</var>, which is an atom, string or
+list of character codes. <var>Times</var> is an integer &gt;= 1. When &gt; 0, the
+<var>MD5</var> algorithm is repeated <var>Times</var> times on the generated hash.
+This can be used for password encryption algorithms to make
+generate-and-test loops slow.
+
+<dl class="tags">
+<dt class="keyword-deprecated">deprecated</dt><dd class="keyword-deprecated">- . New code should use the <a class="file" href="http://127.0.0.1:4040/help/source/doc/swi/library/crypt.pl">library(crypt)</a> library
+provided by the clib package.</dd>
+</dl>
+
+</dd>
+</dl>
+
+
+
+</body></html>
