@@ -346,3 +346,14 @@ text-align: center;
     height: 120px;
 }
 
+.user-annotations {
+    background-color: #d8d8ce;
+}
+
+/* remove div.footer from plweb.css */
+.footer.newstyle {
+    background-color: #d8d8ce;
+    border: none;
+    border-width: 0px;
+    margin: 0px;
+}
