@@ -1,0 +1,216 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>SWI-Prolog</title>
+<link rel="stylesheet" type="text/css" href="js/plweb.css">
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="js/jquery.markitup.js">
+</script>
+<script type="text/javascript" src="js/jquery-ui.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="js/style.css">
+<link rel="stylesheet" type="text/css" href="/js/markitupstyle.css">
+<script type="text/javascript" src="js/set.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery.tagit.css">
+<link rel="stylesheet" type="text/css" href="js/tagit.ui-zendesk.css">
+<script type="text/javascript" src="js/tag-it.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/pldoc.css">
+<script type="text/javascript" src="js/pldoc.js">
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="js/favicon.ico">
+<link rel="apple-touch-icon" href="js/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="js/swipl.css">
+</head>
+<body>
+<div id='outer-container'>
+    <div id='upper-header'>
+        <div id='upper-header-contents'>
+            <span id='dyknow-container'>
+                <span class='lbl'>Did you know?</span>
+                <span id='dyknow'>SWI-Prolog has an XML Parser</span>
+            </span>
+            <span id='search-container'>
+            <!-- this worked til I copied in all the other files -->
+                <span class='lbl'>Search Documentation: </span>
+                <form id="search-form" action="/pldoc/search">
+                    <input name="for" id="for">
+                    <input id="submit-for" type="submit" value="Search">
+                    <input type="hidden" name="in" value="all">
+                    <input type="hidden" name="match" value="summary">
+                    <script type="text/javascript">
+
+        $(function() {
+        $("#"+"for").autocomplete({
+        minLength: 1,
+        delay: 0.3,
+        source: "/autocomplete/ac_predicate",
+        focus: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          return false;
+        },
+        select: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          window.location.href = ui.item.href;
+          return false;
+        }
+        })
+        .data("ui-autocomplete")._renderItem = function(ul,item) {
+        var label = String(item.label).replace(
+            new RegExp(this.term),
+            "<span class=\"acmatch\">$&</span>");
+        var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+        return $("<li>")
+          .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+          .appendTo(ul)
+        };
+        });
+               
+                    </script>
+                </form>
+            </span>
+        </div>
+    </div><!-- upper banner -->
+    <div id='header-line-area'>
+    <img src='js/swipl.png'>
+    <span class='primary-header'>A.12 library(lists): List Manipulation</span>
+    </div>
+    <div id='menubar'>
+        <div class='menubar fixed-width'>
+            <ul class='menubar-container'>
+                <li><a href="/">HOME</a></li>
+                <li>DOWNLOAD
+                    <ul class='dropdown one'>
+                        <li><a href="/download.html">SWI-PROLOG</a></li>
+                        <li><a href="/sources.html">SOURCES/BUILDING</a></li>
+                        <li><a href="/addons.html">ADD-ONS</a></li>
+                        <li><a href="/git/">BROWSE GIT</a></li>
+                    </ul>
+                </li>
+                <li>DOCUMENTATION
+                    <ul>
+                        <li><a href="/pldoc/refman/">MANUAL</a></li>
+                        <li><a href="/pldoc/index.html">PACKAGES</a></li>
+                        <li><a href="/FAQ/">FAQ</a></li>
+                        <li><a href="/pldoc/man?section=cmdline">COMMAND LINE</a></li>
+                        <li><a href="/pldoc/package/pldoc.html">PLDOC</a></li>
+                        <li>BLUFFERS<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/prologsyntax.html">PROLOG SYNTAX</a></li>
+                                <li><a href="/pldoc/man?section=emacsbluff">pceEMACS</a></li>
+                                <li><a href="/htmlbluffer.html">HTML GENERATION</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/license.html">LICENSE</a></li>
+                        <li><a href="/Contributors.html">CONTRIBUTORS</a></li>
+                        <li><a href="/Publications.html">PUBLICATIONS</a></li>
+                    </ul>
+                </li>
+                <li>TUTORIALS
+                    <ul>
+                        <li>BEGINNER<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/pldoc/man?section=quickstart">GETTING STARTED</a></li>
+                                <li><a href="/swipltuts/mod/index.html">MODULES</a></li>
+                                <li><a href="/pldoc/man?section=debugoverview">DEBUGGER</a></li>
+                                <li><a href="/IDE.html">DEVELOPMENT TOOLS</a></li>
+                            </ul>
+                        </li>
+                        <li>INTERMEDIATE<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/howto/http/">WEB SERVICE</a></li>
+                                <li><a href="/swipltuts/html/index.html">WEB APPLICATIONS</a></li>
+                                <li><a href="/swipltuts/pldoc/index.html">PLDOC</a></li>
+                                <li><a href="/dcg/index.html">DCGs</a></li>
+                                <li><a href="/xpce.pdf">XPCE</a></li>
+                                <li><a href="/Graphics.html">GUI OPTIONS</a></li>
+                            </ul>
+                        </li>
+                        <li>ADVANCED<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/howto/UseRdfMeta.html">RDF NAMESPACES</a></li>
+                                <li><a href="/build/guidelines.txt">UNIX PACKAGES</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li><!-- tutorials -->
+                <li>COMMUNITY
+                    <ul>
+                        <li><a href="/Support.txt">SUPPORT</a></li>
+                        <li><a href="http://webchat.freenode.net/?channels=##prolog">IRC</a></li>
+                        <li><a href="http://www.swi-prolog.org/Mailinglist.txt">MAIL LIST</a></li>
+                        <li><a href="/bugzilla/">BUG TRACKER</a></li>
+                        <li><a href="/Links.html">EXTERNAL LINKS</a></li>
+                        <li><a href="/Contact.html">CONTACT</a></li>
+                        <li><a href="/loot.html">SWI-PROLOG ITEMS</a></li>
+                    </ul>
+                </li><!-- community -->
+                <li>USERS
+                    <ul>
+                        <li><a href="/web/index.html">SEMANTIC WEB</a></li>
+                        <li><a href="/swipltuts/student/index.html">STUDENTS</a></li>
+                        <li><a href="/Publications.html">RESEARCHERS</a></li>
+                        <li><a href="/commercial.html">COMMERCIAL USERS</a></li>
+                    </ul>
+                </li><!-- users -->
+                <li>WIKI
+                    <ul>
+                        <li><a href="/openid/login?openid.return_to=/user/logout">LOGIN</a></li>
+                        <li><a href="http://www.swi-prolog.org/wiki_edit?location=$LOC$">EDIT THIS PAGE</a></li>
+                        <li><a href="/wiki/sandbox">SANDBOX</a></li>
+                        <li><a href="/wiki/">WIKI HELP</a></li>
+                        <li><a href="/list-tags">ALL TAGS</a></li>
+                    </ul>
+                </li><!-- wiki -->
+            </ul>
+        </div>
+    </div>
+    <div class='breadcrumb'>
+        <a href='/foo'>Home</a>
+        <span>&gt;</span>
+        <a href='/foo'>A SWI-Prolog Library</a>
+    </div>
+    <div id='contents'>
+        <div>
+            This is the content
+        </div>
+    </div>
+    <div id='tail-end'>&nbsp;</div>
+</div>
+<script type="text/javascript">
+$(function() {
+    $(".menubar-container > li").bind('mouseenter', function() {
+        $(this).contents().filter('ul').addClass('activemenu');
+        $(this).contents().filter('ul').offset({ top: $(this).offset().top + 31, left: $(this).offset().left });
+        $(this).contents().filter('ul').css('position', 'absolute');
+    }).bind('mouseleave', function() {
+        var foo = this;
+        window.setTimeout(function() {
+            $(foo).contents().filter('ul').removeClass('activemenu');
+        }, 100);
+    });
+    $(".menubar-container > li > ul").bind('mouseenter', function() {
+        $(this).addClass('mouseovermenu');
+    }).bind('mouseleave' , function() {
+        var foo = this;
+        window.setTimeout(function() {
+            $(foo).removeClass('mouseovermenu');
+        }, 100);
+    });
+    $(".menubar-container > li > ul > li").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenuitem');
+        $(this).contents().filter('ul').toggleClass('activemenu');
+        $(this).contents().filter('ul').offset({ top: $(this).offset().top , left: $(this).offset().left + 208 });
+        $(this).contents().filter('ul').css('position', 'absolute');
+    });
+    $(".menubar-container > li > ul > li > ul > li").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenuitem');
+    });
+});
+</script>
+</body>
+</html>
