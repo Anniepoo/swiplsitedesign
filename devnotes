@@ -1,0 +1,64 @@
+Plan of attack:
+0.5 Add news   <=== SKIPPED COME BACK
+1. Add a marker for each pg style so I can tell what served what
+2. Remove the hard code to serve the homepage everywhere. Make it serve
+itself where appropriate.
+3. Write the new pages, edit others
+4. Make all menus & links on homepage work (possibly linking to 404)
+5. Cherry out the homepage
+6. Reformat 'loose' 1 col pages
+7. Reformat manual pages omitting the tree control
+8. Reformat pldoc pages omitting the tree control
+9. Make the trees work
+10. Clean up small stuff
+
+
+
+doc_wiki:wiki_codes_to_dom/3
+
+translates plain text to DOM
+
+line 443 
+Markdown sections
+### 
+
+faces start at 631
+
+wiki_face
+
+line 747 - \include
+
+
+started hammering at wiki_face, line 807 doc_wiki.pl
+in /usr/lib/swi-prolog/library/pldoc/
+
+I added an additional clause to wiki_face at 807
+
+then in 
+
+wiki.pl 
+on line 791 I added iframe_include (and exported at top)
+
+when I return to it I'm going to not make an iframe, I'm going to slurp the file in.
+
+I'll get the file from a non-served location
+
+in parms.pl I added inclusion as a file alias
+
+When you submit patch, don't forget the patch to swipl and to plweb
+
+the swipl install is at
+
+git clone git://www.swi-prolog.org/home/pl/git/pl-devel.git
+
+I cloned but didn't install swipl dev at swiplforpatching so I oculd make patches
+
+Files I changed
+/swiplweb/plweb/wiki.pl
+/swiplweb/plweb/parms.pl
+/usr/lib/swi-prolog/library/pldoc/doc_wiki.pl
+
+OK, I've done it wrong - I've put inline_html_file in wiki.pl.  I need to move it and the line in parms into doc_wiki.pl
+Xc[
+
+
