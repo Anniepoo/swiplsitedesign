@@ -1,0 +1,64 @@
+/* swipl content */
+
+#contents p {
+    font-size: 18px;
+    font-style: normal;
+}
+
+.latex .defbody {
+    font-size: 18px;
+    font-style: normal;
+}
+
+dl.tags > dt.tag {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+dl.tags > dd {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+code {
+    font-style: normal;
+    font-family: monospace;
+    font-weight: 400;
+}
+
+#contents a {
+    color: #0c3d6e;
+}
+
+#contents a:hover {
+    font-weight: 700;
+}
+
+#contents dt a:hover {
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#contents dt.pubdef {
+    background-color: #0c3d6e;
+    color: #FFF;
+    height: 31px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 21px;
+}   /* KILL dt.pubdef in pldoc.css */
+
+#contents dt.pubdef * {
+    color: #FFF;
+    font-size: 18px;
+    vertical-align: middle;
+    /* HEY - code generates 26px padding-top, kill it */
+}
+
+#contents .code {
+    font-size: 14px;
+}
+

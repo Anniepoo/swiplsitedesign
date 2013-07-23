@@ -1,0 +1,776 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>SWI-Prolog</title>
+<link rel="stylesheet" type="text/css" href="js/plweb.css">
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="js/jquery.markitup.js">
+</script>
+<script type="text/javascript" src="js/jquery-ui.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="js/style.css">
+<link rel="stylesheet" type="text/css" href="/js/markitupstyle.css">
+<script type="text/javascript" src="js/set.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery.tagit.css">
+<link rel="stylesheet" type="text/css" href="js/tagit.ui-zendesk.css">
+<script type="text/javascript" src="js/tag-it.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/pldoc.css">
+<script type="text/javascript" src="js/pldoc.js">
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="js/favicon.ico">
+<link rel="apple-touch-icon" href="js/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="js/swipl.css">
+<link rel="stylesheet" type="text/css" href="js/swiplcontent.css">
+</head>
+<body>
+<div id='outer-container'>
+    <div id='upper-header'>
+        <div id='upper-header-contents'>
+            <span id='dyknow-container'>
+                <span class='lbl'>Did you know?</span>
+                <span id='dyknow'>SWI-Prolog has an XML Parser</span>
+            </span>
+            <span id='search-container'>
+            <!-- this worked til I copied in all the other files -->
+                <span class='lbl'>Search Documentation: </span>
+                <form id="search-form" action="/pldoc/search">
+                    <input name="for" id="for">
+                    <input id="submit-for" type="submit" value="Search">
+                    <input type="hidden" name="in" value="all">
+                    <input type="hidden" name="match" value="summary">
+                    <script type="text/javascript">
+
+        $(function() {
+        $("#"+"for").autocomplete({
+        minLength: 1,
+        delay: 0.3,
+        source: "/autocomplete/ac_predicate",
+        focus: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          return false;
+        },
+        select: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          window.location.href = ui.item.href;
+          return false;
+        }
+        })
+        .data("ui-autocomplete")._renderItem = function(ul,item) {
+        var label = String(item.label).replace(
+            new RegExp(this.term),
+            "<span class=\"acmatch\">$&</span>");
+        var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+        return $("<li>")
+          .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+          .appendTo(ul)
+        };
+        });
+               
+                    </script>
+                </form>
+            </span>
+        </div>
+    </div><!-- upper banner -->
+    <div id='header-line-area'>
+    <img src='js/swipl.png'>
+    <span class='primary-header'>A.12 library(lists): List Manipulation</span>
+    </div>
+    <div id='menubar'>
+        <div class='menubar fixed-width'>
+            <ul class='menubar-container'>
+                <li><a href="/">HOME</a></li>
+                <li>DOWNLOAD
+                    <ul class='dropdown one'>
+                        <li><a href="/download.html">SWI-PROLOG</a></li>
+                        <li><a href="/sources.html">SOURCES/BUILDING</a></li>
+                        <li><a href="/addons.html">ADD-ONS</a></li>
+                        <li><a href="/git/">BROWSE GIT</a></li>
+                    </ul>
+                </li>
+                <li>DOCUMENTATION
+                    <ul>
+                        <li><a href="/pldoc/refman/">MANUAL</a></li>
+                        <li><a href="/pldoc/index.html">PACKAGES</a></li>
+                        <li><a href="/FAQ/">FAQ</a></li>
+                        <li><a href="/pldoc/man?section=cmdline">COMMAND LINE</a></li>
+                        <li><a href="/pldoc/package/pldoc.html">PLDOC</a></li>
+                        <li>BLUFFERS<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/prologsyntax.html">PROLOG SYNTAX</a></li>
+                                <li><a href="/pldoc/man?section=emacsbluff">pceEMACS</a></li>
+                                <li><a href="/htmlbluffer.html">HTML GENERATION</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/license.html">LICENSE</a></li>
+                        <li><a href="/Contributors.html">CONTRIBUTORS</a></li>
+                        <li><a href="/Publications.html">PUBLICATIONS</a></li>
+                    </ul>
+                </li>
+                <li>TUTORIALS
+                    <ul>
+                        <li>BEGINNER<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/pldoc/man?section=quickstart">GETTING STARTED</a></li>
+                                <li><a href="/swipltuts/mod/index.html">MODULES</a></li>
+                                <li><a href="/pldoc/man?section=debugoverview">DEBUGGER</a></li>
+                                <li><a href="/IDE.html">DEVELOPMENT TOOLS</a></li>
+                            </ul>
+                        </li>
+                        <li>INTERMEDIATE<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/howto/http/">WEB SERVICE</a></li>
+                                <li><a href="/swipltuts/html/index.html">WEB APPLICATIONS</a></li>
+                                <li><a href="/swipltuts/pldoc/index.html">PLDOC</a></li>
+                                <li><a href="/dcg/index.html">DCGs</a></li>
+                                <li><a href="/xpce.pdf">XPCE</a></li>
+                                <li><a href="/Graphics.html">GUI OPTIONS</a></li>
+                            </ul>
+                        </li>
+                        <li>ADVANCED<span class='arrow'>&#x25B6;</span>
+                            <ul>
+                                <li><a href="/howto/UseRdfMeta.html">RDF NAMESPACES</a></li>
+                                <li><a href="/build/guidelines.txt">UNIX PACKAGES</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li><!-- tutorials -->
+                <li>COMMUNITY
+                    <ul>
+                        <li><a href="/Support.txt">SUPPORT</a></li>
+                        <li><a href="http://webchat.freenode.net/?channels=##prolog">IRC</a></li>
+                        <li><a href="http://www.swi-prolog.org/Mailinglist.txt">MAIL LIST</a></li>
+                        <li><a href="/bugzilla/">BUG TRACKER</a></li>
+                        <li><a href="/Links.html">EXTERNAL LINKS</a></li>
+                        <li><a href="/Contact.html">CONTACT</a></li>
+                        <li><a href="/loot.html">SWI-PROLOG ITEMS</a></li>
+                    </ul>
+                </li><!-- community -->
+                <li>USERS
+                    <ul>
+                        <li><a href="/web/index.html">SEMANTIC WEB</a></li>
+                        <li><a href="/swipltuts/student/index.html">STUDENTS</a></li>
+                        <li><a href="/Publications.html">RESEARCHERS</a></li>
+                        <li><a href="/commercial.html">COMMERCIAL USERS</a></li>
+                    </ul>
+                </li><!-- users -->
+                <li>WIKI
+                    <ul>
+                        <li><a href="/openid/login?openid.return_to=/user/logout">LOGIN</a></li>
+                        <li><a href="http://www.swi-prolog.org/wiki_edit?location=$LOC$">EDIT THIS PAGE</a></li>
+                        <li><a href="/wiki/sandbox">SANDBOX</a></li>
+                        <li><a href="/wiki/">WIKI HELP</a></li>
+                        <li><a href="/list-tags">ALL TAGS</a></li>
+                    </ul>
+                </li><!-- wiki -->
+            </ul>
+        </div>
+    </div>
+    <div class='breadcrumb'>
+        <a href='/foo'>Home</a>
+        <span>&gt;</span>
+        <a href='/foo'>A SWI-Prolog Library</a>
+    </div>
+    <div id='contents'>
+        <div>
+<!-- CONTENTS starts -->
+<dl class="tags">
+<dt class="tag">Compatibility</dt><dd>Virtually every Prolog system has <code>library(lists)</code>, but the 
+set of provided predicates is diverse. There is a fair agreement on the 
+semantics of most of these predicates, although error handling may vary.</dd>
+</dl>
+
+
+
+
+
+<p>
+This library provides commonly accepted basic predicates for list 
+manipulation in the Prolog community. Some additional list manipulations 
+are built-in. See e.g., <a href="/pldoc/man?predicate=memberchk/2">memberchk/2</a>, <a href="/pldoc/man?predicate=length/2">length/2</a>.
+</p>
+
+<p>
+The implementation of this library is copied from many places. These 
+include: "The Craft of Prolog", the DEC-10 Prolog library (LISTRO.PL) 
+and the YAP lists library. Some predicates are reimplemented based on 
+their specification by Quintus and SICStus.
+</p>
+
+<dl class="latex">
+<dt class="pubdef"><a name="member/2"><strong>member</strong>(<var>?Elem, 
+?List</var>)</a></dt><dd class="defbody">True if <var>Elem</var> is a member of <var>List</var>. The SWI-Prolog 
+definition differs from the classical one. Our definition avoids 
+unpacking each list element twice and provides determinism on the last 
+element. E.g. this is deterministic:
+
+
+
+<pre class="code">
+    member(X, [One]).
+</pre>
+
+
+
+
+
+<dl class="tags">
+<dt class="tag">author</dt><dd>Gertjan van Noord</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><a name="append/3"><strong>append</strong>(<var>?List1, 
+?List2, ?List1AndList2</var>)</a></dt><dd class="defbody"><var>List1AndList2</var> is the concatenation of <var>List1</var> and <var>List2</var></dd>
+<dt class="pubdef"><a name="append/2"><strong>append</strong>(<var>+ListOfLists, 
+?List</var>)</a></dt><dd class="defbody">Concatenate a list of lists. Is true if <var>ListOfLists</var> is a list 
+of lists, and <var>List</var> is the concatenation of these lists.
+
+
+<table class="arglist">
+<tr valign="top"><td><var>ListOfLists</var> </td><td>must be a list of <i>possibly</i> 
+partial lists </td></tr>
+</table>
+
+</dd>
+<dt class="pubdef"><a name="prefix/2"><strong>prefix</strong>(<var>?Part, 
+?Whole</var>)</a></dt><dd class="defbody">True iff <var>Part</var> is a leading substring of <var>Whole</var>. 
+This is the same as <code>append(Part, _, Whole)</code>.</dd>
+<dt class="pubdef"><a name="select/3"><strong>select</strong>(<var>?Elem, 
+?List1, ?List2</var>)</a></dt><dd class="defbody">Is true when <var>List1</var>, with <var>Elem</var> removed, results in <var>List2</var>.</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="selectchk/3"><strong>selectchk</strong>(<var>+Elem, 
++List, -Rest</var>)</a></dt><dd class="defbody">Semi-deterministic removal of first element in <var>List</var> that 
+unifies with <var>Elem</var>.</dd>
+<dt class="pubdef"><span class="pred-tag">[nondet]</span><a name="select/4"><strong>select</strong>(<var>?X, 
+?XList, ?Y, ?YList</var>)</a></dt><dd class="defbody">Select two elements from two lists at the same place. True when
+<code>select(X, XList)</code> and <code>select(Y, YList)</code> are 
+true, <var>X</var> and <var>Y</var> appear in the same locations of 
+their respective lists and
+<code>same_length(XList, YList)</code> is true. A typical use for this 
+predicate is to <i>replace</i> an element:
+
+
+
+<pre class="code">
+?- select(b, [a,b,c], 2, X).
+X = [a, 2, c] ;
+X = [a, b, c].
+</pre>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="selectchk/4"><strong>selectchk</strong>(<var>?X, 
+?XList, ?Y, ?YList</var>)</a></dt><dd class="defbody">Semi-deterministic version of <a href="/pldoc/man?predicate=select/4">select/4</a>.</dd>
+<dt class="pubdef"><a name="nextto/3"><strong>nextto</strong>(<var>?X, 
+?Y, ?List</var>)</a></dt><dd class="defbody">True if <var>Y</var> follows <var>X</var> in <var>List</var>.</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="delete/3"><strong>delete</strong>(<var>+List1, 
+@Elem, -List2</var>)</a></dt><dd class="defbody">Delete matching elements from a list. True when <var>List2</var> is a 
+list with all elements from <var>List1</var> except for those that unify 
+with
+<var>Elem</var>. Matching <var>Elem</var> with elements of <var>List1</var> 
+is uses <code>\+ Elem \= H</code>, which implies that <var>Elem</var> is 
+not changed.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=select/3">select/3</a>, <a href="/pldoc/man?predicate=subtract/3">subtract/3</a>.</dd>
+<dt class="tag">deprecated</dt><dd>There are too many ways in which one might want to delete elements from 
+a list to justify the name. Think of matching (= vs. <code>==</code>), 
+delete first/all, be deterministic or not.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><a name="nth0/3"><strong>nth0</strong>(<var>?Index, 
+?List, ?Elem</var>)</a></dt><dd class="defbody">True when <var>Elem</var> is the <var>Index</var>'th element of <var>List</var>. 
+Counting starts at 0.
+
+
+
+<dl class="tags">
+<dt class="tag">Errors</dt><dd><code>type_error(integer, Index)</code> if <var>Index</var> is not an 
+integer or unbound.</dd>
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=nth1/3">nth1/3</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><a name="nth1/3"><strong>nth1</strong>(<var>?Index, 
+?List, ?Elem</var>)</a></dt><dd class="defbody">Is true when <var>Elem</var> is the <var>Index</var>'th element of <var>List</var>. 
+Counting starts at 1.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=nth0/3">nth0/3</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="nth0/4"><strong>nth0</strong>(<var>?N, 
+?List, ?Elem, ?Rest</var>)</a></dt><dd class="defbody">Select/insert element at index. True when <var>Elem</var> is the <var>N</var>'th 
+(0-based) element of <var>List</var> and <var>Rest</var> is the 
+remainder (as in by
+<a href="/pldoc/man?predicate=select/3">select/3</a>) of <var>List</var>. 
+For example:
+
+
+
+<pre class="code">
+?- nth0(I, [a,b,c], E, R).
+I = 0, E = a, R = [b, c] ;
+I = 1, E = b, R = [a, c] ;
+I = 2, E = c, R = [a, b] ;
+false.
+</pre>
+
+
+
+
+
+<pre class="code">
+?- nth0(1, L, a1, [a,b]).
+L = [a, a1, b].
+</pre>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="nth1/4"><strong>nth1</strong>(<var>?N, 
+?List, ?Elem, ?Rest</var>)</a></dt><dd class="defbody">As <a href="/pldoc/man?predicate=nth0/4">nth0/4</a>, but counting 
+starts at 1.</dd>
+<dt class="pubdef"><a name="last/2"><strong>last</strong>(<var>?List, 
+?Last</var>)</a></dt><dd class="defbody">Succeeds when <var>Last</var> is the last element of <var>List</var>. 
+This predicate is <code>semidet</code> if <var>List</var> is a list and <code>multi</code> 
+if <var>List</var> is a partial list.
+
+
+
+<dl class="tags">
+<dt class="tag">Compatibility</dt><dd>There is no de-facto standard for the argument order of
+<a href="/pldoc/man?predicate=last/2">last/2</a>. Be careful when 
+porting code or use
+<code>append(_, [Last], List)</code> as a portable alternative.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="proper_length/2"><strong>proper_length</strong>(<var>@List, 
+-Length</var>)</a></dt><dd class="defbody">True when <var>Length</var> is the number of elements in the proper list
+<var>List</var>. This is equivalent to
+
+
+
+<pre class="code">
+proper_length(List, Length) :-
+      is_list(List),
+      length(List, Length).
+</pre>
+
+
+</dd>
+<dt class="pubdef"><a name="same_length/2"><strong>same_length</strong>(<var>?List1, 
+?List2</var>)</a></dt><dd class="defbody">Is true when <var>List1</var> and <var>List2</var> are lists with the 
+same number of elements. The predicate is deterministic if at least one 
+of the arguments is a proper list. It is non-deterministic if both 
+arguments are partial lists.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=length/2">length/2</a></dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><a name="reverse/2"><strong>reverse</strong>(<var>?List1, 
+?List2</var>)</a></dt><dd class="defbody">Is true when the elements of <var>List2</var> are in reverse order 
+compared to
+<var>List1</var>.</dd>
+<dt class="pubdef"><span class="pred-tag">[nondet]</span><a name="permutation/2"><strong>permutation</strong>(<var>?Xs, 
+?Ys</var>)</a></dt><dd class="defbody">True when <var>Xs</var> is a permutation of <var>Ys</var>. This can 
+solve for <var>Ys</var> given
+<var>Xs</var> or <var>Xs</var> given <var>Ys</var>, or even enumerate <var>Xs</var> 
+and <var>Ys</var> together. The predicate <a href="/pldoc/man?predicate=permutation/2">permutation/2</a> 
+is primarily intended to generate permutations. Note that a list of 
+length N has N! permutations, and unbounded permutation generation 
+becomes prohibitively expensive, even for rather short lists (10! = 
+3,628,800).
+
+
+
+<p>
+If both <var>Xs</var> and <var>Ys</var> are provided and both lists 
+have equal length the order is <code>|</code><var>Xs</var><code>|</code><code>^</code>2. 
+Simply testing whether <var>Xs</var> is a permutation of <var>Ys</var> 
+can be achieved in order log(<code>|</code><var>Xs</var><code>|</code>) 
+using <a href="/pldoc/man?predicate=msort/2">msort/2</a> as 
+illustrated below with the <code>semidet</code> predicate <span class="pred-ext">is_permutation/2</span>:
+</p>
+
+<pre class="code">
+is_permutation(Xs, Ys) :-
+  msort(Xs, Sorted),
+  msort(Ys, Sorted).
+</pre>
+
+
+
+
+
+<p>
+The example below illustrates that <var>Xs</var> and <var>Ys</var> 
+being proper lists is not a sufficient condition to use the above 
+replacement.
+</p>
+
+<pre class="code">
+?- permutation([1,2], [X,Y]).
+X = 1, Y = 2 ;
+X = 2, Y = 1 ;
+false.
+</pre>
+
+
+
+
+
+<dl class="tags">
+<dt class="tag">Errors</dt><dd><code>type_error(list, Arg)</code> if either argument is not a proper or 
+partial list.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="flatten/2"><strong>flatten</strong>(<var>+List1, 
+?List2</var>)</a></dt><dd class="defbody">Is true if <var>List2</var> is a non-nested version of <var>List1</var>.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=append/2">append/2</a></dd>
+<dt class="tag">deprecated</dt><dd>Ending up needing <span class="pred-ext">flatten/3</span> often 
+indicates, like <a href="/pldoc/man?predicate=append/3">append/3</a> 
+for appending two lists, a bad design. Efficient code that generates 
+lists from generated small lists must use difference lists, often 
+possible through grammar rules for optimal readability.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="max_member/2"><strong>max_member</strong>(<var>-Max, 
++List</var>)</a></dt><dd class="defbody">True when <var>Max</var> is the largest member in the standard order of 
+terms. Fails if <var>List</var> is empty.
+
+
+
+<dl class="tags">
+<dt class="mtag">See also</dt><dd>- <a href="/pldoc/man?predicate=compare/3">compare/3</a> <br>
+
+- <a href="/pldoc/man?predicate=max_list/2">max_list/2</a> for the 
+maximum of a list of numbers.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="min_member/2"><strong>min_member</strong>(<var>-Min, 
++List</var>)</a></dt><dd class="defbody">True when <var>Min</var> is the smallest member in the standard order of 
+terms. Fails if <var>List</var> is empty.
+
+
+
+<dl class="tags">
+<dt class="mtag">See also</dt><dd>- <a href="/pldoc/man?predicate=compare/3">compare/3</a> <br>
+
+- <a href="/pldoc/man?predicate=min_list/2">min_list/2</a> for the 
+minimum of a list of numbers.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="sum_list/2"><strong>sum_list</strong>(<var>+List, 
+-Sum</var>)</a></dt><dd class="defbody"><var>Sum</var> is the result of adding all numbers in <var>List</var>.</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="max_list/2"><strong>max_list</strong>(<var>+List:list(number), 
+-Max:number</var>)</a></dt><dd class="defbody">True if <var>Max</var> is the largest number in <var>List</var>. Fails 
+if <var>List</var> is empty.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=max_member/2">max_member/2</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="min_list/2"><strong>min_list</strong>(<var>+List:list(number), 
+-Min:number</var>)</a></dt><dd class="defbody">True if <var>Min</var> is the smallest number in <var>List</var>. Fails 
+if <var>List</var> is empty.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=min_member/2">min_member/2</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="numlist/3"><strong>numlist</strong>(<var>+Low, 
++High, -List</var>)</a></dt><dd class="defbody"><var>List</var> is a list [<var>Low</var>, <var>Low</var>+1, ... <var>High</var>]. 
+Fails if <var>High</var> <var>&lt;</var> <var>Low</var>.
+
+
+
+<dl class="tags">
+<dt class="mtag">Errors</dt><dd>- <code>type_error(integer, Low)</code> <br>
+
+- <code>type_error(integer, High)</code></dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="is_set/1"><strong>is_set</strong>(<var>@Set</var>)</a></dt><dd class="defbody">True if <var>Set</var> is a proper list without duplicates. Equivalence 
+is based on <a href="/pldoc/man?predicate=%3D%3D/2">==/2</a>. The 
+implementation uses <a href="/pldoc/man?predicate=sort/2">sort/2</a>, 
+which implies that the complexity is N*<code>log(N)</code> and the 
+predicate may cause a resource-error. There are no other error 
+conditions.</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="list_to_set/2"><strong>list_to_set</strong>(<var>+List, 
+?Set</var>)</a></dt><dd class="defbody">True when <var>Set</var> has the same elements as <var>List</var> in the 
+same order. The left-most copy of duplicate elements is retained. <var>List</var> 
+may contain variables. Elements <i>E1</i> and <i>E2</i> are considered 
+duplicates iff <i>E1</i> <code>==</code> <i>E2</i> holds. The complexity 
+of the implementation is N*<code>log(N)</code>.
+
+
+
+<dl class="tags">
+<dt class="tag">Errors</dt><dd><var>List</var> is type-checked.</dd>
+<dt class="tag">author</dt><dd>Ulrich Neumerkel</dd>
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=sort/2">sort/2</a> can be used to 
+create an ordered set. Many set operations on ordered sets are order N 
+rather than order N<code>**</code>2. The <a href="/pldoc/man?predicate=list_to_set/2">list_to_set/2</a> 
+predicate is is more expensive than <a href="/pldoc/man?predicate=sort/2">sort/2</a> 
+because it involves, in addition to a sort, three linear scans of the 
+list.</dd>
+<dt class="tag">Compatibility</dt><dd>Up to version 6.3.11, <a href="/pldoc/man?predicate=list_to_set/2">list_to_set/2</a> 
+had complexity N<code>**</code>2 and equality was tested using <a href="/pldoc/man?predicate=%3D/2">=/2</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="intersection/3"><strong>intersection</strong>(<var>+Set1, 
++Set2, -Set3</var>)</a></dt><dd class="defbody">True if <var>Set3</var> unifies with the intersection of <var>Set1</var> 
+and <var>Set2</var>. The complexity of this predicate is <code>|</code><var>Set1</var><code>|</code>*<code>|</code><var>Set2</var><code>|</code>
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=ord_intersection/3">ord_intersection/3</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="union/3"><strong>union</strong>(<var>+Set1, 
++Set2, -Set3</var>)</a></dt><dd class="defbody">True if <var>Set3</var> unifies with the union of <var>Set1</var> and <var>Set2</var>. 
+The complexity of this predicate is <code>|</code><var>Set1</var><code>|</code>*<code>|</code><var>Set2</var><code>|</code>
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=ord_union/3">ord_union/3</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a name="subset/2"><strong>subset</strong>(<var>+SubSet, 
++Set</var>)</a></dt><dd class="defbody">True if all elements of <var>SubSet</var> belong to <var>Set</var> as 
+well. Membership test is based on <a href="/pldoc/man?predicate=memberchk/2">memberchk/2</a>. 
+The complexity is <code>|</code><var>SubSet</var><code>|</code>*<code>|</code><var>Set</var><code>|</code>.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=ord_subset/2">ord_subset/2</a>.</dd>
+</dl>
+
+
+</dd>
+<dt class="pubdef"><span class="pred-tag">[det]</span><a name="subtract/3"><strong>subtract</strong>(<var>+Set, 
++Delete, -Result</var>)</a></dt><dd class="defbody"><var>Delete</var> all elements in <var>Delete</var> from <var>Set</var>. 
+Deletion is based on unification using <a href="/pldoc/man?predicate=memberchk/2">memberchk/2</a>. 
+The complexity is <code>|</code><var>Delete</var><code>|</code>*<code>|</code><var>Set</var><code>|</code>.
+
+
+
+<dl class="tags">
+<dt class="tag">See also</dt><dd><a href="/pldoc/man?predicate=ord_subtract/3">ord_subtract/3</a>.</dd>
+</dl>
+
+
+</dd>
+</dl>
+
+
+<!-- End of content -->
+        </div>
+    </div>
+
+<!--          ================== Tail ====================  -->
+<div class="user-annotations">
+<ul id="tags">
+<li class="tagit-new"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" class="ui-widget-content ui-autocomplete-input" placeholder="Tag wiki('')" autocomplete="off"></li>
+</ul>
+<div style="overflow:auto">
+<div id="tag-warnings" style="float:left;"></div>
+<div class="tag-notes">Tag confusing pages with <b>doc-needs-help</b></div>
+</div>
+
+<script type="text/javascript">
+
+		    function tagInfo(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").removeClass("warning");
+		      $("#tag-warnings").addClass("informational");
+		    }
+		    function tagWarning(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").addClass("warning");
+		      $("#tag-warnings").removeClass("informational");
+		    }
+
+		    $(document).ready(function() {
+		      $("#tags").tagit({
+			  autocomplete: { delay: 0.3,
+					  minLength: 1,
+					  source: "/complete-tag"
+					},
+			  onTagClicked: function(event, ui) {
+			    window.location.href = "/show-tag"+"?tag="+
+			      encodeURIComponent(ui.tagLabel);
+			  },
+			  beforeTagAdded: function(event, ui) {
+			    if ( !ui.duringInitialization ) {
+			      var result = false;
+			      tagInfo("Submitting ...");
+			      $.ajax({ dataType: "json",
+				       url: "/add-tag",
+				       data: { tag: ui.tagLabel,
+					       obj: "917420f8e9d17932f2f88f522310f995028bed48"
+					     },
+				       async: false,
+				       success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Added: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				     });
+			      return result;
+			    }
+			  },
+			  beforeTagRemoved: function(event, ui) {
+			    var result = false;
+			    if ( !ui.tagLabel ) {
+			      return false;
+			    }
+			    tagInfo("Submitting ...");
+			    $.ajax({ dataType: "json",
+				     url: "/remove-tag",
+				     data: { tag: ui.tagLabel,
+					     obj: "917420f8e9d17932f2f88f522310f995028bed48"
+					   },
+				     async: false,
+				     success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Removed: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				   });
+			    return result;
+			  },
+			  placeholderText: "Tag wiki(\'\')"
+			});
+		      });
+		  
+</script>
+<div class="comments">
+<div class="comment-action"><a class="edit-comment" href="" onClick="$(&quot;#comment_form&quot;).css(&quot;display&quot;,&quot;block&quot;); return false">Add</a> comment for wiki('')</div>
+
+<form action="/add-annotation" id="comment_form" method="POST" style="display:none">
+<input type="hidden" name="object" value="917420f8e9d17932f2f88f522310f995028bed48">
+<div class="explain-comment">	      Comments are intended to point to <b>related material</b>,
+	      indicate <b>errors</b> or provide <b>examples</b>.<br>
+
+	      Comments are written using the PlDoc wiki format.  Preview
+	      may be enabled and disabled with the two rightmost buttons.
+	      </div>
+
+<table>
+<tr><td><textarea id="comment" name="comment" cols="80" rows="20"></textarea>
+<script type="text/javascript">
+
+		   $(document).ready(function() {
+		      $("#"+"comment").markItUp(eval("pldoc"+"_settings"));
+		      if ( eval("false") ) {
+			$('a[title="Preview"]').trigger("mouseup");
+		      }
+		    });
+		  
+</script>
+</td></tr>
+<tr><td align="right"><input type="submit" value="Save comment"></td></tr>
+</table>
+
+</form>
+
+</div>
+</div>
+</div>
+<div class="footer newstyle">Powered by <a href="http://www.swi-prolog.org">SWI-Prolog</a> 6.3.19</div>
+</div>
+<!--          ================== Tail ====================  -->
+
+    <div id='tail-end'>&nbsp;</div>
+</div>
+<script type="text/javascript">
+$(function() {
+    $(".menubar-container > li").bind('mouseenter', function() {
+        $(this).contents().filter('ul').addClass('activemenu');
+        $(this).contents().filter('ul').offset({ top: $(this).offset().top + 31, left: $(this).offset().left });
+        $(this).contents().filter('ul').css('position', 'absolute');
+    }).bind('mouseleave', function() {
+        var foo = this;
+        window.setTimeout(function() {
+            $(foo).contents().filter('ul').removeClass('activemenu');
+        }, 100);
+    });
+    $(".menubar-container > li > ul").bind('mouseenter', function() {
+        $(this).addClass('mouseovermenu');
+    }).bind('mouseleave' , function() {
+        var foo = this;
+        window.setTimeout(function() {
+            $(foo).removeClass('mouseovermenu');
+        }, 100);
+    });
+    $(".menubar-container > li > ul > li").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenuitem');
+        $(this).contents().filter('ul').toggleClass('activemenu');
+        $(this).contents().filter('ul').offset({ top: $(this).offset().top , left: $(this).offset().left + 208 });
+        $(this).contents().filter('ul').css('position', 'absolute');
+    });
+    $(".menubar-container > li > ul > li > ul > li").bind('mouseenter mouseleave', function() {
+        $(this).toggleClass('mouseovermenuitem');
+    });
+});
+</script>
+</body>
+</html>
