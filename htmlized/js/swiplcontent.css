@@ -5,10 +5,12 @@
     font-style: normal;
 }
 
-.latex .defbody {
+.defbody {
     font-size: 18px;
     font-style: normal;
 }
+
+.
 
 dl.tags > dt.tag {
     font-size: 14px;
@@ -32,6 +34,10 @@ code {
     color: #0c3d6e;
 }
 
+.pubdef a {
+    color: #FFF !important;
+}
+
 #contents a:hover {
     font-weight: 700;
 }
@@ -39,23 +45,6 @@ code {
 #contents dt a:hover {
     font-weight: 400;
     cursor: pointer;
-}
-
-#contents dt.pubdef {
-    background-color: #0c3d6e;
-    color: #FFF;
-    height: 31px;
-    padding-top: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 21px;
-}   /* KILL dt.pubdef in pldoc.css */
-
-#contents dt.pubdef * {
-    color: #FFF;
-    font-size: 18px;
-    vertical-align: middle;
-    /* HEY - code generates 26px padding-top, kill it */
 }
 
 #contents .code {

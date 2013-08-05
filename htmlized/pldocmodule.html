@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://localhost:5000/doc/swi/library/http/html_head.pl -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>html_head.pl</title>
+
+
+<!-- Annie adds -->
+<!-- TBD  remove menu stuff if not needed -->
+<link rel="stylesheet" type="text/css" href="js/plweb.css">
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="js/jquery.markitup.js">
+</script>
+<script type="text/javascript" src="js/jquery-ui.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="js/style.css">
+<link rel="stylesheet" type="text/css" href="/js/markitupstyle.css">
+<script type="text/javascript" src="js/set.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery.tagit.css">
+<link rel="stylesheet" type="text/css" href="js/tagit.ui-zendesk.css">
+<script type="text/javascript" src="js/tag-it.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/pldoc.css">
+<script type="text/javascript" src="js/pldoc.js">
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="js/favicon.ico">
+<link rel="apple-touch-icon" href="js/apple-touch-icon.png">
+<link rel="stylesheet" type="text/css" href="js/swipl.css">
+<link rel="stylesheet" type="text/css" href="js/swiplcontent.css">
+
+<!-- end Annie adds -->
+
+
+</head>
+<body>
+
+<div class="navhdr">
+<div class="jump">
+<div>
+
+<form action="/place">
+<input type="submit" value="Go">
+<select name="place">
+<option onClick="document.location='/doc/swi/index.html';">c:/program files/swipl</option>
+<option onClick="document.location='/doc/swi/boot/index.html';">c:/program files/swipl/boot</option>
+<option onClick="document.location='/doc/swi/library/index.html';">c:/program files/swipl/library</option>
+<option onClick="document.location='/doc/swi/library/dcg/index.html';">c:/program files/swipl/library/dcg</option>
+<option onClick="document.location='/doc/swi/library/dialect/swi/index.html';">c:/program files/swipl/library/dialect/swi</option>
+<option onClick="document.location='/doc/swi/library/http/index.html';" selected>c:/program files/swipl/library/http</option>
+<option onClick="document.location='/doc/swi/library/pldoc/index.html';">c:/program files/swipl/library/pldoc</option>
+<option onClick="document.location='/doc/swi/xpce/prolog/boot/index.html';">c:/program files/swipl/xpce/prolog/boot</option>
+<option onClick="document.location='/doc/swi/xpce/prolog/lib/index.html';">c:/program files/swipl/xpce/prolog/lib</option>
+<option onClick="document.location='/doc/swi/xpce/prolog/lib/emacs/index.html';">c:/program files/swipl/xpce/prolog/lib/emacs</option>
+<option onClick="document.location='/doc/swi/xpce/prolog/lib/english/index.html';">c:/program files/swipl/xpce/prolog/lib/english</option>
+</select>
+</form>
+
+<a class="prolog_version" href="http://www.swi-prolog.org"> SWI-Prolog 6.3.17</a></div>
+</div>
+<div class="search">
+
+<form id="search-form" action="/search">
+<div><input name="for" id="for"><input id="submit-for" type="submit" value="Search"></div>
+<div class="search-options"><span class="search-in"><input type="radio" name="in" value="all" checked>All<input type="radio" name="in" value="app">Application<input type="radio" name="in" value="man">Manual</span><span class="search-match"><input type="radio" name="match" value="name">Name<input type="radio" name="match" value="summary" checked>Summary</span><span class="search-help"><a href="/package/pldoc.html#sec:browser">Help</a></span></div>
+</form>
+
+</div>
+<br clear="right">
+</div>
+
+<!-- Annie adds -->
+<div id="contents">
+    <div>
+<!-- end Annie adds -->
+
+<h1 class="file"><span style="float:right"><a href="html_head.pl?reload=true&amp;public_only=false"><img class="action" alt="Reload" title="Make &amp; Reload" src="./js/reload.gif"></a><a href="html_head.pl?public_only=true"><img class="action" alt="All predicates" title="Click to show exports only" src="./js/private.png"></a><a href="html_head.pl?show=src"><img class="action" alt="Show source" title="Show source" src="./js/source.png"></a><a onClick="HTTPrequest('/edit?file=c%3a%2fprogram%20files%2fswipl%2flibrary%2fhttp%2fhtml_head.pl')"><img class="action" alt="edit" title="Edit file" src="./js/edit.gif"></a></span>html_head.pl -- Automatic inclusion of CSS and scripts links</h1>
+
+<p>
+This library allows for abstract declaration of available CSS and
+Javascript resources and their dependencies using <a href="/doc_for?object=html_head:html_resource/2">html_resource/2</a>. Based
+on these declarations, html generating code can declare that it depends
+on specific CSS or Javascript functionality, after which this library
+ensures that the proper links appear in the HTML head. The
+implementation is based on mail system implemented by <a class="packages" href="/man?predicate=html_post/2">html_post/2</a> of
+library <a class="file" href="/doc/swi/library/http/html_write.pl">html_write.pl</a>.</p>
+
+<p>
+Declarations come in two forms. First of all http locations are declared
+using the <a class="file" href="/doc/swi/library/http/http_path.pl">http_path.pl</a> library. Second, <a href="/doc_for?object=html_head:html_resource/2">html_resource/2</a> specifies HTML
+resources to be used in the <code>head</code> and their dependencies. Resources are
+currently limited to Javascript files (.js) and style sheets (.css). It
+is trivial to add support for other material in the head. See
+<a href="/doc_for?object=html_head:html_include//1">html_include//1</a>.</p>
+
+<p>
+For usage in HTML generation, there is the DCG rule <a href="/doc_for?object=html_head:html_requires//1">html_requires//1</a>
+that demands named resources in the HTML head.</p>
+
+<h2 class="wiki" id="html-resource-ordering">About resource ordering</h2>
+
+<p>
+All calls to <a href="/doc_for?object=html_head:html_requires//1">html_requires//1</a> for the page are collected and duplicates
+are removed. Next, the following steps are taken:</p>
+
+<ol>
+<li>Add all dependencies to the set</li>
+<li>Replace multiple members by `aggregate' scripts or css files.
+see <a href="#use_agregates/4">use_agregates/4</a>.</li>
+<li>Order all resources by demanding that their dependencies
+preceede the resource itself. Note that the ordering of
+resources in the dependency list is <b>ignored</b>. This implies
+that if the order matters the dependency list must be split
+and only the primary dependency must be added.</li>
+</ol>
+
+<h2 class="wiki" id="html-resource-debugging">Debugging dependencies</h2>
+
+<p>
+Use ?- <code>debug(html(script))</code>. to see the requested and final set of
+resources. All declared resources are in <a href="#html_resource/3">html_resource/3</a>. The <a class="builtin" href="/man?predicate=edit/1">edit/1</a>
+command recognises the names of HTML resources.</p>
+
+<h2 class="wiki" id="html-resource-predicates">Predicates</h2>
+
+<dl class="tags">
+<dt class="keyword-tbd">To be done</dt><dd class="keyword-tbd">- Possibly we should add <span class="undef">img//2</span> to include images from symbolic
+path notation.</dd><dd class="keyword-tbd">- It would be nice if the HTTP file server could use our location
+declarations.</dd>
+</dl>
+
+<dl>
+<dt class="pubdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=html_resource&amp;arity=2&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=104&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="html_resource/2"><b class="pred">html_resource</b><var class="arglist">(+About, +Properties)</var></a> is <b class="det">det</b></dt><dd class="defbody">Register an HTML head resource. <var>About</var> is either an atom that
+specifies an HTTP location or a term Alias(Sub). This works
+similar to <a class="builtin" href="/man?predicate=absolute_file_name/2">absolute_file_name/2</a>. See <span class="undef">location_path/2</span> for
+details. Recognised properties are:
+
+<dl class="termlist">
+<dt class="term"><b class="pred">requires</b><var class="arglist">(+Requirements)</var></dt><dd>Other required script and css files. If this is a plain
+file name, it is interpreted relative to the declared
+resource. <var>Requirements</var> can be a list, which is equivalent
+to multiple requires properties.</dd>
+<dt class="term"><b class="pred">virtual</b><var class="arglist">(+Bool)</var></dt><dd>If <code>true</code> (default <code>false</code>), do not include <var>About</var> itself,
+but only its dependencies. This allows for defining an
+alias for one or more resources.</dd>
+<dt class="term"><b class="pred">ordered</b><var class="arglist">(+Bool)</var></dt><dd>Defines that the list of requirements is ordered, which
+means that each requirement in the list depends on its
+predecessor.</dd>
+<dt class="term"><b class="pred">aggregate</b><var class="arglist">(+List)</var></dt><dd>States that <var>About</var> is an aggregate of the resources in
+<var>List</var>. This means that if both <var>About</var> and one of the
+elements of <var>List</var> appears in the dependencies, <var>About</var>
+is kept and the smaller one is dropped. If there are a
+number of dependencies on the small members, these are
+replaced with dependency on the big (aggregate) one,
+for example, to specify that a big javascript is
+actually the composition of a number of smaller ones.</dd>
+<dt class="term"><b class="pred">mime_type</b><var class="arglist">(-Mime)</var></dt><dd>May be specified for non-virtual resources to specify
+the mime-type of the resource. By default, the mime
+type is derived from the file name using
+<a href="/doc_for?object=mimetype:file_mime_type/2">file_mime_type/2</a>.</dd>
+</dl>
+
+<p>
+Registering the same <var>About</var> multiple times extends the properties
+defined for <var>About</var>. In particular, this allows for adding
+additional dependencies to a (virtual) resource.</p></dd>
+<dt class="pubdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=html_requires&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=167&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="html_requires/3"><b class="pred">html_requires</b><var class="arglist">(+ResourceOrList)</var>//</a> is <b class="det">det</b></dt><dd class="defbody">Include <var>ResourceOrList</var> and all dependencies derived from it and
+add them to the HTML <code>head</code> using <a class="packages" href="/man?predicate=html_post/2">html_post/2</a>. The actual
+dependencies are computed during the HTML output phase by
+<a href="/doc_for?object=html_head:html_insert_resource//1">html_insert_resource//1</a>.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=html_insert_resource&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=195&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="html_insert_resource/3"><b class="pred">html_insert_resource</b><var class="arglist">(+ResourceOrList)</var>//</a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Actually include HTML head resources. Called through
+<a href="/doc_for?object=html_write:html_post//2">html_post//2</a> from <a href="/doc_for?object=html_head:html_requires//1">html_requires//1</a> after rewrite by
+<a href="#html_head_expansion/2">html_head_expansion/2</a>. We are guaranteed we will only get one
+call that is passed a flat list of requested requirements. We
+have three jobs:
+
+<ol>
+<li>Figure out all indirect requirements</li>
+<li>See whether we can use any `aggregate' resources</li>
+<li>Put required resources before their requiree.</li>
+</ol>
+
+</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=use_agregates&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=225&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="use_agregates/3"><b class="pred">use_agregates</b><var class="arglist">(+Paths, -Aggregated, -AggregatedBy)</var></a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Try to replace sets of resources by an `aggregate', a large
+javascript or css file that combines the content of multiple
+small ones to reduce the number of files that must be
+transferred to the client. The current rule says that aggregates
+are used if at least half of the members are used.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=current_aggregate&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=265&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="current_aggregate/3"><b class="pred">current_aggregate</b><var class="arglist">(-Aggregate, -Parts, -Size)</var></a> is <b class="det">nondet</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">True if <var>Aggregate</var> is a defined aggregate with <var>Size</var> <var>Parts</var>. All
+parts are canonical absolute HTTP locations and <var>Parts</var> is sorted
+to allow for processing using ordered set predicates.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=requires&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=295&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="requires/3"><b class="pred">requires</b><var class="arglist">(+Spec)</var>//</a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=requires&amp;arity=4&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=295&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="requires/4"><b class="pred">requires</b><var class="arglist">(+Spec, +Base)</var>//</a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">True if Files is the set of files that need to be loaded for
+<var>Spec</var>. Note that <var>Spec</var> normally appears in Files, but this is not
+necessary (i.e. virtual resources or the usage of aggregate
+resources).</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=order_html_resources&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=342&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="order_html_resources/3"><b class="pred">order_html_resources</b><var class="arglist">(+Requirements, +AggregatedBy, -Ordered)</var></a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Establish a proper order for the collected (sorted and unique)
+list of <var>Requirements</var>.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=requirements_graph&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=356&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="requirements_graph/3"><b class="pred">requirements_graph</b><var class="arglist">(+Requirements, +AggregatedBy, -Graph)</var></a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Produce an S-graph (see <a class="file" href="/doc/swi/library/ugraphs.pl">library(ugraphs)</a>) that represents the
+dependencies in the list of <var>Requirements</var>. Edges run from
+required to requirer.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=prop_edges&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=392&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="prop_edges/3"><b class="pred">prop_edges</b><var class="arglist">(+Properties)</var>//</a><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Subscribes a list of dependencies from resources that declare
+their requirements with <code>ordered(true)</code>.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=connect_graph&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=427&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="connect_graph/3"><b class="pred">connect_graph</b><var class="arglist">(+Graph, -Start, -Connected)</var></a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Turn <var>Graph</var> into a connected graph by putting a shared starting
+point before all vertices.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=before&amp;arity=2&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=438&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="before/2"><b class="pred">before</b><var class="arglist">(+Term, -Before)</var></a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Unify <var>Before</var> to a term that comes before <var>Term</var> in the standard
+order of terms.
+
+<dl class="tags">
+<dt class="keyword-error">Errors</dt><dd class="keyword-error">- instantiation_error if <var>Term</var> is unbound.</dd>
+</dl>
+
+</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=res_properties&amp;arity=2&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=454&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="res_properties/2"><b class="pred">res_properties</b><var class="arglist">(+Spec, -Properties)</var></a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">True if <var>Properties</var> is the set of defined properties on <var>Spec</var>.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=same_resource&amp;arity=2&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=488&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="same_resource/2"><b class="pred">same_resource</b><var class="arglist">(+R1, +R2)</var></a> is <b class="det">semidet</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">True if <var>R1</var> an <var>R2</var> represent the same resource. <var>R1</var> and <var>R2</var> are
+resource specifications are defined by <a href="/doc_for?object=http_path:http_absolute_location/3">http_absolute_location/3</a>.</dd>
+<dt class="privdef"><span style="float:right"><a onClick="HTTPrequest('/edit?name=html_include&amp;arity=3&amp;file=c:/program%20files/swipl/library/http/html_head.pl&amp;line=520&amp;module=html_head&amp;module=html_head')"><img class="action" alt="Edit predicate" title="Edit predicate" src="./js/edit.gif"></a></span><a name="html_include/3"><b class="pred">html_include</b><var class="arglist">(+PathOrList)</var>//</a> is <b class="det">det</b><span class="anot" style="float:right">[private]</span></dt><dd class="defbody">Include to HTML resources that must be in the HTML &lt;head&gt;
+element. Currently onlu supports <code>.js</code> and <code>.css</code> files.
+Extend this to support more header material. Do not use this
+predicate directly. <a href="/doc_for?object=html_head:html_requires//1">html_requires//1</a> is the public interface to
+include HTML resources.
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>HTTP</var></td><td class="argdescr">- location or list of these.</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+<!-- annie adds -->
+    </div>
+</div>
+<!-- end annie adds -->
+</body>
+</html>

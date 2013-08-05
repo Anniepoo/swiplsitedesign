@@ -38,6 +38,7 @@ table.paramlist td
 
 .pred, .det, .functor
 { font-weight: bold;
+
 }
 
 span.pred-tag
@@ -56,8 +57,20 @@ dt.keyword-bug, dt.keyword-deprecated, dt.keyword-tbd
   color: red;
 }
 
-dt.pubdef
-{ background: url("pub-bg.png") top left;
+dt.pubdef {
+    background-color: #0c3d6e;
+    color: #FFF;
+    height: 31px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 21px;
+}
+
+dt.pubdef * {
+    color: #FFF;
+    font-size: 18px;
+    vertical-align: middle;
 }
 
 dt.multidef
