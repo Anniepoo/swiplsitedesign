@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>SWI-Prolog -- Manual</title>
+
+<link rel="stylesheet" type="text/css" href="/css/plweb.css">
+<script type="text/javascript" src="/js/jquery/jquery.js">
+</script>
+<script type="text/javascript" src="/js/markitup/jquery.markitup.js">
+</script>
+<script type="text/javascript" src="/js/jquery/ui/minified/jquery-ui.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/js/jquery/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/js/markitup/sets/pldoc/style.css">
+<link rel="stylesheet" type="text/css" href="/js/markitup/skins/markitup/style.css">
+<script type="text/javascript" src="/js/markitup/sets/pldoc/set.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/js/tagit/css/jquery.tagit.css">
+<link rel="stylesheet" type="text/css" href="/js/tagit/css/tagit.ui-zendesk.css">
+<script type="text/javascript" src="/js/tagit/js/tag-it.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/pldoc/res/pldoc.css">
+<script type="text/javascript" src="/pldoc/res/pldoc.js">
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+<body class="pldoc">
+
+<div class="sidebar">
+<div class="logo"><a href="http://www.swi-prolog.org"><img id="logo" border="0" alt="SWI-Prolog logo" src="/icons/swipl.png"></a></div>
+<div class="menu">
+<ul>
+<li><a class="file" href="/index.txt">Home</a></li>
+<li><b><a class="file" href="/Download.txt">Download</a></b></li>
+<li><a href="/git">Browse GIT</a></li>
+<li><a href="/contrib/">Contrib</a></li>
+<li><a href="/pack/list">Packs</a></li>
+</ul>
+<hr>
+<ul>
+<li><b><a href="/howto/">HOWTO</a></b></li>
+<li><b><a href="/FAQ/">FAQ</a></b></li>
+<li><b><a href="/pldoc/index.html">Manual</a></b></li>
+<li><a href="/list-tags">Tags</a></li>
+<li><a class="file" href="/Mailinglist.txt">Mailinglist</a></li>
+<li><a class="file" href="/Support.txt">Support</a></li>
+<li><a class="file" href="/Links.txt">Links</a></li>
+<li><a class="file" href="/Contact.txt">Contact</a></li>
+</ul>
+<hr>
+<ul>
+<li><a class="file" href="/IDE.txt">Development tools</a></li>
+<li><a class="file" href="/PlDoc.txt">PlDoc Documentation</a></li>
+<li><a class="file" href="/Graphics.txt">Graphics</a></li>
+<li><a class="file" href="/web/index.txt">(Semantic) Web</a></li>
+</ul>
+<hr>
+<ul>
+<li><a class="file" href="/Publications.txt">Publications</a></li>
+<li><a class="file" href="/Contributors.txt">Contributors</a></li>
+<li><a class="file" href="/license.txt">License</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="/wiki/">Wiki (edit)</a></li>
+</ul>
+</div>
+</div>
+<div class="righthand">
+<div class="current-user"><a class="signin" href="/openid/login?openid.return_to=/pldoc/man?section%3Dsponsor">login</a></div>
+<div class="content">
+<div class="navhdr">
+<div class="jump"><a href="/pldoc/man?section=intro">1 Introduction</a></div>
+<div class="search">
+
+<form id="search-form" action="/pldoc/search">
+<div><input id="submit-for" type="submit" value="Search" style="float:right">
+<div id="search-container" style="overflow:hidden"><input style="width:100%; min-width:20em" name="for" id="for"></div>
+<script type="text/javascript">
+
+$(function() {
+  $("#"+"for").autocomplete({
+    minLength: 1,
+    delay: 0.3,
+    source: "/autocomplete/ac_predicate",
+    focus: function(event,ui) {
+      $("#"+"for").val(ui.item.label);
+      return false;
+    },
+    select: function(event,ui) {
+      $("#"+"for").val(ui.item.label);
+      window.location.href = ui.item.href;
+      return false;
+    }
+  })
+  .data("ui-autocomplete")._renderItem = function(ul,item) {
+    var label = String(item.label).replace(
+		new RegExp(this.term),
+		"<span class=\"acmatch\">$&</span>");
+    var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+    return $("<li>")
+      .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+      .appendTo(ul)
+  };
+});
+		   
+</script>
+</div>
+<div class="search-options"><span class="search-in"><input type="radio" name="in" value="all" checked>All<input type="radio" name="in" value="app">Application<input type="radio" name="in" value="man">Manual</span><span class="search-match"><input type="radio" name="match" value="name">Name<input type="radio" name="match" value="summary" checked>Summary</span><span class="search-help"><a href="/pldoc/package/pldoc.html#sec:browser">Help</a></span></div>
+</form>
+
+</div>
+<br clear="right">
+</div>
+
+<p>
+</p><style type="text/css">
+/* Style sheet for SWI-Prolog latex2html
+*/
+
+dd.defbody
+{ margin-bottom: 1em;
+}
+
+dt.pubdef
+{ background-color: #c5e1ff;
+}
+
+dt.multidef
+{ background-color: #c8ffc7;
+}
+
+.bib dd
+{ margin-bottom: 1em;
+}
+
+.bib dt
+{ float: left;
+margin-right: 1.3ex;
+}
+
+pre.code
+{ margin-left: 1.5em;
+margin-right: 1.5em;
+border: 1px dotted;
+padding-top: 5px;
+padding-left: 5px;
+padding-bottom: 5px;
+background-color: #f8f8f8;
+}
+
+div.navigate
+{ text-align: center;
+background-color: #f0f0f0;
+border: 1px dotted;
+padding: 5px;
+}
+
+div.title
+{ text-align: center;
+padding-bottom: 1em;
+font-size: 200%;
+font-weight: bold;
+}
+
+div.author
+{ text-align: center;
+font-style: italic;
+}
+
+div.abstract
+{ margin-top: 2em;
+background-color: #f0f0f0;
+border: 1px dotted;
+padding: 5px;
+margin-left: 10%; margin-right:10%;
+}
+
+div.abstract-title
+{ text-align: center;
+padding: 5px;
+font-size: 120%;
+font-weight: bold;
+}
+
+div.toc-h1
+{ font-size: 200%;
+font-weight: bold;
+}
+
+div.toc-h2
+{ font-size: 120%;
+font-weight: bold;
+margin-left: 2em;
+}
+
+div.toc-h3
+{ font-size: 100%;
+font-weight: bold;
+margin-left: 4em;
+}
+
+div.toc-h4
+{ font-size: 100%;
+margin-left: 6em;
+}
+
+span.sec-nr
+{
+}
+
+span.sec-title
+{
+}
+
+span.pred-ext
+{ font-weight: bold;
+}
+
+span.pred-tag
+{ float: right;
+padding-top: 0.2em;
+font-size: 80%;
+font-style: italic;
+color: #202020;
+}
+
+div.caption
+{ width: 80%;
+margin: auto;
+text-align:center;
+}
+
+/* Footnotes */
+
+sup.fn { color: blue; text-decoration: underline; }
+span.fn-text { display: none; }
+sup.fn span {display: none;}
+sup:hover span
+{ display: block !important;
+position: absolute; top: auto; left: auto; width: 80%;
+color: #000; background: white;
+border: 2px solid;
+padding: 5px; margin: 10px; z-index: 100;
+font-size: smaller;
+}
+/* AO */
+sup.fn span:hover
+{ display: block !important;
+position: absolute; top: auto; left: auto; width: 80%;
+color: #000; background: white;
+border: 2px solid;
+padding: 5px; margin: 10px; z-index: 100;
+font-size: smaller;
+}
+/* /AO */
+
+/* Lists */
+
+dl.latex
+{ margin-top: 1ex;
+margin-bottom: 0.5ex;
+}
+
+dl.latex dl.latex dd.defbody
+{ margin-bottom: 0.5ex;
+}
+
+/* PlDoc Tags */
+
+dl.tags
+{ font-size: 90%;
+margin-left: 5ex;
+margin-top: 1ex;
+margin-bottom: 0.5ex;
+}
+
+dl.tags dt
+{ margin-left: 0pt;
+font-weight: bold;
+}
+
+dl.tags dd
+{ margin-left: 3ex;
+}
+
+td.param
+{ font-style: italic;
+font-weight: bold;
+}
+
+/* Index */
+
+dt.index-sep
+{ font-weight: bold;
+font-size: +1;
+margin-top: 1ex;
+}</style>
+
+
+<h2 id="sec:sponsor"><a name="sec:1.4"><span class="sec-nr">1.4</span> <span class="sec-title">Support 
+the SWI-Prolog project</span></a></h2>
+
+
+
+
+
+
+
+<p>
+You can support the SWI-Prolog project in several ways. Academics are 
+invited to cite one of the publications<sup class="fn">2<span class="fn-text"><a class="url" href="http://www.swi-prolog.org/Publications.html">http://www.swi-prolog.org/Publications.html</a></span></sup> 
+on SWI-Prolog. Users can help by identifying and/or fixing problems with 
+the code or its documentation.<sup class="fn">3<span class="fn-text"><a class="url" href="http://www.swi-prolog.org/howto/SubmitPatch.html">http://www.swi-prolog.org/howto/SubmitPatch.html</a></span></sup>. 
+Users can contribute new features or, more lightweight, contribute packs<sup class="fn">4<span class="fn-text"><a class="url" href="http://www.swi-prolog.org/pack/list">http://www.swi-prolog.org/pack/list</a></span></sup>. 
+Commercial users may consider contacting the developers<sup class="fn">5<span class="fn-text"><a class="url" href="mailto:info@swi-prolog.org">mailto:info@swi-prolog.org</a></span></sup> 
+to sponsor the development of new features or seek for opportunities to 
+cooperate with the developers or other commercial users.
+</p>
+
+<p>
+</p>
+<div class="user-annotations">
+<ul id="tags">
+</ul>
+<div style="overflow:auto">
+<div id="tag-warnings" style="float:left;"></div>
+<div class="tag-notes">Tag confusing pages with <b>doc-needs-help</b><span class="separator">|</span>Tags are associated to your profile if you are logged in</div>
+</div>
+
+<script type="text/javascript">
+
+		    function tagInfo(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").removeClass("warning");
+		      $("#tag-warnings").addClass("informational");
+		    }
+		    function tagWarning(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").addClass("warning");
+		      $("#tag-warnings").removeClass("informational");
+		    }
+
+		    $(document).ready(function() {
+		      $("#tags").tagit({
+			  autocomplete: { delay: 0.3,
+					  minLength: 1,
+					  source: "/complete-tag"
+					},
+			  onTagClicked: function(event, ui) {
+			    window.location.href = "/show-tag"+"?tag="+
+			      encodeURIComponent(ui.tagLabel);
+			  },
+			  beforeTagAdded: function(event, ui) {
+			    if ( !ui.duringInitialization ) {
+			      var result = false;
+			      tagInfo("Submitting ...");
+			      $.ajax({ dataType: "json",
+				       url: "/add-tag",
+				       data: { tag: ui.tagLabel,
+					       obj: "e8e7fb7477b123329907f39fd820d2f025c7bb25"
+					     },
+				       async: false,
+				       success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Added: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				     });
+			      return result;
+			    }
+			  },
+			  beforeTagRemoved: function(event, ui) {
+			    var result = false;
+			    if ( !ui.tagLabel ) {
+			      return false;
+			    }
+			    tagInfo("Submitting ...");
+			    $.ajax({ dataType: "json",
+				     url: "/remove-tag",
+				     data: { tag: ui.tagLabel,
+					     obj: "e8e7fb7477b123329907f39fd820d2f025c7bb25"
+					   },
+				     async: false,
+				     success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Removed: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				   });
+			    return result;
+			  },
+			  placeholderText: "Tag Section \"Support the SWI-Prolog project\""
+			});
+		      });
+		  
+</script>
+<div class="comments">
+<div class="comment-login"><a class="signin" href="/openid/login?openid.return_to=/pldoc/man?section%3Dsponsor">login</a> to add a comment</div>
+</div>
+</div>
+</div>
+<div class="footer">Powered by <a href="http://www.swi-prolog.org">SWI-Prolog</a> 7.1.1</div>
+</div>
+</body>
+
+</html>

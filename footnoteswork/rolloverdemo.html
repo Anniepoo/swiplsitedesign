@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.1.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="http://fiddle.jshell.net/css/result-light.css">
+  
+  <style type='text/css'>
+    .clickme {
+    margin: auto;
+    width: 250px;
+    height: 50px;
+    background: #333;
+    cursor: pointer;
+    margin-bottom: 90px;
+}
+
+.pop {
+    position: relative;
+    top: 80px;
+    left: 0;
+    width: 280px;
+    height: 80px;
+    background: #999;
+    display: none;
+}
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+var clickme = $('.clickme');
+
+clickme.mouseenter(function() {
+    $(this).find('div.pop').show(100);
+});
+clickme.mouseleave(function() {
+    var t = $(this).find('div.pop');
+    window.setTimeout(
+        
+        function() {
+              t.hide(100);
+        }, 500);
+});
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <p>Click to enlarge:</p>
+
+<div class="clickme" >
+<div class="pop"></div></div>
+
+<div class="clickme" >
+<div class="pop"></div></div>
+
+<div class="clickme" >
+<div class="pop"></div></div>
+  
+</body>
+
+
+</html>
