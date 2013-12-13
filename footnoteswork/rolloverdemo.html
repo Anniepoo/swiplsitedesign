@@ -8,9 +8,9 @@
   <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.1.js'></script>
   
   <link rel="stylesheet" type="text/css" href="http://fiddle.jshell.net/css/result-light.css">
-  
+    
   <style type='text/css'>
-    .clickme {
+    .fn {
     margin: auto;
     width: 250px;
     height: 50px;
@@ -19,14 +19,23 @@
     margin-bottom: 90px;
 }
 
-.pop {
-    position: relative;
-    top: 80px;
-    left: 0;
-    width: 280px;
-    height: 80px;
-    background: #999;
+.fnp {
+    position: absolute;
+    top: auto;
+    left: auto;
+    border: 1px solid #000;
     display: none;
+    margin-top: 25px;
+    padding: 8px;
+    font-size: larger;
+}
+
+.fn.footnote {
+    margin: auto;
+	width: auto;
+    cursor: pointer;
+    display: inline;
+	background: inherit;
 }
   </style>
   
@@ -34,18 +43,19 @@
 
 <script type='text/javascript'>//<![CDATA[ 
 $(window).load(function(){
-var clickme = $('.clickme');
+var clickme = $('.fn');
 
 clickme.mouseenter(function() {
-    $(this).find('div.pop').show(100);
+    console.log('showing');
+    $(this).find('span.fnp').show(100);
 });
 clickme.mouseleave(function() {
-    var t = $(this).find('div.pop');
+    var t = $(this).find('span.fnp');
     window.setTimeout(
         
         function() {
               t.hide(100);
-        }, 500);
+        }, 5000);
 });
 });//]]>  
 
@@ -54,16 +64,14 @@ clickme.mouseleave(function() {
 
 </head>
 <body>
-  <p>Click to enlarge:</p>
+  <p>
+This is a footnote.
+<sup class="fn footnote">3
+    <span class="fnp"><a href="www.google.com">whoot</a></span></sup>
+</span>It seems academic.</p>
 
-<div class="clickme" >
-<div class="pop"></div></div>
+<p>test<sup>4</sup> me</p>
 
-<div class="clickme" >
-<div class="pop"></div></div>
-
-<div class="clickme" >
-<div class="pop"></div></div>
   
 </body>
 
