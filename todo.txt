@@ -1,11 +1,13 @@
 TO Do
 as of 12/25/2013
+To put yourself on one of these tasks add your name in parens at end
 
-1. integrate HTML and css for new homepage
-2. create module for the new menu
+1. integrate HTML and css for new homepage DONE (Jan)
+2. create module for the new menu DONE
 3. generate tree structure on left for pldoc
 4. generate tree structure on left for manual
-5. Fix location of footnotes
+5. Fix location of footnotes DONE (Annie)
+5a. Integrate fix into website
 6. update look of download graph
 7. generate psd files of pldoc page for local and website, for predicate and module level
 8. generate static html files from psds in 7
@@ -18,5 +20,8 @@ graph
 14. Make graph itself
 15. make a list of all new pages that go behind the new menus (done- its in newpages/pagesweneed)
 16. Write'em
+17. Make a page for xpce and link via did you know. Also link gthis off the xpce page.
+18. Make the breadcrumb trail work (see /Download.html)
+19. Fix up wiki edit area.
 
 
