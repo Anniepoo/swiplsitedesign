@@ -16,4 +16,7 @@ as of 12/25/2013
 13. extend markdown to allow insertion of special dynamic elements, build a dynamic element for new 
 graph
 14. Make graph itself
+15. make a list of all new pages that go behind the new menus (done- its in newpages/pagesweneed)
+16. Write'em
+
 
