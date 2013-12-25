@@ -1,0 +1,19 @@
+TO Do
+as of 12/25/2013
+
+1. integrate HTML and css for new homepage
+2. create module for the new menu
+3. generate tree structure on left for pldoc
+4. generate tree structure on left for manual
+5. Fix location of footnotes
+6. update look of download graph
+7. generate psd files of pldoc page for local and website, for predicate and module level
+8. generate static html files from psds in 7
+9. update html generation for all pages in 8
+10. From homepagemenus.txt generate/edit all the new pages
+11. Reorganize the download pages
+12. add news item, dogfood, and Changes with release 7 items (/pldoc/man?section=extensions)
+13. extend markdown to allow insertion of special dynamic elements, build a dynamic element for new 
+graph
+14. Make graph itself
+
