@@ -1,0 +1,62 @@
+Download Section
+Home
+Download
+   SWI-Prolog             -new
+   Sources/Building       -new
+   Add-ons                -new
+   Browse GIT             - add instructions at top of current browser
+
+
+Docs   (could be documentation, depends on space)
+  Manual             http://www.swi-prolog.org/pldoc/refman/
+  Packages           http://www.swi-prolog.org/pldoc/index.html less manual link
+  FAQ                http://www.swi-prolog.org/FAQ/
+  Command Line Options     http://www.swi-prolog.org/pldoc/man?section=cmdline
+  pldoc             http://www.swi-prolog.org/pldoc/package/pldoc.html
+  ---
+  Cheat Sheets
+     Prolog               - needs written
+     pceemacs       http://www.swi-prolog.org/pldoc/man?section=emacsbluff
+     HTML                 - needs written
+  ---
+  License                http://www.swi-prolog.org/license.html
+  Contributors           http://www.swi-prolog.org/Contributors.html
+  Publications           http://www.swi-prolog.org/Publications.html
+Tutorials
+ Beginner
+    Getting Started    http://www.swi-prolog.org/pldoc/man?section=quickstart
+    Modules            http://www.pathwayslms.com/swipltuts/mod/index.html
+    Using the Debugger http://www.swi-prolog.org/pldoc/man?section=debugoverview
+    Development Tools  /IDE.html
+ Intermediate
+    Creating a web-service           http://www.swi-prolog.org/howto/http/
+    Creating web applications        http://www.pathwayslms.com/swipltuts/html/index.html
+    PlDoc                            http://www.pathwayslms.com/swipltuts/pldoc/index.html
+    DCG's                            http://www.pathwayslms.com/swipltuts/dcg/index.html
+    XPCE                             I have this as a pdf
+    Options for Graphics             /Graphics.html  (add running an HTTP server)
+ Advanced
+    RDF Namespaces        http://www.swi-prolog.org/howto/UseRdfMeta.html
+    Guidelines For Package Managers   http://www.swi-prolog.org/build/guidelines.txt
+Community
+  Support   http://www.swi-prolog.org/Support.txt  (most is redundant, but that's ok)
+  IRC       http://webchat.freenode.net/?channels=##prolog
+  Mail List  http://www.swi-prolog.org/Mailinglist.txt    (add comp.lang.prolog)
+  Bug List   http://www.swi-prolog.org/bugzilla/
+  External Links  http://www.swi-prolog.org/Links.html
+  Contact    /Contact.html
+  SWI-Prolog Stuff    New page based on bottom of http://www.swi-prolog.org/Download.html
+Users
+  Semantic Web      /web/index.html
+  Students          http://www.pathwayslms.com/swipltuts/student/index.html until we get something better
+  Research          
+    Publications           http://www.swi-prolog.org/Publications.html
+  Commercial Users
+Wiki
+  Login                    http://www.swi-prolog.org/openid/login?openid.return_to=/user/logout
+  Edit This Page           http://www.swi-prolog.org/wiki_edit?location=<GENERATED>
+  Sandbox                  /wiki/sandbox
+  Wiki Help                http://www.swi-prolog.org/wiki/     (add wiki syntax to this page)
+  All Tags                 http://www.swi-prolog.org/list-tags
+  
+  
