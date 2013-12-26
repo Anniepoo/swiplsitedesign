@@ -54,6 +54,7 @@ Users
   Research          
     Publications           http://www.swi-prolog.org/Publications.html
   Commercial Users
+                   Should contain the stats graph http://www.swi-prolog.org/logs/dl-statistics.html
 Wiki
   Login                    http://www.swi-prolog.org/openid/login?openid.return_to=/user/logout
   Edit This Page           http://www.swi-prolog.org/wiki_edit?location=<GENERATED>
