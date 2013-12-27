@@ -355,5 +355,158 @@ text-align: center;
     background-color: #d8d8ce;
     border: none;
     border-width: 0px;
-    margin: 0px;
+	margin: 0;
+	padding: 12px 0 12px 58px;
+	font-size: 14px;
+	font-weight: plain;
+	color: #0a3d6c;
 }
+
+.footer.newstyle a.powered {
+	text-decoration: none;
+	color: #0a3d6c;	
+}
+
+.footer.newstyle a.powered:hover {
+	text-decoration: underline;
+}
+
+.footer.newstyle a.powered:active {
+	text-decoration: underline;
+}
+
+.footer.newstyle a.login {
+	text-decoration: none;
+	color: #0a3d6c;	
+	float: right;
+	margin-right: 58px;
+}
+
+.footer.newstyle a.login:hover {
+	text-decoration: underline;
+}
+
+.footer.newstyle a.login:active {
+	text-decoration: underline;
+}
+
+.tagit-new {
+	list-style-type: none;
+}
+
+.tag-notes {
+	padding-top: 18px;
+	padding-bottom: 4px;
+	text-align: right;
+	margin-right: 58px;
+	font-family: Source Sans Pro, sans;
+	font-size: 14px;
+	font-weight: plain;
+	color: #0a3d6c;
+}
+
+.tag-notes b {
+	font-weight: bold;
+}
+
+#tags {
+	margin-top: 3px;
+	margin-bottom: 0px;
+	padding-left: 58px;
+}
+
+#tag-area-label {
+	font-family: Source Sans Pro, sans;
+	font-size: 18px;
+	color: #0a3d6c;
+	position: absolute;
+	margin-top: 6px;
+	vertical-align: baseline;
+}
+
+li.tagit-new  {
+	margin-right: 58px;
+}
+
+.tagit-new input.ui-widget-content.ui-autocomplete-input {
+	min-height: 32px;
+	font-size: 18px;
+	margin-left: 45px;
+	min-width: 94%;
+}
+
+.annotation {
+	margin-top: 20px;
+	padding-bottom: 8px;
+}
+
+.annotation  .comment {
+	margin-left: 103px;
+	margin-right: 58px;
+	margin-top: 3px;
+	margin-bottom: 8px;
+	border: 1px solid #0a3d6c;
+	min-height: 60px;
+}
+
+.annotation .commenter {
+	margin-left: 103px;
+	font-family: Source Sans Pro, sans;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0a3d6c;
+}
+
+.annotation .commenter a:link {
+	text-decoration: none;
+	font-weight: inherit;
+	color: #0a3d6c;
+}
+
+.annotation .commenter a:unvisited {
+	text-decoration: none;
+	font-weight: inherit;
+	color: #0a3d6c;
+}
+
+.annotation .commenter a:hover {
+	text-decoration: underline;
+	font-weight: inherit;
+	color: #0a3d6c;
+}
+
+.annotation .commenter a:active {
+	text-decoration: underline;
+	font-weight: inherit;
+	color: #0a3d6c;
+}
+
+.annotation span.editlink  {
+	float: right;
+	margin-right: 58px;
+}
+
+.annotation span.editlink  a:link {
+	text-decoration: none;
+	color: #0a3d6c;
+	font-weight: normal;
+}
+
+.annotation span.editlink  a:visited {
+	text-decoration: none;
+	color: #0a3d6c;
+	font-weight: normal;
+}
+
+.annotation span.editlink  a:hover {
+	text-decoration: underline;
+	color: #0a3d6c;
+	font-weight: normal;
+}
+
+.annotation span.editlink  a:active {
+	text-decoration: underline;
+	color: #0a3d6c;
+	font-weight: bold;
+}
+
