@@ -75,7 +75,7 @@ body {
     height: 112px;
 }
 
-#header-line-area img {
+#header-line-area img.owl {
     margin-left: 104px;
     margin-right: 47px;
     margin-top: 30px;
@@ -399,6 +399,7 @@ text-align: center;
 	padding-bottom: 4px;
 	text-align: right;
 	margin-right: 58px;
+	margin-top: 32px;
 	font-family: Source Sans Pro, sans;
 	font-size: 14px;
 	font-weight: plain;

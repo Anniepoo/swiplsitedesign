@@ -26,6 +26,7 @@
 <link rel="apple-touch-icon" href="js/apple-touch-icon.png">
 <link rel="stylesheet" type="text/css" href="js/swipl.css">
 <link rel="stylesheet" type="text/css" href="js/swiplcontent.css">
+<link rel="stylesheet" type="text/css" href="js/pldoc.css">
 </head>
 <body>
 <div id='outer-container'>
@@ -77,8 +78,10 @@
         </div>
     </div><!-- upper banner -->
     <div id='header-line-area'>
-    <img src='js/swipl.png'>
+    <img class='owl' src='js/swipl.png'>
+	<!-- Jan note that you need to flip between includeprivate.png and exportonly.png  -->
     <span class='primary-header'>A.12 library(lists): List Manipulation</span>
+	<div class='edit-buttons-bar'><div class='edit-buttons'><img src='js/make.png' title='Make & Reload'/><img src='js/exportonly.png' title='Exports Only'/><img src='js/showsource.png' title='Show Source'/><img src='js/editfile.png' title='Edit'/></div></div>
     </div>
     <div id='menubar'>
         <div class='menubar fixed-width'>
@@ -232,11 +235,11 @@
 </li>
 </ul>
 </div>
-</td><td class="content">
+</td><td class="content main">
 <dt>
 <div class="synopsis"><span class="synopsis-hdr">Availability:</span><code>:- use_module(<a href="/pldoc/man?section=lists">library(lists)</a>).</code><span class="autoload">(can be autoloaded)</span></div>
 </dt>
-<dt class="pubdef"><span class="pred-tag">[semidet]</span><a id="max_member/2"><strong>max_member</strong>(<var>-Max, 
+<dt class="pub def"><span class="pred-tag">[semidet]<a onclick="HTTPrequest('/help/source/edit?name=http_delete_handler&amp;arity=1&amp;file=c:/program%20files/swipl/library/http/http_dispatch.pl&amp;line=190&amp;module=http_dispatch&amp;module=http_dispatch')"><img class="action" alt="Edit predicate" title="Edit predicate" src="js/predicate_edit_icon.png"></a></span><a id="max_member/2"><strong>max_member</strong>(<var>-Max, 
 +List</var>)</a></dt><dd class="defbody">True when <var>Max</var> is the largest member in the standard order of 
 terms. Fails if <var>List</var> is empty.
 
@@ -248,7 +251,22 @@ terms. Fails if <var>List</var> is empty.
 - <a href="/pldoc/man?predicate=max_list/2">max_list/2</a> for the 
 maximum of a list of numbers.</dd>
 </dl>
+<!-- and now for a private one -->
 
+<dt class="priv def"><span class="pred-tag">[private][det]<a onclick="HTTPrequest('/help/source/edit?name=http_delete_handler&amp;arity=1&amp;file=c:/program%20files/swipl/library/http/http_dispatch.pl&amp;line=190&amp;module=http_dispatch&amp;module=http_dispatch')"><img class="action" alt="Edit predicate" title="Edit predicate" src="js/predicate_edit_icon.png"></a></span><a id="sneaky_member/2"><strong>sneaky_member</strong>(<var>-Max, 
++List</var>)</a></dt><dd class="defbody">True when <var>Max</var> is some secret outsiders should not use. Fails if <var>List</var> is empty.
+
+<!-- and a multifile one -->
+<dt class="multi def"><span class="pred-tag">[multifile][nondet]<a onclick="HTTPrequest('/help/source/edit?name=http_delete_handler&amp;arity=1&amp;file=c:/program%20files/swipl/library/http/http_dispatch.pl&amp;line=190&amp;module=http_dispatch&amp;module=http_dispatch')"><img class="action" alt="Edit predicate" title="Edit predicate" src="js/predicate_edit_icon.png"></a></span><a id="sneaky_member/2"><strong>multifile_member</strong>(<var>-Max, 
++List</var>)</a></dt><dd class="defbody">True when <var>Max</var> is some multifile predicate used to switch syntax of whole system to Cobol. Fails if <var>List</var> is empty.
+
+
+<dl class="tags">
+<dt class="mtag">See also</dt><dd>- <a href="/pldoc/man?predicate=compare/3">compare/3</a> <br>
+
+- <a href="/pldoc/man?predicate=max_list/2">max_list/2</a> for the 
+maximum of a list of numbers.</dd>
+</dl>
 
 </dd></td></tr>
 </tbody></table>

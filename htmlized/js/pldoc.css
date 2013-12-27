@@ -57,7 +57,7 @@ dt.keyword-bug, dt.keyword-deprecated, dt.keyword-tbd
   color: red;
 }
 
-dt.pubdef {
+dt.def {
     background-color: #0c3d6e;
     color: #FFF;
     height: 31px;
@@ -67,18 +67,24 @@ dt.pubdef {
     margin-bottom: 21px;
 }
 
-dt.pubdef * {
+dt.def * {
     color: #FFF;
     font-size: 18px;
     vertical-align: middle;
 }
 
-dt.multidef
-{ background: url("multi-bg.png") top left;
+dt.pub.def {
+    background-color: #0c3d6e;
 }
 
-dt.privdef
-{ background: url("priv-bg.png") top left;
+dt.multi.def
+{ 
+    background-color: #ef9439;
+}
+
+dt.priv.def
+{ 
+    background-color: #207ad4;
 }
 
 dt.undoc, h2.undoc
@@ -87,8 +93,8 @@ dt.undoc, h2.undoc
 
 img.action
 { border: 0;
-  padding-top: 0.2em;
-  height: 1em;
+  vertical-align: middle;
+  margin-left: 8px;
 }
 
 dl.tags
@@ -185,6 +191,19 @@ div.src_formats
   margin-bottom: 2px;
 }
 
+#header-line-area .edit-buttons-bar {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -14px;
+	width: 960px;
+	height: 33px;
+	
+}
+
+#header-line-area .edit-buttons {
+	float: right;
+}
+
 /* Summary index */
 
 table.summary
@@ -223,7 +242,18 @@ tr.private
   background-color: #fbffa6;
 }
 
+.content.main{
+	max-width: 960px;
+	background-color: #f6f5ee;
+	padding: 8px;
+	margin-left: 17px;
+}
+
 /* Navigation tree */
+
+.naved-content {
+	max-width: 94%;
+}
 
 table.naved-content td
 { vertical-align: top;
@@ -245,6 +275,8 @@ div.navtree
   margin-right: 1em;
   position: relative;
   z-index: +1;
+  padding: 8px;
+  background-color: #f6f5ee;
 }
 
 ul.nav
@@ -253,17 +285,15 @@ ul.nav
   list-style-type: none;
 }
 
-li.current > a
+li.nav a
 { color: #000;
-  font-weight: bold;
-  border: 1px solid;
+  font-size: 12pt;
+  text-decoration: none;
 }
 
-li.nav a
-{ color: #888;
-  font-size: 80%;
-  text-decoration: none;
-  background-color: #fff;
+li.current > a
+{ color: #0c3d6e;
+  font-weight: bold;
 }
 
 li.nav a:hover
@@ -331,7 +361,7 @@ span.search-help
 
 div.synopsis
 { text-align: right;
-  margin-top: 15pt;
+  margin-bottom: 8px;
 }
 
 span.synopsis-hdr
