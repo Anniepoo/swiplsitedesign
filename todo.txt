@@ -4,7 +4,7 @@ To put yourself on one of these tasks add your name in parens at end
 
 1. integrate HTML and css for new homepage DONE (Jan)
 2. create a pl module for the new menu so this code comes from a single place for whole site.
-This is going to be one of the more dynamic parts of the site. DONE
+This is going to be one of the more dynamic parts of the site. DONE (its in page.pl)
 3. generate tree structure on left for pldoc DONE
 4. generate tree structure on left for manual DONE
 5. Fix location of footnotes DONE (Annie)
