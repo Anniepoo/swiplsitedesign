@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html><head>
+<title>max_member/2</title>
+
+<link rel="stylesheet" type="text/css" href="js/plweb.css">
+<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="js/style.css">
+<link rel="stylesheet" type="text/css" href="js/style_002.css">
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="js/jquery_002.js">
+</script>
+<script type="text/javascript" src="js/set.js">
+</script>
+<script type="text/javascript" src="js/jquery-ui.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/jquery.html">
+<link rel="stylesheet" type="text/css" href="js/tagit.html">
+<script type="text/javascript" src="js/tag-it.html">
+</script>
+<script type="text/javascript" src="js/pldoc.js">
+</script>
+<link rel="stylesheet" type="text/css" href="js/pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+<body class="pldoc">
+
+<div class="sidebar">
+<div class="logo"><a href="http://www.swi-prolog.org/"><img id="logo" alt="SWI-Prolog logo" src="js/swipl.png" border="0"></a></div>
+<div class="menu">
+<ul>
+<li><a href="/wiki_edit?location=/pldoc/index.txt" class="nofile" title="Click to create index.txt">index.txt</a></li>
+<li><b><a class="file" href="/Download.txt">Download</a></b></li>
+<li><a href="/git">Browse GIT</a></li>
+<li><a href="/contrib/">Contrib</a></li>
+<li><a href="/pack/list">Packs</a></li>
+</ul>
+<hr>
+<ul>
+<li><b><a href="/howto/">HOWTO</a></b></li>
+<li><b><a href="/FAQ/">FAQ</a></b></li>
+<li><b><a href="/pldoc/index.html">Manual</a></b></li>
+<li><a href="/list-tags">Tags</a></li>
+<li><a class="file" href="/Mailinglist.txt">Mailinglist</a></li>
+<li><a class="file" href="/Support.txt">Support</a></li>
+<li><a class="file" href="/Links.txt">Links</a></li>
+<li><a class="file" href="/Contact.txt">Contact</a></li>
+</ul>
+<hr>
+<ul>
+<li><a class="file" href="/IDE.txt">Development tools</a></li>
+<li><a class="file" href="/PlDoc.txt">PlDoc Documentation</a></li>
+<li><a class="file" href="/Graphics.txt">Graphics</a></li>
+<li><a class="file" href="/web/index.txt">(Semantic) Web</a></li>
+</ul>
+<hr>
+<ul>
+<li><a class="file" href="/Publications.txt">Publications</a></li>
+<li><a class="file" href="/Contributors.txt">Contributors</a></li>
+<li><a class="file" href="/license.txt">License</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="/wiki/">Wiki (edit)</a></li>
+</ul>
+</div>
+</div>
+<div class="righthand">
+<div class="current-user"><a class="signin" href="/openid/login?openid.return_to=/pldoc/doc_for?object%3Dmax_member/2">login</a></div>
+
+<h1>pldoc</h1>
+
+<div class="content">
+<div class="navhdr">
+<div class="jump"><a href="/pldoc/man?section=lists">A.12 library(lists): List Manipulation</a></div>
+<div class="search">
+
+<form id="search-form" action="/pldoc/search">
+<div><input id="submit-for" value="Search" style="float:right" type="submit">
+<div id="search-container" style="overflow:hidden"><span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input autocomplete="off" class="ui-autocomplete-input" style="width:100%; min-width:20em" name="for" id="for"></div>
+<script type="text/javascript">
+
+$(function() {
+  $("#"+"for").autocomplete({
+    minLength: 1,
+    delay: 0.3,
+    source: "/autocomplete/ac_predicate",
+    focus: function(event,ui) {
+      $("#"+"for").val(ui.item.label);
+      return false;
+    },
+    select: function(event,ui) {
+      $("#"+"for").val(ui.item.label);
+      window.location.href = ui.item.href;
+      return false;
+    }
+  })
+  .data("ui-autocomplete")._renderItem = function(ul,item) {
+    var label = String(item.label).replace(
+		new RegExp(this.term),
+		"<span class=\"acmatch\">$&</span>");
+    var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+    return $("<li>")
+      .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+      .appendTo(ul)
+  };
+});
+		   
+</script>
+</div>
+<div class="search-options"><span class="search-in"><input name="in" value="all" checked="checked" type="radio">All<input name="in" value="app" type="radio">Application<input name="in" value="man" type="radio">Manual</span><span class="search-match"><input name="match" value="name" type="radio">Name<input name="match" value="summary" checked="checked" type="radio">Summary</span><span class="search-help"><a href="/pldoc/package/pldoc.html#sec:browser">Help</a></span></div>
+</form>
+
+</div>
+<br clear="right">
+</div>
+
+<p>
+</p>
+
+<table class="naved-content">
+<tbody><tr><td>
+<div class="navtree">
+<ul class="nav">
+<li class="nav"><a href="/pldoc/doc_for?object=root"></a><a href="/pldoc/index.html">Documentation</a>
+<ul class="nav">
+<li class="nav"><a href="/pldoc/doc_for?object=manual"></a><a href="/pldoc/refman/">Core system</a>
+<ul class="nav">
+<li class="nav"><a href="/pldoc/man?section=libpl">The SWI-Prolog library</a>
+<ul class="nav">
+<li class="nav"><a href="/pldoc/man?section=lists">library(lists): List Manipulation</a>
+<ul class="nav">
+<li class="obj nav"><a href="/pldoc/doc_for?object=member/2">member/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=append/3">append/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=append/2">append/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=prefix/2">prefix/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=select/3">select/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=selectchk/3">selectchk/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=select/4">select/4</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=selectchk/4">selectchk/4</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=nextto/3">nextto/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=delete/3">delete/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=nth0/3">nth0/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=nth1/3">nth1/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=nth0/4">nth0/4</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=nth1/4">nth1/4</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=last/2">last/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=proper_length/2">proper_length/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=same_length/2">same_length/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=reverse/2">reverse/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=permutation/2">permutation/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=flatten/2">flatten/2</a></li>
+<li class="obj nav current"><a href="/pldoc/doc_for?object=max_member/2">max_member/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=min_member/2">min_member/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=sum_list/2">sum_list/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=max_list/2">max_list/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=min_list/2">min_list/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=numlist/3">numlist/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=is_set/1">is_set/1</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=list_to_set/2">list_to_set/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=intersection/3">intersection/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=union/3">union/3</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=subset/2">subset/2</a></li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=subtract/3">subtract/3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="obj nav"><a href="/pldoc/doc_for?object=packages"></a><a href="/pldoc/packages">Extensions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td><td class="content">
+<dt>
+<div class="synopsis"><span class="synopsis-hdr">Availability:</span><code>:- use_module(<a href="/pldoc/man?section=lists">library(lists)</a>).</code><span class="autoload">(can be autoloaded)</span></div>
+</dt>
+<dt class="pubdef"><span class="pred-tag">[semidet]</span><a id="max_member/2"><strong>max_member</strong>(<var>-Max, 
++List</var>)</a></dt><dd class="defbody">True when <var>Max</var> is the largest member in the standard order of 
+terms. Fails if <var>List</var> is empty.
+
+
+
+<dl class="tags">
+<dt class="mtag">See also</dt><dd>- <a href="/pldoc/man?predicate=compare/3">compare/3</a> <br>
+
+- <a href="/pldoc/man?predicate=max_list/2">max_list/2</a> for the 
+maximum of a list of numbers.</dd>
+</dl>
+
+
+</dd></td></tr>
+</tbody></table>
+
+<div class="user-annotations">
+<ul id="tags">
+</ul>
+<div style="overflow:auto">
+<div id="tag-warnings" style="float:left;"></div>
+<div class="tag-notes">Tag confusing pages with <b>doc-needs-help</b><span class="separator">|</span>Tags are associated to your profile if you are logged in</div>
+</div>
+
+<script type="text/javascript">
+
+		    function tagInfo(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").removeClass("warning");
+		      $("#tag-warnings").addClass("informational");
+		    }
+		    function tagWarning(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").addClass("warning");
+		      $("#tag-warnings").removeClass("informational");
+		    }
+
+		    $(document).ready(function() {
+		      $("#tags").tagit({
+			  autocomplete: { delay: 0.3,
+					  minLength: 1,
+					  source: "/complete-tag"
+					},
+			  onTagClicked: function(event, ui) {
+			    window.location.href = "/show-tag"+"?tag="+
+			      encodeURIComponent(ui.tagLabel);
+			  },
+			  beforeTagAdded: function(event, ui) {
+			    if ( !ui.duringInitialization ) {
+			      var result = false;
+			      tagInfo("Submitting ...");
+			      $.ajax({ dataType: "json",
+				       url: "/add-tag",
+				       data: { tag: ui.tagLabel,
+					       obj: "e6ca9381984f74423c8439c938e2e90d5af907c6"
+					     },
+				       async: false,
+				       success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Added: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				     });
+			      return result;
+			    }
+			  },
+			  beforeTagRemoved: function(event, ui) {
+			    var result = false;
+			    if ( !ui.tagLabel ) {
+			      return false;
+			    }
+			    tagInfo("Submitting ...");
+			    $.ajax({ dataType: "json",
+				     url: "/remove-tag",
+				     data: { tag: ui.tagLabel,
+					     obj: "e6ca9381984f74423c8439c938e2e90d5af907c6"
+					   },
+				     async: false,
+				     success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Removed: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				   });
+			    return result;
+			  },
+			  placeholderText: "Tag predicate max_member/2"
+			});
+		      });
+		  
+</script>
+<div class="comments">
+<div class="comment-login"><a class="signin" href="/openid/login?openid.return_to=/pldoc/doc_for?object%3Dmax_member/2">login</a> to add a comment</div>
+</div>
+</div>
+</div>
+<div class="footer">Powered by <a href="http://www.swi-prolog.org/">SWI-Prolog</a> 7.1.4-16-gec44629</div>
+</div>
+
+
+
+<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

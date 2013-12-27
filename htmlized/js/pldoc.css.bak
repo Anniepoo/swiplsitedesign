@@ -223,69 +223,6 @@ tr.private
   background-color: #fbffa6;
 }
 
-/* Navigation tree */
-
-table.naved-content td
-{ vertical-align: top;
-}
-
-table.naved-content td.content
-{ width: 100%
-}
-
-div.navtree:hover
-{ overflow-x: visible;
-}
-
-div.navtree
-{ width: 12em;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-right: 1em;
-  position: relative;
-  z-index: +1;
-}
-
-ul.nav
-{ padding: 0px 0px 0px 0.5em;
-  margin: 0px;
-  list-style-type: none;
-}
-
-li.current > a
-{ color: #000;
-  font-weight: bold;
-  border: 1px solid;
-}
-
-li.nav a
-{ color: #888;
-  font-size: 80%;
-  text-decoration: none;
-  background-color: #fff;
-}
-
-li.nav a:hover
-{ text-decoration: underline;
-}
-
-/* Packs */
-
-table.packs
-{ margin-left: 5%;
-  border: 1px solid;
-}
-
-table.packs th
-{ background: url("h2-bg.png") top left;
-  text-align: left;
-}
-
-option.packs
-{ font-weight: bold;
-}
-
 /* Search */
 
 span.for
@@ -307,17 +244,6 @@ div.search-counts
 
 div.search-options
 { font-size: 70%;
-  white-space: nowrap;
-}
-
-div.search-options input
-{ -ms-transform: scale(0.7);		/* IE */
-  -moz-transform: scale(0.7);		/* FF */
-  -webkit-transform: scale(0.7);	/* Safari and Chrome */
-  -o-transform: scale(0.7);		/* Opera */
-  position:relative;
-  top: 4px;
-  margin-right: 0px;
 }
 
 span.search-in, span.search-match
@@ -366,30 +292,17 @@ span.file_anot
 }
 
 /* Footnotes from latex2html */
-.fn {
-    color: red;
-    font-size: 70%;
+sup.fn { color: blue; text-decoration: underline; }
+span.fn-text { display: none; }
+sup.fn span {display: none;}
+sup:hover span
+{ display: block !important;
+  position: absolute; top: auto; left: auto; width: 80%;
+  color: #000; background: white;
+  border: 2px solid;
+  padding: 5px; margin: 10px; z-index: 100;
+  font-size: 80%;
 }
-
-.fn-text, .fnp {
-    position: absolute;
-    top: auto;
-    left: 10%;
-    border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px #888;
-    display: none;
-    background: #fff;
-    color: #000;
-    margin-top: 25px;
-    padding: 8px 12px;
-    font-size: larger;
-}
-
-sup:hover span.fn-text
-{ display: block;
-}
-
 
 span.sec-nr
 {
@@ -445,36 +358,3 @@ a.nofile:hover				/* non-existing file-link */
   text-decoration: underline;
 }
 
-/* Tables from latex2html (incomplete) */
-
-table.center
-{ margin: auto;
-}
-
-table.latex
-{ border-collapse:collapse;
-}
-
-table.latex tr
-{ vertical-align: text-top;
-}
-
-table.latex td
-{ padding: 2px 1em;
-}
-
-table.latex th
-{ padding: 2px 1em;
-}
-
-table.latex tr.hline td
-{ border-top: 1px solid black;
-}
-
-table.latex tr.hline th
-{ border-top: 1px solid black;
-}
-
-table.frame-box
-{ border: 2px solid black;
-}

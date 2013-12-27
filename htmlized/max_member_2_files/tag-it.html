@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>500 Internal server error</title>
+
+<link rel="stylesheet" type="text/css" href="/css/plweb.css">
+<link rel="stylesheet" type="text/css" href="/pldoc/res/pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+<body class="pldoc">
+
+<div class="sidebar">
+<div class="logo"><a href="http://www.swi-prolog.org"><img id="logo" border="0" alt="SWI-Prolog logo" src="/icons/swipl.png"></a></div>
+<div class="menu">
+<ul>
+<li><code class="nofile">index.txt</code></li>
+<li><b><a class="file" href="/Download.txt">Download</a></b></li>
+<li><a href="/git">Browse GIT</a></li>
+<li><a href="/contrib/">Contrib</a></li>
+<li><a href="/pack/list">Packs</a></li>
+</ul>
+<hr>
+<ul>
+<li><b><a href="/howto/">HOWTO</a></b></li>
+<li><b><a href="/FAQ/">FAQ</a></b></li>
+<li><b><a href="/pldoc/index.html">Manual</a></b></li>
+<li><a href="/list-tags">Tags</a></li>
+<li><a class="file" href="/Mailinglist.txt">Mailinglist</a></li>
+<li><a class="file" href="/Support.txt">Support</a></li>
+<li><a class="file" href="/Links.txt">Links</a></li>
+<li><a class="file" href="/Contact.txt">Contact</a></li>
+</ul>
+<hr>
+<ul>
+<li><a class="file" href="/IDE.txt">Development tools</a></li>
+<li><a class="file" href="/PlDoc.txt">PlDoc Documentation</a></li>
+<li><a class="file" href="/Graphics.txt">Graphics</a></li>
+<li><a class="file" href="/web/index.txt">(Semantic) Web</a></li>
+</ul>
+<hr>
+<ul>
+<li><a class="file" href="/Publications.txt">Publications</a></li>
+<li><a class="file" href="/Contributors.txt">Contributors</a></li>
+<li><a class="file" href="/license.txt">License</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="/wiki/">Wiki (edit)</a></li>
+</ul>
+</div>
+</div>
+<div class="righthand">
+
+<h1>pldoc</h1>
+
+<div class="content">
+
+<h1>Internal server error</h1>
+
+<p>
+source_sink `js(tagit/js/tag-it.min.js)' does not exist<br>
+In:<br>
+  [18] throw(error(...,_G180))<br>
+  [14] http_dispatch:http_reply_file(js('tagit/js/tag-it.min.js'),[],[...|...]) at /usr/local/lib/swipl-7.1.4/library/http/http_dispatch.pl:635<br>
+  [12] http_dispatch:call_action(http_server_files: ...,[...|...]) at /usr/local/lib/swipl-7.1.4/library/http/http_dispatch.pl:594<br>
+  [10] time:run_alarm_goal('$alarm'(34990507855788),http_dispatch: ...) at /usr/local/lib/swipl-7.1.4/library/time.pl:123<br>
+   [9] setup_call_catcher_cleanup(time: ...,time: ...,_G259,time: ...) at /usr/local/lib/swipl-7.1.4/boot/init.pl:310<br>
+   [5] httpd_wrapper:call_handler(http_dispatch: ...,56,-) at /usr/local/lib/swipl-7.1.4/library/http/http_wrapper.pl:253<br>
+   [4] catch(httpd_wrapper: ...,error(...,...),httpd_wrapper:true) at /usr/local/lib/swipl-7.1.4/boot/init.pl:274<br>
+   [3] httpd_wrapper:handler_with_output_to(http_dispatch: ...,56,-,current_output,error(...,...)) at /usr/local/lib/swipl-7.1.4/library/http/http_wrapper.pl:239<br>
+   [2] httpd_wrapper:http_wrap_spawned(http_dispatch: ...,_G353,_G354) at /usr/local/lib/swipl-7.1.4/library/http/http_wrapper.pl:115<br>
+   [1] thread_httpd:wrap_spawned(&lt;stream&gt;(0x7f4b880234e0),http_dispatch: ...) at /usr/local/lib/swipl-7.1.4/library/http/thread_httpd.pl:638<br>
+   [0] &lt;meta call&gt;</p><address><a href="http://www.swi-prolog.org">SWI-Prolog</a> httpd at anniepoo-VirtualBox</address></div>
+<div class="footer">Powered by <a href="http://www.swi-prolog.org">SWI-Prolog</a> 7.1.4-16-gec44629</div>
+</div>
+</body>
+
+</html>

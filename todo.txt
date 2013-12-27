@@ -8,7 +8,7 @@ This is going to be one of the more dynamic parts of the site. DONE
 3. generate tree structure on left for pldoc DONE
 4. generate tree structure on left for manual DONE
 5. Fix location of footnotes DONE (Annie)
-5a. Integrate fix into website (Jan/Annie)
+5a. Integrate fix into website DONE (Jan/Annie)
 6. update look of download graph (low priority - http://www.swi-prolog.org/logs/dl-statistics.html)
 This will be in both the Commercial Users page and the Our Dogfood page
 7. generate psd files of pldoc page for local and website, for predicate and module level (Annie)
