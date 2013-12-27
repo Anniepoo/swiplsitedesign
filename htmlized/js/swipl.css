@@ -447,6 +447,9 @@ li.tagit-new  {
 	margin-bottom: 8px;
 	border: 1px solid #0a3d6c;
 	min-height: 60px;
+	font-size: 14px;
+	color: #000;
+	font-weight: plain;
 }
 
 .annotation .commenter {
