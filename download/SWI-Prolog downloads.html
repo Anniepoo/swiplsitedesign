@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html><head>
+<title>SWI-Prolog downloads</title>
+
+<link rel="stylesheet" type="text/css" href="SWI-Prolog%20downloads_files/plweb.css">
+<link rel="stylesheet" type="text/css" href="SWI-Prolog%20downloads_files/swipl.css">
+<link rel="stylesheet" type="text/css" href="SWI-Prolog%20downloads_files/jquery-ui.css">
+<script type="text/javascript" src="SWI-Prolog%20downloads_files/jquery.js">
+</script>
+<script type="text/javascript" src="SWI-Prolog%20downloads_files/jquery-ui.js">
+</script>
+<link rel="stylesheet" type="text/css" href="SWI-Prolog%20downloads_files/jquery.html">
+<link rel="stylesheet" type="text/css" href="SWI-Prolog%20downloads_files/tagit.html">
+<script type="text/javascript" src="SWI-Prolog%20downloads_files/tag-it.html">
+</script>
+<script type="text/javascript" src="SWI-Prolog%20downloads_files/menu.js">
+</script>
+<link rel="stylesheet" type="text/css" href="SWI-Prolog%20downloads_files/pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="http://localhost:3040/icons/favicon.ico">
+<link rel="apple-touch-icon" href="http://localhost:3040/apple-touch-icon.png">
+
+</head>
+<body>
+<div class="outer-container">
+<div id="upper-header">
+<div id="upper-header-contents"><span id="dyknow-container"><span class="lbl">Did you know?</span><span id="dyknow"><a href="http://localhost:3040/pack/list">SWI-Prolog has lots of useful Packages</a></span></span><span id="search-container"><span class="lbl">Search Documentation:</span>
+
+<form action="/pldoc/search" id="search-form">
+<span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input autocomplete="off" class="ui-autocomplete-input" name="for" id="for"><input id="submit-for" value="Search" type="submit"><input name="in" value="all" type="hidden"><input name="match" value="summary" type="hidden">
+<script type="text/javascript">
+
+    $(function() {
+        $("#"+"for").autocomplete({
+        minLength: 1,
+        delay: 0.3,
+        source: "/autocomplete/ac_predicate",
+        focus: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          return false;
+        },
+        select: function(event,ui) {
+          $("#"+"for").val(ui.item.label);
+          window.location.href = ui.item.href;
+          return false;
+        }
+        })
+        .data("ui-autocomplete")._renderItem = function(ul,item) {
+        var label = String(item.label).replace(
+            new RegExp(this.term),
+            "<span class=\"acmatch\">$&</span>");
+        var tag = item.tag ? " <i>["+item.tag+"]</i>" : "";
+        return $("<li>")
+          .append("<a class=\""+item.class+"\">"+label+tag+"</a>")
+          .appendTo(ul)
+        };
+        });
+
+</script>
+</form>
+
+</span></div>
+</div>
+<div id="header-line-area"><img src="SWI-Prolog%20downloads_files/swipl.png"><span class="primary-header">Yet To Do</span></div>
+
+<div id="menubar">        
+<div class="menubar fixed-width">            
+<ul class="menubar-container">
+<li><a href="http://localhost:3040/">HOME</a></li>
+<li>DOWNLOAD
+                    
+<ul style="top: 211.75px; left: 288px; position: absolute;" class="dropdown one">
+<li><a href="http://localhost:3040/Download.html">SWI-PROLOG</a></li>
+<li><a href="http://localhost:3040/sources.html">SOURCES/BUILDING</a></li>
+<li><a href="http://localhost:3040/addons.html">ADD-ONS</a></li>
+<li><a href="http://localhost:3040/git/">BROWSE GIT</a></li>
+</ul>
+
+                </li>
+<li>DOCUMENTATION
+                    
+<ul style="top: 211.75px; left: 427.5px; position: absolute;" class="">
+<li><a href="http://localhost:3040/pldoc/refman/">MANUAL</a></li>
+<li><a href="http://localhost:3040/pldoc/index.html">PACKAGES</a></li>
+<li><a href="http://localhost:3040/FAQ/">FAQ</a></li>
+<li><a href="http://localhost:3040/pldoc/man?section=cmdline">COMMAND LINE</a></li>
+<li><a href="http://localhost:3040/pldoc/package/pldoc.html">PLDOC</a></li>
+<li>BLUFFERS<span class="arrow">▶</span>
+                            
+<ul>
+<li><a href="http://localhost:3040/prologsyntax.html">PROLOG SYNTAX</a></li>
+<li><a href="http://localhost:3040/pldoc/man?section=emacsbluff">pceEMACS</a></li>
+<li><a href="http://localhost:3040/htmlbluffer.html">HTML GENERATION</a></li>
+</ul>
+
+                        </li>
+<li><a href="http://localhost:3040/license.html">LICENSE</a></li>
+<li><a href="http://localhost:3040/Contributors.html">CONTRIBUTORS</a></li>
+<li><a href="http://localhost:3040/Publications.html">PUBLICATIONS</a></li>
+</ul>
+
+                </li>
+<li>TUTORIALS
+                    
+<ul>
+<li>BEGINNER<span class="arrow">▶</span>
+                            
+<ul>
+<li><a href="http://localhost:3040/pldoc/man?section=quickstart">GETTING STARTED</a></li>
+<li><a href="http://localhost:3040/swipltuts/mod/index.html">MODULES</a></li>
+<li><a href="http://localhost:3040/pldoc/man?section=debugoverview">DEBUGGER</a></li>
+<li><a href="http://localhost:3040/IDE.html">DEVELOPMENT TOOLS</a></li>
+</ul>
+
+                        </li>
+<li>INTERMEDIATE<span class="arrow">▶</span>
+                            
+<ul>
+<li><a href="http://localhost:3040/howto/http/">WEB SERVICE</a></li>
+<li><a href="http://localhost:3040/swipltuts/html/index.html">WEB APPLICATIONS</a></li>
+<li><a href="http://localhost:3040/swipltuts/pldoc/index.html">PLDOC</a></li>
+<li><a href="http://localhost:3040/dcg/index.html">DCGs</a></li>
+<li><a href="http://localhost:3040/xpce.pdf">XPCE</a></li>
+<li><a href="http://localhost:3040/Graphics.html">GUI OPTIONS</a></li>
+</ul>
+
+                        </li>
+<li>ADVANCED<span class="arrow">▶</span>
+                            
+<ul>
+<li><a href="http://localhost:3040/howto/UseRdfMeta.html">RDF NAMESPACES</a></li>
+<li><a href="http://localhost:3040/build/guidelines.txt">UNIX PACKAGES</a></li>
+</ul>
+
+                        </li>
+</ul>
+
+                </li>
+<li>COMMUNITY
+                    
+<ul>
+<li><a href="http://localhost:3040/Support.txt">SUPPORT</a></li>
+<li><a href="http://webchat.freenode.net/?channels=##prolog">IRC</a></li>
+<li><a href="http://localhost:3040/Mailinglist.txt">MAIL LIST</a></li>
+<li><a href="http://localhost:3040/bugzilla/">BUG TRACKER</a></li>
+<li><a href="http://localhost:3040/Links.html">EXTERNAL LINKS</a></li>
+<li><a href="http://localhost:3040/Contact.html">CONTACT</a></li>
+<li><a href="http://localhost:3040/loot.html">SWI-PROLOG ITEMS</a></li>
+</ul>
+
+                </li>
+<li>USERS
+                    
+<ul>
+<li><a href="http://localhost:3040/web/index.html">SEMANTIC WEB</a></li>
+<li><a href="http://localhost:3040/swipltuts/student/index.html">STUDENTS</a></li>
+<li><a href="http://localhost:3040/Publications.html">RESEARCHERS</a></li>
+<li><a href="http://localhost:3040/commercial.html">COMMERCIAL USERS</a></li>
+</ul>
+
+                </li>
+<li>WIKI
+                    
+<ul>
+<li><a href="http://localhost:3040/openid/login?openid.return_to=/user/logout">LOGIN</a></li>
+<li><a href="http://localhost:3040/wiki_edit?location=/">EDIT THIS PAGE</a></li>
+<li><a href="http://localhost:3040/wiki/sandbox">SANDBOX</a></li>
+<li><a href="http://localhost:3040/wiki/">WIKI HELP</a></li>
+<li><a href="http://localhost:3040/list-tags">ALL TAGS</a></li>
+</ul>
+
+                </li>
+</ul>
+
+        </div>
+
+    </div>
+
+
+<p>
+Someday breadcrumb</p>
+<div id="contents">
+<div>
+
+<h1 class="wiki"><span style="float:right"><a href="http://localhost:3040/wiki_edit?location=/Download.html"><img class="action" alt="edit" title="Edit wiki page" src="SWI-Prolog%20downloads_files/edit.gif"></a></span>SWI-Prolog downloads</h1>
+
+<h2 class="wiki">Available versions</h2>
+
+<ul>
+<li><a href="http://localhost:3040/download/stable">Stable release</a>
+Sources and executables for MS-Windows and MacOS X
+version <b>6.6.x</b></li>
+<li><a href="http://localhost:3040/download/devel">Development release</a>
+Sources and executables for MS-Windows and MacOS X
+version <b>7.1.x</b></li>
+<li><a href="http://localhost:3040/download/daily/bin">Daily builds for Windows</a> <img alt="new.gif" src="SWI-Prolog%20downloads_files/new.gif" border="0"></li>
+<li>Some popular <a href="http://localhost:3040/download/old?show=all">old versions</a></li>
+<li><a class="file" href="http://localhost:3040/git.html">GIT access</a>, browse GIT <a href="http://localhost:3040/git/">repository</a></li>
+</ul>
+
+<h2 class="wiki">Read more about</h2>
+
+<ul>
+<li>Available SWI-Prolog <a class="file" href="http://localhost:3040/versions.html">versions</a></li>
+<li>Information on <a class="file" href="http://localhost:3040/build/LinuxDistro.html">Linux packages and building on Linux</a></li>
+</ul>
+
+<h3 class="wiki">Get the manual on paper</h3>
+
+<p>
+<a href="http://books.google.nl/books/about/SWI_Prolog_Reference_Manual_6_2_2.html?id=q6R3Q3B-VC4C&amp;redir_esc=y"><img alt="book" src="SWI-Prolog%20downloads_files/swibook.jpeg" align="left" border="0"></a>
+The full SWI-Prolog manual is also available as a print-on-demand book.
+This <b>comprehensive manual</b> gives an overview of the system and how to
+set-up programming projects with it, it describes the built-in
+predicates, module system, coroutining, threads, the Constraint Handling
+Rules library, the foreign language interface and how to generate
+runtime applications.</p>
+
+<p>
+Clicking the cover page at the left brings you to google books, which
+shows the places where you can order the book.</p>
+
+<h3 class="wiki">More gadgets</h3>
+
+<p>
+<a href="http://www.cafepress.com/swiprologshop"><img alt="mug" src="SWI-Prolog%20downloads_files/mug.jpeg" align="left" border="0"></a>
+Buy SWI-Prolog gadgets!</p>
+
+<p>
+For <b>European</b> citizens, it might be wiser to order with the
+<a href="http://www.cafepress.co.uk/dd/74209076">UK branch of cafe press</a>. This
+site also provides links to other national branches of cafe press. It appears
+that the various national sites offer a different selection of items, notably
+see the <a href="http://www.cafepress.es/dd/73935314">Spanish</a> shop.</p>
+<div class="user-annotations">
+<ul id="tags">
+</ul>
+<div style="overflow:auto">
+<div id="tag-warnings" style="float:left;"></div>
+<div class="tag-notes">Tag confusing pages with <b>doc-needs-help</b><span class="separator">|</span>Tags are associated to your profile if you are logged in</div>
+</div>
+
+<script type="text/javascript">
+
+		    function tagInfo(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").removeClass("warning");
+		      $("#tag-warnings").addClass("informational");
+		    }
+		    function tagWarning(text) {
+		      $("#tag-warnings").text(text);
+		      $("#tag-warnings").addClass("warning");
+		      $("#tag-warnings").removeClass("informational");
+		    }
+
+		    $(document).ready(function() {
+		      $("#tags").tagit({
+			  autocomplete: { delay: 0.3,
+					  minLength: 1,
+					  source: "/complete-tag"
+					},
+			  onTagClicked: function(event, ui) {
+			    window.location.href = "/show-tag"+"?tag="+
+			      encodeURIComponent(ui.tagLabel);
+			  },
+			  beforeTagAdded: function(event, ui) {
+			    if ( !ui.duringInitialization ) {
+			      var result = false;
+			      tagInfo("Submitting ...");
+			      $.ajax({ dataType: "json",
+				       url: "/add-tag",
+				       data: { tag: ui.tagLabel,
+					       obj: "2cf6581b320f19c57b356c2b4b64db2ca101b387"
+					     },
+				       async: false,
+				       success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Added: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				     });
+			      return result;
+			    }
+			  },
+			  beforeTagRemoved: function(event, ui) {
+			    var result = false;
+			    if ( !ui.tagLabel ) {
+			      return false;
+			    }
+			    tagInfo("Submitting ...");
+			    $.ajax({ dataType: "json",
+				     url: "/remove-tag",
+				     data: { tag: ui.tagLabel,
+					     obj: "2cf6581b320f19c57b356c2b4b64db2ca101b387"
+					   },
+				     async: false,
+				     success: function(data) {
+					if ( data.status == true ) {
+					  tagInfo("Removed: "+ui.tagLabel);
+					  result = true;
+					} else {
+					  tagWarning(data.message);
+					}
+				      }
+				   });
+			    return result;
+			  },
+			  placeholderText: "Tag Wiki page \"SWI-Prolog downloads\""
+			});
+		      });
+		  
+</script>
+<div class="comments">
+<div class="comment-login"><a class="signin" href="http://localhost:3040/openid/login?openid.return_to=/Download.html">login</a> to add a comment</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer newstyle">
+<div class="current-user"><a class="signin" href="http://localhost:3040/openid/login?openid.return_to=/Download.html">login</a></div>
+Powered by <a href="http://www.swi-prolog.org/">SWI-Prolog</a> 7.1.4-16-gec44629</div>
+<div id="tail-end">&nbsp;</div>
+</div>
+
+
+
+<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

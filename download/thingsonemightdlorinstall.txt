@@ -1,0 +1,85 @@
+this is intended to be a comprehensive class hierarchy of things one might 
+download or install from the site.
+
+[Action, What, OS, Width, Distro, Track, Release, Build, DownLoad]
+	
+Action
+	Download and install
+	Get Sources
+	Read the changelog
+	Comment on a release
+	read about the motivation/etc. about tools like git, the PPA, blah blah	
+	
+What
+	SWI-Prolog
+	Packs
+	Manual
+	Contrib
+	Stuff in GIT
+
+
+SWI-Prolog itself
+Axes
+Known OSes -
+    Windows
+	   32
+	   64
+	MacOS
+	Linux
+	   32
+	   64
+	   distro
+			Debian and Ubuntu (including PPA for Ubuntu)
+			Redhat (Fedora, RHEL, CentOS)
+			SuSE
+			Mageia
+	
+Track
+	Git/Windows Nightlies
+    Development
+	Stable
+	Old
+	
+Release
+	Latest on branch
+	All
+
+Build
+	Binaries
+	Sources
+	
+DL Location
+	website
+	GIT
+	PPA
+
+	
+Need to build docs
+    No
+	Yes
+	
+The wizard sequence should be
+download
+build
+run - advice for actually getting up the first time, writing hello world.
+
+
+
+	   
+	   
+Dev notes
+=========
+download.pl has the code for current
+Jan wants to make sure you can still comment on versions
+
+	     
+The new main menu has
+========
+Download
+   SWI-Prolog             -new
+   Sources/Building       -new
+   Add-ons                -new
+   Browse GIT             - add instructions at top of current browser
+
+
+

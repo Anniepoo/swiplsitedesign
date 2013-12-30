@@ -20,8 +20,8 @@ This will be in both the Commercial Users page and the Our Dogfood page
 12b.  dogfood, write Dogfood page (Jan & Randy?)
 12c. and Changes with release 7 items (/pldoc/man?section=extensions)
 13. extend markdown to allow insertion of special dynamic elements, build a dynamic element for new 
-graph
-14. Make graph itself
+graph (Not needed, it's a static image).
+14. Make graph itself (Defer)
 15. make a list of all new pages that go behind the new menus (done- its in newpages/pagesweneed)
 16. Write'em
 17. Make a page for xpce and link via did you know. Also link gthis off the xpce page.
