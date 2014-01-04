@@ -29,12 +29,41 @@
 <link rel="stylesheet" type="text/css" href="js/pldoc.css">
 </head>
 <body>
-<div id='outer-container'>
+<div id='outer-container' class='pldoc module'>
     <div id='upper-header'>
         <div id='upper-header-contents'>
-            <span id='dyknow-container'>
-                <span class='lbl'>Did you know?</span>
-                <span id='dyknow'>SWI-Prolog has an XML Parser</span>
+            <span id='jump-container'>
+<form action="/help/source/place">
+<select name="place">
+<option class="packs" onclick="document.location='/help/source/pack/';" value=":packs:">List extension packs</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/demo/index.html';" selected="selected">/home/anniepoo/weblog/demo</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/debug_page/index.html';">/home/anniepoo/weblog/prolog/debug_page</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/formatting/index.html';">/home/anniepoo/weblog/prolog/formatting</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/html_form/index.html';">/home/anniepoo/weblog/prolog/html_form</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/books/google/index.html';">/home/anniepoo/weblog/prolog/info/books/google</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/buttons/index.html';">/home/anniepoo/weblog/prolog/info/buttons</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/geocoding/google/index.html';">/home/anniepoo/weblog/prolog/info/geocoding/google</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/html/index.html';">/home/anniepoo/weblog/prolog/info/html</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/maps/index.html';">/home/anniepoo/weblog/prolog/info/maps</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/maps/google/index.html';">/home/anniepoo/weblog/prolog/info/maps/google</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/maps/leaflet/index.html';">/home/anniepoo/weblog/prolog/info/maps/leaflet</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/nav/index.html';">/home/anniepoo/weblog/prolog/nav</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/resources/index.html';">/home/anniepoo/weblog/prolog/resources</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/support/index.html';">/home/anniepoo/weblog/prolog/support</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/widgets/agents/index.html';">/home/anniepoo/weblog/prolog/widgets/agents</option>
+<option onclick="document.location='/help/source/doc/swi/index.html';">/usr/local/lib/swipl-7.1.4</option>
+<option onclick="document.location='/help/source/doc/swi/boot/index.html';">/usr/local/lib/swipl-7.1.4/boot</option>
+<option onclick="document.location='/help/source/doc/swi/library/index.html';">/usr/local/lib/swipl-7.1.4/library</option>
+<option onclick="document.location='/help/source/doc/swi/library/dcg/index.html';">/usr/local/lib/swipl-7.1.4/library/dcg</option>
+<option onclick="document.location='/help/source/doc/swi/library/dialect/swi/index.html';">/usr/local/lib/swipl-7.1.4/library/dialect/swi</option>
+<option onclick="document.location='/help/source/doc/swi/library/http/index.html';">/usr/local/lib/swipl-7.1.4/library/http</option>
+<option onclick="document.location='/help/source/doc/swi/library/pldoc/index.html';">/usr/local/lib/swipl-7.1.4/library/pldoc</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/boot/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/boot</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/lib/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/lib</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/lib/emacs/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/lib/emacs</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/lib/english/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/lib/english</option>
+</select>
+</form>
             </span>
             <span id='search-container'>
             <!-- this worked til I copied in all the other files -->
@@ -80,171 +109,17 @@
     <div id='header-line-area'>
     <img class='owl' src='js/swipl.png'>
 	<!-- Jan note that you need to flip between includeprivate.png and exportonly.png  -->
-    <span class='primary-header'>A.12 library(lists): List Manipulation</span>
+    <span class='primary-header'>debug.pl</span>
 	<div class='edit-buttons-bar'><div class='edit-buttons'><img src='js/make.png' title='Make & Reload'/><img src='js/exportonly.png' title='Exports Only'/><img src='js/showsource.png' title='Show Source'/><img src='js/editfile.png' title='Edit'/></div></div>
     </div>
-    <div id='menubar'>
-        <div class='menubar fixed-width'>
-            <ul class='menubar-container'>
-                <li><a href="/">HOME</a></li>
-                <li>DOWNLOAD
-                    <ul class='dropdown one'>
-                        <li><a href="/download.html">SWI-PROLOG</a></li>
-                        <li><a href="/sources.html">SOURCES/BUILDING</a></li>
-                        <li><a href="/addons.html">ADD-ONS</a></li>
-                        <li><a href="/git/">BROWSE GIT</a></li>
-                    </ul>
-                </li>
-                <li>DOCUMENTATION
-                    <ul>
-                        <li><a href="/pldoc/refman/">MANUAL</a></li>
-                        <li><a href="/pldoc/index.html">PACKAGES</a></li>
-                        <li><a href="/FAQ/">FAQ</a></li>
-                        <li><a href="/pldoc/man?section=cmdline">COMMAND LINE</a></li>
-                        <li><a href="/pldoc/package/pldoc.html">PLDOC</a></li>
-                        <li>BLUFFERS<span class='arrow'>&#x25B6;</span>
-                            <ul>
-                                <li><a href="/prologsyntax.html">PROLOG SYNTAX</a></li>
-                                <li><a href="/pldoc/man?section=emacsbluff">pceEMACS</a></li>
-                                <li><a href="/htmlbluffer.html">HTML GENERATION</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/license.html">LICENSE</a></li>
-                        <li><a href="/Contributors.html">CONTRIBUTORS</a></li>
-                        <li><a href="/Publications.html">PUBLICATIONS</a></li>
-                    </ul>
-                </li>
-                <li>TUTORIALS
-                    <ul>
-                        <li>BEGINNER<span class='arrow'>&#x25B6;</span>
-                            <ul>
-                                <li><a href="/pldoc/man?section=quickstart">GETTING STARTED</a></li>
-                                <li><a href="/swipltuts/mod/index.html">MODULES</a></li>
-                                <li><a href="/pldoc/man?section=debugoverview">DEBUGGER</a></li>
-                                <li><a href="/IDE.html">DEVELOPMENT TOOLS</a></li>
-                            </ul>
-                        </li>
-                        <li>INTERMEDIATE<span class='arrow'>&#x25B6;</span>
-                            <ul>
-                                <li><a href="/howto/http/">WEB SERVICE</a></li>
-                                <li><a href="/swipltuts/html/index.html">WEB APPLICATIONS</a></li>
-                                <li><a href="/swipltuts/pldoc/index.html">PLDOC</a></li>
-                                <li><a href="/dcg/index.html">DCGs</a></li>
-                                <li><a href="/xpce.pdf">XPCE</a></li>
-                                <li><a href="/Graphics.html">GUI OPTIONS</a></li>
-                            </ul>
-                        </li>
-                        <li>ADVANCED<span class='arrow'>&#x25B6;</span>
-                            <ul>
-                                <li><a href="/howto/UseRdfMeta.html">RDF NAMESPACES</a></li>
-                                <li><a href="/build/guidelines.txt">UNIX PACKAGES</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li><!-- tutorials -->
-                <li>COMMUNITY
-                    <ul>
-                        <li><a href="/Support.txt">SUPPORT</a></li>
-                        <li><a href="http://webchat.freenode.net/?channels=##prolog">IRC</a></li>
-                        <li><a href="http://www.swi-prolog.org/Mailinglist.txt">MAIL LIST</a></li>
-                        <li><a href="/bugzilla/">BUG TRACKER</a></li>
-                        <li><a href="/Links.html">EXTERNAL LINKS</a></li>
-                        <li><a href="/Contact.html">CONTACT</a></li>
-                        <li><a href="/loot.html">SWI-PROLOG ITEMS</a></li>
-                    </ul>
-                </li><!-- community -->
-                <li>USERS
-                    <ul>
-                        <li><a href="/web/index.html">SEMANTIC WEB</a></li>
-                        <li><a href="/swipltuts/student/index.html">STUDENTS</a></li>
-                        <li><a href="/Publications.html">RESEARCHERS</a></li>
-                        <li><a href="/commercial.html">COMMERCIAL USERS</a></li>
-                    </ul>
-                </li><!-- users -->
-                <li>WIKI
-                    <ul>
-                        <li><a href="/openid/login?openid.return_to=/user/logout">LOGIN</a></li>
-                        <li><a href="http://www.swi-prolog.org/wiki_edit?location=$LOC$">EDIT THIS PAGE</a></li>
-                        <li><a href="/wiki/sandbox">SANDBOX</a></li>
-                        <li><a href="/wiki/">WIKI HELP</a></li>
-                        <li><a href="/list-tags">ALL TAGS</a></li>
-                    </ul>
-                </li><!-- wiki -->
-            </ul>
-        </div>
-    </div>
-    <div class='breadcrumb'>
-        <a href='/foo'>Home</a>
-        <span>&gt;</span>
-        <a href='/foo'>A SWI-Prolog Library</a>
-    </div>
+	
 <!-- insert of max_member_2.html -->
 <div class="content">
 <table class="naved-content">
-<tbody><tr><td>
-<div class="navtree">
-<ul class="nav">
-<li class="nav"><a href="/pldoc/doc_for?object=root"></a><a href="/pldoc/index.html">Documentation</a>
-<ul class="nav">
-<li class="nav"><a href="/pldoc/doc_for?object=manual"></a><a href="/pldoc/refman/">Core system</a>
-<ul class="nav">
-<li class="nav"><a href="/pldoc/man?section=libpl">The SWI-Prolog library</a>
-<ul class="nav">
-<li class="nav"><a href="/pldoc/man?section=lists">library(lists): List Manipulation</a>
-<ul class="nav">
-<li class="obj nav"><a href="/pldoc/doc_for?object=member/2">member/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=append/3">append/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=append/2">append/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=prefix/2">prefix/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=select/3">select/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=selectchk/3">selectchk/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=select/4">select/4</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=selectchk/4">selectchk/4</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=nextto/3">nextto/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=delete/3">delete/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=nth0/3">nth0/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=nth1/3">nth1/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=nth0/4">nth0/4</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=nth1/4">nth1/4</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=last/2">last/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=proper_length/2">proper_length/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=same_length/2">same_length/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=reverse/2">reverse/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=permutation/2">permutation/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=flatten/2">flatten/2</a></li>
-<li class="obj nav current"><a href="/pldoc/doc_for?object=max_member/2">max_member/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=min_member/2">min_member/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=sum_list/2">sum_list/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=max_list/2">max_list/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=min_list/2">min_list/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=numlist/3">numlist/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=is_set/1">is_set/1</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=list_to_set/2">list_to_set/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=intersection/3">intersection/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=union/3">union/3</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=subset/2">subset/2</a></li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=subtract/3">subtract/3</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="obj nav"><a href="/pldoc/doc_for?object=packages"></a><a href="/pldoc/packages">Extensions</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</td><td class="content main">
-<dt>
-<div class="synopsis"><span class="synopsis-hdr">Availability:</span><code>:- use_module(<a href="/pldoc/man?section=lists">library(lists)</a>).</code><span class="autoload">(can be autoloaded)</span></div>
-</dt>
+<tbody><tr><td class="content main">
 <dt class="pub def"><span class="pred-tag">[semidet]<a onclick="HTTPrequest('/help/source/edit?name=http_delete_handler&amp;arity=1&amp;file=c:/program%20files/swipl/library/http/http_dispatch.pl&amp;line=190&amp;module=http_dispatch&amp;module=http_dispatch')"><img class="action" alt="Edit predicate" title="Edit predicate" src="js/predicate_edit_icon.png"></a></span><a id="max_member/2"><strong>max_member</strong>(<var>-Max, 
 +List</var>)</a></dt><dd class="defbody">True when <var>Max</var> is the largest member in the standard order of 
 terms. Fails if <var>List</var> is empty.
-
-
-
 <dl class="tags">
 <dt class="mtag">See also</dt><dd>- <a href="/pldoc/man?predicate=compare/3">compare/3</a> <br>
 
@@ -273,173 +148,5 @@ maximum of a list of numbers.</dd>
 </div>
 
 <!-- end of insert of max_member_2.html -->
-<!--          ================== Tail ====================  -->
-<div class="user-annotations">
-<div class="tag-notes">Tag confusing pages with <b>doc-needs-help</b></div>
-<ul id="tags">
-<li class="tagit-new"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><span id="tag-area-label">Tags: </span><input type="text" class="ui-widget-content ui-autocomplete-input" placeholder="Tag wiki('')" autocomplete="off"></li>
-</ul>
-<div style="overflow:auto">
-<div id="tag-warnings" style="float:left;"></div>
-</div>
-
-<script type="text/javascript">
-
-		    function tagInfo(text) {
-		      $("#tag-warnings").text(text);
-		      $("#tag-warnings").removeClass("warning");
-		      $("#tag-warnings").addClass("informational");
-		    }
-		    function tagWarning(text) {
-		      $("#tag-warnings").text(text);
-		      $("#tag-warnings").addClass("warning");
-		      $("#tag-warnings").removeClass("informational");
-		    }
-
-		    $(document).ready(function() {
-		      $("#tags").tagit({
-			  autocomplete: { delay: 0.3,
-					  minLength: 1,
-					  source: "/complete-tag"
-					},
-			  onTagClicked: function(event, ui) {
-			    window.location.href = "/show-tag"+"?tag="+
-			      encodeURIComponent(ui.tagLabel);
-			  },
-			  beforeTagAdded: function(event, ui) {
-			    if ( !ui.duringInitialization ) {
-			      var result = false;
-			      tagInfo("Submitting ...");
-			      $.ajax({ dataType: "json",
-				       url: "/add-tag",
-				       data: { tag: ui.tagLabel,
-					       obj: "917420f8e9d17932f2f88f522310f995028bed48"
-					     },
-				       async: false,
-				       success: function(data) {
-					if ( data.status == true ) {
-					  tagInfo("Added: "+ui.tagLabel);
-					  result = true;
-					} else {
-					  tagWarning(data.message);
-					}
-				      }
-				     });
-			      return result;
-			    }
-			  },
-			  beforeTagRemoved: function(event, ui) {
-			    var result = false;
-			    if ( !ui.tagLabel ) {
-			      return false;
-			    }
-			    tagInfo("Submitting ...");
-			    $.ajax({ dataType: "json",
-				     url: "/remove-tag",
-				     data: { tag: ui.tagLabel,
-					     obj: "917420f8e9d17932f2f88f522310f995028bed48"
-					   },
-				     async: false,
-				     success: function(data) {
-					if ( data.status == true ) {
-					  tagInfo("Removed: "+ui.tagLabel);
-					  result = true;
-					} else {
-					  tagWarning(data.message);
-					}
-				      }
-				   });
-			    return result;
-			  },
-			  placeholderText: "Tag wiki(\'\')"
-			});
-		      });
-		  
-</script>
-<div class="comments">
-<!-- annie from aanother page -->
-<div class="comments">
-<div class="annotation">
-<!-- annie I swapped comment and commenter -->
-<!-- annie Note that commenter format has changed -->
-<div class="commenter"><a class="user" href="/user/view_profile?user=d31df84c-b41d-11e2-949c-00144fee017c">Anne Ogborn</a>(<span class="date">14 days ago</span>)<span class="editlink"><a href="/someeditpage">edit/delete</a></span></div>
-<div class="comment">This is a temporary comment while I fiddle with multiple comments</div>
-</div>
-<div class="annotation">
-<div class="commenter"><a class="user" href="/user/view_profile?user=7319b3d8-6dda-11e3-a2eb-00144fee017c">Matt S Trout</a>(<span class="date">4 months ago</span>)</div>
-<div class="comment">Test comment</div>
-</div>
-<!-- end from another page -->
-<!-- annie this was the old add comment area
-<div class="comment-action"><a class="edit-comment" href="" onClick="$(&quot;#comment_form&quot;).css(&quot;display&quot;,&quot;block&quot;); return false">Add</a> comment for wiki('')</div>
-
-<form action="/add-annotation" id="comment_form" method="POST" style="display:none">
-<input type="hidden" name="object" value="917420f8e9d17932f2f88f522310f995028bed48">
-<div class="explain-comment">	      Comments are intended to point to <b>related material</b>,
-	      indicate <b>errors</b> or provide <b>examples</b>.<br>
-
-	      Comments are written using the PlDoc wiki format.  Preview
-	      may be enabled and disabled with the two rightmost buttons.
-	      </div>
-
-<table>
-<tr><td><textarea id="comment" name="comment" cols="80" rows="20"></textarea>
-<script type="text/javascript">
-
-		   $(document).ready(function() {
-		      $("#"+"comment").markItUp(eval("pldoc"+"_settings"));
-		      if ( eval("false") ) {
-			$('a[title="Preview"]').trigger("mouseup");
-		      }
-		    });
-		  
-</script>
-</td></tr>
-<tr><td align="right"><input type="submit" value="Save comment"></td></tr>
-</table>
-
-</form>
--->
-</div>
-</div>
-</div>
-<!-- Annie sez I changed the extent of the a -->
-<div class="footer newstyle"><a class="powered" href="http://www.swi-prolog.org">Powered by SWI-Prolog 6.3.19</a><a class="login" href="http://www.google.com" >logout</a></div>
-</div>
-<!--          ================== Tail ====================  -->
-
-    <div id='tail-end'>&nbsp;</div>
-</div>
-<script type="text/javascript">
-$(function() {
-    $(".menubar-container > li").bind('mouseenter', function() {
-        $(this).contents().filter('ul').addClass('activemenu');
-        $(this).contents().filter('ul').offset({ top: $(this).offset().top + 31, left: $(this).offset().left });
-        $(this).contents().filter('ul').css('position', 'absolute');
-    }).bind('mouseleave', function() {
-        var foo = this;
-        window.setTimeout(function() {
-            $(foo).contents().filter('ul').removeClass('activemenu');
-        }, 100);
-    });
-    $(".menubar-container > li > ul").bind('mouseenter', function() {
-        $(this).addClass('mouseovermenu');
-    }).bind('mouseleave' , function() {
-        var foo = this;
-        window.setTimeout(function() {
-            $(foo).removeClass('mouseovermenu');
-        }, 100);
-    });
-    $(".menubar-container > li > ul > li").bind('mouseenter mouseleave', function() {
-        $(this).toggleClass('mouseovermenuitem');
-        $(this).contents().filter('ul').toggleClass('activemenu');
-        $(this).contents().filter('ul').offset({ top: $(this).offset().top , left: $(this).offset().left + 208 });
-        $(this).contents().filter('ul').css('position', 'absolute');
-    });
-    $(".menubar-container > li > ul > li > ul > li").bind('mouseenter mouseleave', function() {
-        $(this).toggleClass('mouseovermenuitem');
-    });
-});
-</script>
 </body>
 </html>

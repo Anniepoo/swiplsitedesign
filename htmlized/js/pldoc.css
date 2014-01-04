@@ -279,6 +279,18 @@ div.navtree
   background-color: #f6f5ee;
 }
 
+#outer-container.pldoc.module  .naved-content
+{
+	margin-left: 30px;
+}
+
+#outer-container.pldoc.module  .edit-buttons-bar
+{
+	position: absolute;
+	left:	-30px;
+	top:	120px;
+}
+
 ul.nav
 { padding: 0px 0px 0px 0.5em;
   margin: 0px;
