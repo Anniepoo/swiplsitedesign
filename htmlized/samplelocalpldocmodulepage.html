@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html><head>
+<title>debug.pl</title>
+
+<script type="text/javascript" src="samplelocalpldocmodulepage_files/jquery.js">
+</script>
+<link rel="stylesheet" type="text/css" href="samplelocalpldocmodulepage_files/pldoc.css">
+<script type="text/javascript" src="samplelocalpldocmodulepage_files/jquery-1.js">
+</script>
+<script type="text/javascript" src="samplelocalpldocmodulepage_files/pldoc.js">
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+<div class="navhdr">
+<div class="jump">
+<div>
+
+<form action="/help/source/place">
+<input value="Go" type="submit">
+<select name="place">
+<option class="packs" onclick="document.location='/help/source/pack/';" value=":packs:">List extension packs</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/demo/index.html';" selected="selected">/home/anniepoo/weblog/demo</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/debug_page/index.html';">/home/anniepoo/weblog/prolog/debug_page</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/formatting/index.html';">/home/anniepoo/weblog/prolog/formatting</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/html_form/index.html';">/home/anniepoo/weblog/prolog/html_form</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/books/google/index.html';">/home/anniepoo/weblog/prolog/info/books/google</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/buttons/index.html';">/home/anniepoo/weblog/prolog/info/buttons</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/geocoding/google/index.html';">/home/anniepoo/weblog/prolog/info/geocoding/google</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/html/index.html';">/home/anniepoo/weblog/prolog/info/html</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/maps/index.html';">/home/anniepoo/weblog/prolog/info/maps</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/maps/google/index.html';">/home/anniepoo/weblog/prolog/info/maps/google</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/info/maps/leaflet/index.html';">/home/anniepoo/weblog/prolog/info/maps/leaflet</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/nav/index.html';">/home/anniepoo/weblog/prolog/nav</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/resources/index.html';">/home/anniepoo/weblog/prolog/resources</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/support/index.html';">/home/anniepoo/weblog/prolog/support</option>
+<option onclick="document.location='/help/source/doc/home/anniepoo/weblog/prolog/widgets/agents/index.html';">/home/anniepoo/weblog/prolog/widgets/agents</option>
+<option onclick="document.location='/help/source/doc/swi/index.html';">/usr/local/lib/swipl-7.1.4</option>
+<option onclick="document.location='/help/source/doc/swi/boot/index.html';">/usr/local/lib/swipl-7.1.4/boot</option>
+<option onclick="document.location='/help/source/doc/swi/library/index.html';">/usr/local/lib/swipl-7.1.4/library</option>
+<option onclick="document.location='/help/source/doc/swi/library/dcg/index.html';">/usr/local/lib/swipl-7.1.4/library/dcg</option>
+<option onclick="document.location='/help/source/doc/swi/library/dialect/swi/index.html';">/usr/local/lib/swipl-7.1.4/library/dialect/swi</option>
+<option onclick="document.location='/help/source/doc/swi/library/http/index.html';">/usr/local/lib/swipl-7.1.4/library/http</option>
+<option onclick="document.location='/help/source/doc/swi/library/pldoc/index.html';">/usr/local/lib/swipl-7.1.4/library/pldoc</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/boot/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/boot</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/lib/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/lib</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/lib/emacs/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/lib/emacs</option>
+<option onclick="document.location='/help/source/doc/swi/xpce/prolog/lib/english/index.html';">/usr/local/lib/swipl-7.1.4/xpce/prolog/lib/english</option>
+</select>
+</form>
+
+<a class="prolog_version" href="http://www.swi-prolog.org/"> SWI-Prolog 7.1.4</a></div>
+</div>
+<div class="search">
+
+<form id="search-form" action="/help/source/search">
+<div><input name="for" id="for"><input id="submit-for" value="Search" type="submit"></div>
+<div class="search-options"><span class="search-in"><input name="in" value="all" checked="checked" type="radio">All<input name="in" value="app" type="radio">Application<input name="in" value="man" type="radio">Manual</span><span class="search-match"><input name="match" value="name" type="radio">Name<input name="match" value="summary" checked="checked" type="radio">Summary</span><span class="search-help"><a href="http://127.0.0.1:4040/help/source/package/pldoc.html#sec:browser">Help</a></span></div>
+</form>
+
+</div>
+<br clear="right">
+</div>
+
+<h1 class="file"><span style="float:right"><a href="http://127.0.0.1:4040/help/source/doc/home/anniepoo/weblog/demo/debug.pl?reload=true&amp;public_only=true"><img class="action" alt="Reload" title="Make &amp; Reload" src="samplelocalpldocmodulepage_files/reload.png"></a><a href="http://127.0.0.1:4040/help/source/doc/home/anniepoo/weblog/demo/debug.pl?public_only=false"><img class="action" alt="Public" title="Click to include private" src="samplelocalpldocmodulepage_files/public.png"></a><a href="http://127.0.0.1:4040/help/source/doc/home/anniepoo/weblog/demo/debug.pl?show=src"><img class="action" alt="Show source" title="Show source" src="samplelocalpldocmodulepage_files/source.png"></a><a onclick="HTTPrequest('/help/source/edit?file=%2fhome%2fanniepoo%2fweblog%2fdemo%2fdebug.pl')"><img class="action" alt="edit" title="Edit file" src="samplelocalpldocmodulepage_files/edit.png"></a></span>debug.pl</h1>
+
+<dl>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest('/help/source/edit?name=portray_list_innerds&amp;arity=1&amp;file=/home/anniepoo/weblog/demo/debug.pl&amp;line=45&amp;module=debug&amp;module=debug')"><img class="action" alt="Edit predicate" title="Edit predicate" src="samplelocalpldocmodulepage_files/editpred.png"></a></span><a name="portray_list_innerds/1"><b class="pred">portray_list_innerds</b><var class="arglist">(+List:list)</var></a> is <b class="det">det</b></dt><dd class="defbody">Displays a list without ellipsizing it.
+When debugging termerized HTML ellipsizing gets in
+the way</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest('/help/source/edit?name=pldoc&amp;arity=0&amp;file=/home/anniepoo/weblog/demo/debug.pl&amp;line=70&amp;module=debug&amp;module=debug')"><img class="action" alt="Edit predicate" title="Edit predicate" src="samplelocalpldocmodulepage_files/editpred.png"></a></span><a name="pldoc/0"><b class="pred">pldoc</b></a> is <b class="det">det</b></dt><dd class="defbody">Run the pldoc server on 4040 and open the root page</dd>
+</dl>
+
+<h2 class="wiki">Re-exported predicates</h2>
+
+<p>
+The following predicates are re-exported from other modules</p>
+
+<dl>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest('/help/source/edit?name=start&amp;arity=0&amp;file=/home/anniepoo/weblog/demo/weblogdemo.pl&amp;line=57&amp;module=weblogdemo&amp;module=debug')"><img class="action" alt="Edit predicate" title="Edit predicate" src="samplelocalpldocmodulepage_files/editpred.png"></a></span><a name="start/0"><b class="pred">start</b></a> is <b class="det">nondet</b></dt><dd class="defbody">Starts the server
+nondet because the server might not start</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest('/help/source/edit?name=weblog_demo&amp;arity=0&amp;file=/home/anniepoo/weblog/demo/weblogdemo.pl&amp;line=77&amp;module=weblogdemo&amp;module=debug')"><img class="action" alt="Edit predicate" title="Edit predicate" src="samplelocalpldocmodulepage_files/editpred.png"></a></span><a name="weblog_demo/0"><b class="pred">weblog_demo</b></a> is <b class="det">nondet</b></dt><dd class="defbody">Start the server in debug mode and show
+the index page</dd>
+<dt class="pubdef"><span style="float:right"><a onclick="HTTPrequest('/help/source/edit?name=stop_server&amp;arity=0&amp;file=/home/anniepoo/weblog/demo/weblogdemo.pl&amp;line=94&amp;module=weblogdemo&amp;module=debug')"><img class="action" alt="Edit predicate" title="Edit predicate" src="samplelocalpldocmodulepage_files/editpred.png"></a></span><a name="stop_server/0"><b class="pred">stop_server</b></a> is <b class="det">det</b></dt><dd class="defbody">Stop the web server</dd>
+</dl>
+
+
+
+</body></html>
