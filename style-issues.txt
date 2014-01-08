@@ -1,0 +1,17 @@
+# Style issues
+
+## Issues
+
+  - Vertical alignment of DYK and Search in top bar.
+  - Could we use "position: relative" for the content?  That would fix
+    positioning the footnotes. Only, the menus will be under the
+    contents.  Guess that can be fixed?
+
+## To be discussed with Jessica
+
+  - Overflow handling in navigation tree?
+  - Styling of tags
+  - Styling of h1..4.  As it is, the difference between headers and
+    predicates seems too small.  See e.g., DOCUMENTATION/LICENSE,
+    where the predicates are included.
+  - Styling of tables?  For example, DOWNLOAD/ADD-ONS
