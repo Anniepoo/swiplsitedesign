@@ -77,6 +77,9 @@ in, Type depending on platform (or not filled in) and Usage: Study.
     - Stable, Study selected
     - Download buttons disabled.
 
+So, the average joe simply has a download link and a description what to
+do next. In addition though, he sees the choices made and what the
+alternatives might be.
 
 ================================================================
 			Download SWI-Prolog
@@ -112,6 +115,7 @@ The MacOSX binary is a disk image holding a relocatable app.
   your .profile: ...
 
   Further information about using SWI-Prolog on MacOSX (link)
+================================================================
 
 ## Implementation
 
@@ -139,6 +143,6 @@ includes
 	       }
       download: "/download/stable/bin/w32pl661.exe"
       documentation: "/download/stable/doc/..."
-      license: "/..."
-      description: "/..."
+      license: "/..." (pointing in the wiki area)
+      description: "/..." (pointing in the wiki area)
     }
