@@ -112,3 +112,33 @@ The MacOSX binary is a disk image holding a relocatable app.
   your .profile: ...
 
   Further information about using SWI-Prolog on MacOSX (link)
+
+## Implementation
+
+Server generates above page layout based on facts about them and
+includes
+
+  - browser-based initial selection
+  - patterns for greying buttons, selecting download files and
+    location of the (wiki) text file.  I think these should be
+    objects holding the four dimensions, where a missing dimension
+    is a widcard.  E.g. an array of objects as below.  The JavaScript
+    routine simply scans the array top-to-bottom for the first matching
+    pattern and executes the consequences: activating the right buttons
+    and download the description.  We generate the decision array from
+    a bunch of Prolog rules, so it is all nice and maintainable.  The
+    array is cached, and recomputed if something changes in the download
+    area (much as it is now: the download keeps a cache of available
+    download files and checks whether anything changed on the next request
+    if the cache is older than a minute or so).
+
+    { pattern: { stability: stable,
+		 platform: win32,
+		 type: binary,
+		 // usage: any
+	       }
+      download: "/download/stable/bin/w32pl661.exe"
+      documentation: "/download/stable/doc/..."
+      license: "/..."
+      description: "/..."
+    }
