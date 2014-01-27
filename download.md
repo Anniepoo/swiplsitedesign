@@ -53,10 +53,11 @@
 ## Proposal
 
 Multi-dimensional radio button. The dimension labels are clickable,
-providing a popup with background info. The bottom area consists of
-three links and a text that changes with the selections made. Greying is
-based on a JavaScript routine configured based on rules and data from
-the server.  The text is downloaded by AJAX calls.
+providing a popup with background info (content loaded from a wiki
+page). The bottom area consists of three links and a text that changes
+with the selections made. Greying is based on a JavaScript routine
+configured based on rules and data from the server. The text is
+downloaded by AJAX calls.
 
 The initial selection is (Stable, Platform from browser or not filled
 in, Type depending on platform (or not filled in) and Usage: Study.
