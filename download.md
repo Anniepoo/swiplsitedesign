@@ -146,3 +146,9 @@ includes
       license: "/..." (pointing in the wiki area)
       description: "/..." (pointing in the wiki area)
     }
+
+## Upgrading
+
+We could stick the choice in a cookie, so the next time we can keep the
+same choices and add a link to the changes since the previous version
+downloaded.
