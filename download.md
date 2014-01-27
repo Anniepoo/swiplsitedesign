@@ -49,3 +49,66 @@
       - Don't run Windows or setup Ubuntu cross building
       - Use Linux with standard tools (install dependencies)
       - Use MacOS with Xcode, XQuartz and Macports or Homebrew
+
+## Proposal
+
+Multi-dimensional radio button. The dimension labels are clickable,
+providing a popup with background info. The bottom area consists of
+three links and a text that changes with the selections made. Greying is
+based on a JavaScript routine configured based on rules and data from
+the server.  The text is downloaded by AJAX calls.
+
+The initial selection is (Stable, Platform from browser or not filled
+in, Type depending on platform (or not filled in) and Usage: Study.
+[reset] clears the whole menu, making all options open.  Examples:
+
+  - Windows browser:
+    - Stable, Win64 (32 if browser is), Binary, Study.
+    - Download buttons enabled.
+  - Ubuntu user
+    - Stable, Ubuntu, Linux packahe, Study
+    - Only docs and license enabled
+    - Text shows instructions for adding the PPA
+  - MacOS user
+    - Stable, MacOSX, Binary, Study
+    - Download buttons enabled.
+    - Text as below.
+  - Unknown browser
+    - Stable, Study selected
+    - Download buttons disabled.
+
+
+================================================================
+			Download SWI-Prolog
+
+  Stability   Platform	     Type	      Usage
+  * Stable    * Win32	     * Binary	      * Study
+  * Devel     * Win64	     * Linux package  * Run external application
+  * Daily     * MacOSX	     * Source	      * Web services
+  * GIT	      * Ubuntu	     * GIT	      * Databases
+	      * Other Linux		      * R&D
+	      * Other			      * ...
+
+  [reset]
+
+
+	Download	Documentation	License (link)
+
+[ text below, this is if the user selected MacOSX and Binary ]
+
+The MacOSX binary is a disk image holding a relocatable app.
+
+  * Installation
+  SWI-Prolog can be executed from the disk image, be dragged into
+  your personal app folder or the system app folder.
+
+  * MacOSX versions supported
+  The command line tools run on MacOS 10.6 or later. The app
+  requires MacOS 10.7 or later. The graphical development tools
+  require XQuartz 2.7.15.
+
+  * Post installation
+  To be able to run the command line tools, add the following to
+  your .profile: ...
+
+  Further information about using SWI-Prolog on MacOSX (link)
